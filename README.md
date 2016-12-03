@@ -122,10 +122,10 @@ Create a station dashboard route. When you visit `/station-dashboard` you should
 
 * Total count of stations
 * Average bikes available per station (based on docks).
-* Most bikes available at a station.
-* Station(s) where the most bikes are available.
-* Fewest bikes available at a station.
-* Station(s) where the fewest bikes are available.
+* Most bikes available at a station (based on docks).
+* Station(s) where the most bikes are available (based on docks).
+* Fewest bikes available at a station (based on docks).
+* Station(s) where the fewest bikes are available (based on docks).
 * Most recently installed station.
 * Oldest station.
 
@@ -196,7 +196,7 @@ Create full CRUD functionality for a day's weather conditions with the following
 * Min Temperature
 * Mean Humidity
 * Mean Visibility (in Miles)
-* Max Wind Speed (mph)
+* Mean Wind Speed (mph)
 * Precipitation (inches)
 
 At the end of this iteration users should be able to visit the following routes:
