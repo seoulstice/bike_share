@@ -49,7 +49,7 @@ At a high level, this project will develop along the following path:
 
 ### Define the Relationship with Your Group
 
-DTR with youg group [here](https://gist.github.com/case-eee/38e212c799c563f58766128b5057858a). One group member should send a link of the forked gist to your anchor as soon as it's complete.
+DTR with your group [here](https://gist.github.com/case-eee/38e212c799c563f58766128b5057858a). One group member should send a link of the forked gist to your anchor as soon as it's complete.
 
 ### Clone the Project
 
