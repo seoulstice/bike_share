@@ -176,7 +176,7 @@ Create a trips dashbord route. When you visit `/trips-dashboard` users should be
 * Single date with the highest number of trips with a count of those trips.
 * Single date with the lowest number of trips with a count of those trips.
 
-On the station dashboard add the following information:
+On an individual station show page add the following information:
 
 * Number of rides started at this station.
 * Number of rides ended at this station.
