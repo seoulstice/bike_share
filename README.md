@@ -8,15 +8,15 @@ This application will collect data in two ways: 1) through web forms allowing us
 
 At a high level, this project will develop along the following path:
 
-* Iteration 1: Allow users to save and view information related to bike share stations.
-* Iteration 2: Create a seed file to consume information on the seventy existing bike share stations in San Francisco.
-* Iteration 3: Create a station dashboard with analysis of station information (split by city, date installed, number of of bicycle docks)
-* Iteration 4: Allow users to save and view information related to trips taken.
-* Iteration 5: Update the seed file to consume information on the nearly 670,000 trips taken between August 29, 2013, and August 31, 2015.
-* Iteration 6: Add information to the station dashboard using trip information, and create a trip dashboard with an analysis of trips taken.
-* Iteration 7: Allow users to enter weather information.
-* Iteration 8: Update the seed file to consume weather information.
-* Iteration 9: Create a weather dashboard and update the trip dashboard with additional analytics regarding the relationship between weather and trips taken.
+* **Iteration 1**: Allow users to save and view information related to bike share stations.
+* **Iteration 2**: Create a seed file to consume information on the seventy existing bike share stations in San Francisco.
+* **Iteration 3**: Create a station dashboard with analysis of station information (split by city, date installed, number of of bicycle docks)
+* **Iteration 4**: Allow users to save and view information related to trips taken.
+* **Iteration 5**: Update the seed file to consume information on the nearly 670,000 trips taken between August 29, 2013, and August 31, 2015.
+* **Iteration 6**: Add information to the station dashboard using trip information, and create a trip dashboard with an analysis of trips taken.
+* **Iteration 7**: Allow users to enter weather information.
+* **Iteration 8**: Update the seed file to consume weather information.
+* **Iteration 9**: Create a weather dashboard and update the trip dashboard with additional analytics regarding the relationship between weather and trips taken.
 
 ## Learning Goals
 
@@ -28,7 +28,7 @@ At a high level, this project will develop along the following path:
 
 ### User Experience and Conventions
 
-* Use Sinatra and ERB templates to render views to create, read, update, and delete resources using restful routes and appropriate HTTP verbs
+* Use Sinatra and ERB templates to render views to create, read, update, and delete resources using RESTful routes and appropriate HTTP verbs
 * Use Sinatra and ERB templates to display a dashboard not related to a specific resource saved in the database
 * Use HTML and CSS to create a user experience that allows users to comfortably navigate a site
 
@@ -62,18 +62,18 @@ DTR with your group [here](https://gist.github.com/case-eee/38e212c799c563f58766
 This project must use:
 
 * [Sinatra](http://www.sinatrarb.com/)
-* [PostgreSQL](http://www.postgresql.org/) (this is configured for you)
+* [PostgreSQL](http://www.postgresql.org/)
 * [ActiveRecord](http://guides.rubyonrails.org/active_record_basics.html)
+
+This base repo has already configured those three for you.
 
 You'll want to set up the [DatabaseCleaner](https://github.com/DatabaseCleaner/database_cleaner) gem in order to have a clean database each time you run tests. Follow the instructions for setting up the gem. Due to a bug in the most recent version of the gem, you'll need to use this line when you set the strategy in your test helper file:
 
 ```ruby
-  DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.strategy = :truncation
 ```
 
 See the "Resources" section at the bottom of this page for additional helpful documentation.
-
-Before starting, make sure you have the [Postgres App](http://postgresapp.com/) installed.
 
 ### Restrictions
 
@@ -83,7 +83,8 @@ The project may not use:
 
 ## Instructions
 
-Iterations 0-9 must be completed in order to consider the project complete. Please use TDD throughout. Tests are expected for all features and all models.
+Iterations 0-9 must be completed in order to consider the project complete. 
+Please TDD throughout. Tests are expected for all features and all models.
 
 ## Base Expectations
 
@@ -256,9 +257,9 @@ The project will be assessed with the following rubric:
 
 ### 3. User Experience and Conventions
 
-* 4: Project uses Sinatra methods and ERB templates to display both resources and non-resource related views with appropriate routes, and HTTP verbs. All functionality can be accessed in the application where expected based on the spec. User experience is exceptional ('client ready') and all pieces of the application can be accessed without entering addresses manually in the nav bar.
-* 3: Project still uses appropriate routes and HTTP verbs. User experience is pleasant, but may need additional improvement before truly being ready to be deployed to production for a client.
-* 2: Appication is difficult to navigate, and may not follow restful conventions. This project may have limited styling.
+* 4: Project uses Sinatra methods and ERB templates to display both resources and non-resource related views with appropriate routes, and HTTP verbs. All functionality can be accessed in the application where expected based on the spec. User experience is exceptional ('client ready') and all pieces of the application can be accessed without entering addresses manually in the navbar.
+* 3: Project still uses appropriate routes and HTTP verbs. All pieces of the application can be accessed without entering addresses manually in the navbar. User experience is pleasant, but may need additional improvement before truly being ready to be deployed to production for a client. 
+* 2: Appication is difficult to navigate, and may not follow RESTful conventions. This project may have limited styling.
 * 1: Application does not follow conve
 
 ### 4. Code Organization/Quality
