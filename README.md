@@ -83,7 +83,7 @@ The project may not use:
 
 ## Instructions
 
-Iterations 0-9 must be completed in order to consider the project complete. 
+Iterations 0-9 must be completed in order to consider the project complete.
 Please TDD throughout. Tests are expected for all features and all models.
 
 ## Base Expectations
@@ -115,7 +115,7 @@ At the end of this iteration, you should be able to view an index of all station
 
 Download the dataset available [here](https://www.kaggle.com/benhamner/sf-bay-area-bike-share). This will include all of the CSV files that you will be using in this project. Since these files are large, we have set up your project directory structure and `.gitignore` so that when you add these files to the `/db/csv/` directory they will not be pushed up to GitHub. However, this also means that each of the members of your team will need to download these files independently. Please note that there are idiosyncracies in the data that are outlined in some detail [here](https://www.kaggle.com/benhamner/sf-bay-area-bike-share/discussion/23165). These may not be important to you at this moment, but this will be an important reference as you move through future iterations.
 
-Update the seed file in your `/db` directory and add the `station.csv` file to your `/db/csv/` directory. When you run `ruby db/seed.rb` your development database should be populated with the information from the `station.csv` file. Your index should include a total of seventy stations.
+Update the seeds file in your `/db` directory and add the `station.csv` file to your `/db/csv/` directory. When you run `rake db:seed` your development database should be populated with the information from the `station.csv` file. Your index should include a total of seventy stations.
 
 ### Iteration 3
 
