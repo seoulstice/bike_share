@@ -62,7 +62,7 @@ On an individual station show page the additional information should be present:
 * [ ] Number of rides started at this station.
 * [ ] Number of rides ended at this station.
 * [ ] Most frequent destination station (for rides that began at this station).
-* [ ] Most freuqnet origination station (for rides that ended at this station).
+* [ ] Most frequent origination station (for rides that ended at this station).
 * [ ] Date with the highest number of trips started at this station.
 * [ ] Most frequent zip code for users starting trips at this station.
 * [ ] Bike ID most frequently starting a trip at this station.
