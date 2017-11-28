@@ -1,5 +1,6 @@
 ### General 
 * [ ] Navigation to all links
+* [ ] Simple styling present
 
 ### Iteration 1
 
