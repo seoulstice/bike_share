@@ -4,7 +4,9 @@
 
 In this project you'll use Ruby, Sinatra, and Activerecord to build a site that analyzes bike share usage in San Francisco.
 
-This application will collect data in two ways: 1) through web forms allowing users to enter trip/station/weather information, and 2) by consuming CSV files with historical information for stations, trips, and weather. In addition to creating and storing this information for viewing at a later date, this application will provide a number of user dashboards with higher level analysis of trends in bike share usage.
+This application will collect data in two ways: 
+  1. Through web forms allowing users to enter trip/station/weather information
+  2. By consuming CSV files with historical information for stations, trips, and weather. In addition to creating and storing this information for viewing at a later date, this application will provide a number of user dashboards with higher level analysis of trends in bike share usage.
 
 At a high level, this project will develop along the following path:
 
@@ -49,7 +51,7 @@ At a high level, this project will develop along the following path:
 
 ### Define the Relationship with Your Group
 
-DTR with your group [here](https://gist.github.com/case-eee/38e212c799c563f58766128b5057858a). One group member should send a link of the forked gist to your anchor as soon as it's complete.
+DTR with your group [here](http://backend.turing.io/career_development_curriculum/module_one/dtr_guidelines_memo). One group member should send a link of the forked gist to your anchor as soon as it's complete.
 
 ### Clone the Project
 
@@ -104,10 +106,6 @@ Once you have the `Station` model started, finish it off by creating validations
 You can use ActiveRecord's [validations feature](http://guides.rubyonrails.org/active_record_validations.html) to make sure no record is saved without having all attributes present.
 
 **Be sure to have a test for each individual validation.**
-
-Also, be sure to normalize the table(s) that you build to hold this information, and to use restful routes. What's normalization you ask? Check out the homework assignments for Day 4 [here](https://github.com/turingschool/homework/blob/master/module-2-homework.markdown) and this [overview](https://gist.github.com/Carmer/f9e060bf1ac30e3ab7b3).
-
-**Hint:** Any data that will be repeated in a significant amount of rows in your `stations` table should probably be extracted to its own table.
 
 At the end of this iteration, you should be able to view an index of all stations, view a page for a single station, create a station, edit a station, and delete a station from either the index or the show pages.
 
@@ -237,48 +235,3 @@ Add the following information to your trip dashboard:
 * Import minute by minute data for stations and use that data to create additional analytics.
 * Add latitude and longitude to your station table. Create a Google map with pins for each of the stations.
 
-## Evaluation Rubric
-
-The project will be assessed with the following rubric:
-
-### 1. Functional Expectations
-
-* 4: Application fulfills base expectations and adds two extensions
-* 3: Application fulfills base expectations
-* 2: Application has some small missing base functionality
-* 1: Application is not usable
-
-### 2. ActiveRecord
-
-* 4: Appropriate ActiveRecord methods are used to query the database and live in the appropriate model. No Ruby is used to organize data after database queries.
-* 3: ActiveRecord methods generally live in the appropriate model, but some Ruby is used to organize data after database queries. A project at this level may have some queries that have not produced the correct results based on the expectations described, but in those cases the query was still generally on the right path and demonstrated some minor misunderstanding.
-* 2: Limited use of ActiveRecord methods (for exxample: frequent use of `.all` followed by data manipulation using Ruby where other ActiveRecord methods would be more appropriate). Projects at this level may also include queries that do not produce correct results, but the query would likely need to be completely rewritten.
-* 1: Applciation shows little understanding of ActiveRecord and likely fails to query the database to obtain the information necessary to meet project requirements.
-
-### 3. User Experience and Conventions
-
-* 4: Project uses Sinatra methods and ERB templates to display both resources and non-resource related views with appropriate routes, and HTTP verbs. All functionality can be accessed in the application where expected based on the spec. User experience is exceptional ('client ready') and all pieces of the application can be accessed without entering addresses manually in the navbar.
-* 3: Project still uses appropriate routes and HTTP verbs. All pieces of the application can be accessed without entering addresses manually in the navbar. User experience is pleasant, but may need additional improvement before truly being ready to be deployed to production for a client. 
-* 2: Appication is difficult to navigate, and may not follow RESTful conventions. This project may have limited styling.
-* 1: Application does not follow conve
-
-### 4. Code Organization/Quality
-
-* 4: Code is organized so that the main application file is primarily concerned with HTTP requests/responses. Other logic is refactored to be included in other Ruby objects, and code responsible for analyzing information in the database exists in the appropriate ActiveRecord models. Methods are appropriately refactored to have a specific purpose and generally do not exceed eight to ten lines. The purpose of methods is generally clear and easy to understand/follow. Logic is not included in ERB views, and is instead in the controller or model as appropriate.
-* 3: Some logic not related specifically to HTTP requests/resesponses remains in the main application file. Some methods may be slightly long, or follow unexpected patterns. Limited logic may leak into the views.
-* 2: Code does not represent a significant effort to refactor. Logic leaks into the views or controllers. Long methods may exist, and the purpose behind some methods may be unclear.
-* 1: Code is disorganized and will likely be difficult to understand/maintain.
-
-### 5. Testing
-
-* 4: Application is broken into components which are well tested in both isolation and integration using appropriate data
-* 3: Application is well tested but does not balance isolation and integration/feature tests
-* 2: Application makes some use of tests, but the coverage is insufficient
-* 1: Application does not demonstrate strong use of TDD
-
-### 6. Working Collaboratively
-
-* 4: Excellent use of branches, pull requests, and a project management tool.
-* 3: Good use of branches, pull requests, and a project-management tool.
-* 2: Sporadic use of branches, pull requests, and/or project-management tool.
-* 1: Little use of branches, pull requests, and/or a project-management tool.
