@@ -39,7 +39,7 @@ On `/station-dashboard`:
 
 ### Iteration 5
 
-* [ ] 65534 Trips load from CSV
+* [ ] Trips load from CSV
 
 ### Iteration 6
 
