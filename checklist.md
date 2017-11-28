@@ -74,11 +74,12 @@ On an individual station show page the additional information should be present:
 * [ ] Create a new condition
 * [ ] Update a condition
 * [ ] Delete a station (from both index or show)
+* [ ] Attributes include: duration, start date, start station, end date, end station, bike ID, subscription type
 * [ ] Conditions are paginated by groups of 30
 
 ### Iteration 8
 
-N/A
+* [ ] Weathers load from CSV
 
 ### Iteration 9
 
