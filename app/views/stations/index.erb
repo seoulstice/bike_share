@@ -1,0 +1,9 @@
+<h1>Welcome to Bikeshare</h1>
+<% @stations.each do |station| %>
+  <ul>
+  <li>Station Name-- <%= station.name %></li>
+  <li>Station City-- <%= station.city %></li>
+  <li>Dock Count-- <%= station.dock_count %></li>
+  <li>Installation Date-- <%= station.installation_date %></li>
+  </ul>
+<% end %>

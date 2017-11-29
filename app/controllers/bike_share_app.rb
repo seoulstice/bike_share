@@ -1,8 +1,14 @@
 class BikeShareApp < Sinatra::Base
+  set :method_override, true
+
   get '/stations' do
     @stations = Station.all
 
     erb :"stations/index"
+  end
+
+  get '/stations/new' do
+    erb :"stations/new"
   end
 
   get '/stations/:id' do
@@ -12,23 +18,21 @@ class BikeShareApp < Sinatra::Base
   end
 
   get '/stations/:id/edit' do
-    erb :"station/edit"
-  end
+    @station = Station.find(params[:id])
 
-  get '/stations/new' do
-    erb :"stations/new"
+    erb :"stations/edit"
   end
 
   post '/stations' do
     station = Station.create(params[:station])
 
-    redirect :"station/#{station.id}"
+    redirect "/stations"
   end
 
-  put '/stations' do
-    station = Station.update(params[:id], params[:station])
+  put '/stations/:id' do |id|
+    Station.update(id.to_i, params[:station])
 
-    redirect :"station/#{station.id}"
+    redirect "/stations"
   end
 
   delete '/stations/:id' do
@@ -36,6 +40,6 @@ class BikeShareApp < Sinatra::Base
     # station.destroy
     Station.destroy(params[:id])
 
-    redirect :"stations/index"
+    redirect "/stations"
   end
 end
