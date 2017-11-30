@@ -1,9 +1,52 @@
-<h1>Welcome to Bikeshare</h1>
-<% @stations.each do |station| %>
-  <ul>
-  <li>Station Name-- <%= station.name %></li>
-  <li>Station City-- <%= station.city %></li>
-  <li>Dock Count-- <%= station.dock_count %></li>
-  <li>Installation Date-- <%= station.installation_date %></li>
-  </ul>
-<% end %>
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>Home</title>
+    <style>
+      h1 {
+        color: blue;
+        background-color: gray;
+      }
+
+      li {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .flex-parent {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .flex-child-one {
+        flex-basis: 600px;
+      }
+
+      .flex-child {
+        flex-basis: 300px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to Bikeshare</h1>
+    <% @stations.each do |station| %>
+      <ul>
+        <section class = "flex-parent">
+        <li class = "flex-child-one">Station Name-- <%= station.name %></li>
+        <li class = "flex-child">Station City-- <%= station.city %></li>
+        <li class = "flex-child">Dock Count-- <%= station.dock_count %></li>
+        <li class = "flex-child">Installation Date-- <%= station.installation_date %></li>
+        <a href="/stations/<%= station.id  %>/edit" class = "flex-edit">Edit</a>
+        <form action="/stations/<%= station.id %>" method="POST">
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="submit" value="delete"/>
+        </form>
+      </section>
+      </ul>
+    <% end %>
+  </body>
+</html>
