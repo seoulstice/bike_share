@@ -7,6 +7,7 @@ gem 'sinatra-activerecord'
 gem 'pry'
 
 group :development, :test do
+  gem 'database_cleaner'
   gem 'shotgun'
   gem 'rspec'
   gem 'rspec-core'
