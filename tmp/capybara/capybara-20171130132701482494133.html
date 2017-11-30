@@ -1,0 +1,22 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="/reset.css">
+  <link rel="stylesheet" type="text/css" href="/main.css">
+</head>
+
+<header>
+  <h1>SF Bike Share</h1>
+</header>
+
+<nav>
+  <a href="/stations">Station Index</a>
+  <a href="/station-dashboard">Station Dashboard</a>
+</nav>
+
+<form action="/stations/2" method="post">
+  <input type="hidden" name="_method" value="PUT">
+  Station Name <input type="text" name="station[name]" value="North SJ"><br/>
+  City <input type="text" name="station[city]" value="SJ"><br/>
+  Number of Bike-Docks <input type="number" name="station[dock_count]" value="14"><br/>
+  Installation Date <input type="date" name="station[installation_date]" value="2017-01-10" data-date-inline-picker="true"><br/>
+  <input type="submit">
+</form>
