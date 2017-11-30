@@ -3,6 +3,15 @@ describe "When a visitor visits stations" do
     @station = Station.create(name: "South SF", city: "SF", dock_count: 12, installation_date: "2017-01-01")
   end
 
+  it "sees banner" do
+    visit '/stations'
+
+    expect(page).to have_current_path('/stations')
+
+    expect(page).to have_content("SF Bike Share")
+    expect(page).to have_link("Station Dashboard")
+  end
+
   it "sees all stations" do
     visit '/stations'
 
