@@ -1,21 +1,14 @@
-<head>
-  <link rel="stylesheet" type="text/css" href="/reset.css">
-  <link rel="stylesheet" type="text/css" href="/main.css">
-</head>
+<%= erb :'stations/banner' %>
 
-<h1>Welcome to Bikeshare</h1>
+<a class="new_button" href="/stations/new">New Station</a>
+
 <% @stations.each do |station| %>
   <ul>
-    <section class = "flex-parent">
-    <li class = "flex-child-one">Station Name-- <%= station.name %></li>
-    <li class = "flex-child">Station City-- <%= station.city %></li>
-    <li class = "flex-child">Dock Count-- <%= station.dock_count %></li>
-    <li class = "flex-child">Installation Date-- <%= station.installation_date %></li>
-    <a href="/stations/<%= station.id  %>/edit" class = "flex-edit">Edit</a>
-    <form action="/stations/<%= station.id %>" method="POST">
-      <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="delete"/>
-    </form>
+    <section class = "station">
+    <li class = "station_name"><a href="/stations/<%= station.id %>"> <%= station.name %></a></li>
+    <li class = "station_city"><%= station.city %>, CA</li>
+    <li>Docks: <%= station.dock_count %></li>
+    <li>Installation: <%= station.installation_date %></li>
   </section>
   </ul>
 <% end %>

@@ -1,23 +1,56 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: black;
+  padding: 20px 0 20px 0;
+
+}
+
+nav {
+  padding: 10px 0 10px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: lightgrey;
+}
+
+nav > a {
+  font-size: 20px;
+  color: black;
+}
+
+a:hover {
+  cursor: url(https://imgur.com/P5MWuLX.png), auto;
+  color: rgba(0, 8, 255, 0.5)
+}
+
 h1 {
-  color: blue;
-  background-color: gray;
+  color: lightblue;
+  font-size: 32px;
 }
 
 li {
   font-size: 18px;
+}
+
+
+
+.station {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  margin: 10px;
+}
+
+.station_name {
+  font-size: 24px;
   font-weight: bold;
 }
 
-.flex-parent {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.flex-child-one {
-  flex-basis: 600px;
-}
-
-.flex-child {
-  flex-basis: 300px;
+.station_city {
+  font-size: 20px;
+  font-weight: bold;
 }
