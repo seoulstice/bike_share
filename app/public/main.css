@@ -15,9 +15,15 @@ nav {
   background-color: lightgrey;
 }
 
+
+
 nav > a {
   font-size: 20px;
   color: black;
+}
+
+a:hover {
+  cursor: url(https://imgur.com/P5MWuLX.png), auto;
 }
 
 h1 {
@@ -28,6 +34,8 @@ h1 {
 li {
   font-size: 18px;
 }
+
+
 
 .station {
   display: flex;
