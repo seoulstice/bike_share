@@ -9,12 +9,13 @@
 
 <nav>
   <a href="/stations">Station Index</a>
+  <a href="/station-dashboard">Station Dashboard</a>
 </nav>
 
 <form action="/stations" method="post">
   Station Name <input type="text" name="station[name]" value=""><br/>
-  Station City <input type="text" name="station[city]" value=""><br/>
+  City <input type="text" name="station[city]" value=""><br/>
   Number of Bike-Docks <input type="number" name="station[dock_count]" value=""><br/>
-  Installation Date <input type="date" name="station[installation_date]" value="" data-date-inline-picker="true"><br/>
+  Installation Date <input type="date" name="station[installation_date]" value="<%= Date.today %>" data-date-inline-picker="true"><br/>
   <input type="submit">
 </form>

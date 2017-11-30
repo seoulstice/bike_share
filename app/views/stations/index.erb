@@ -9,11 +9,14 @@
 
 <nav>
   <a href="/stations">Station Index</a>
+  <a href="/station-dashboard">Station Dashboard</a>
 </nav>
+
+<a href="/stations/new">New Station</a>
 
 <% @stations.each do |station| %>
   <ul>
-    <section class = "flex-parent">
+    <section class = "station">
     <li class = "station_name"><a href="/stations/<%= station.id %>"> <%= station.name %></a></li>
     <li class = "station_city"><%= station.city %>, CA</li>
     <li>Docks: <%= station.dock_count %></li>
