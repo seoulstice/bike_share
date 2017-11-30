@@ -3,13 +3,21 @@
   <link rel="stylesheet" type="text/css" href="/main.css">
 </head>
 
-<h1>Show Page</h1>
+<header>
+  <h1>Show Page</h1>
+</header>
+
+<nav>
+  <a href="/stations">Station Index</a>
+</nav>
+
 <ul>
-  <li>Station Name-- <%= @station.name %></li>
-  <li>Station City-- <%= @station.city %></li>
-  <li>Dock Count-- <%= @station.dock_count %></li>
-  <li>Installation Date-- <%= @station.installation_date %></li>
+  <li class="station_name"><%= @station.name %></li>
+  <li class="station_city"><%= @station.city %>, CA</li>
+  <li>Docks: <%= @station.dock_count %></li>
+  <li>Installation Date: <%= @station.installation_date %></li>
 </ul>
+<a href="/stations/<%= @station.id %>">Edit</a>
 <form class="" action="/stations/<%= @station.id %>" method="post">
   <input type="hidden" name="_method" value="DELETE">
   <input type="Submit" name="" value="Delete">

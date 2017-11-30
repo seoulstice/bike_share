@@ -3,7 +3,14 @@
   <link rel="stylesheet" type="text/css" href="/main.css">
 </head>
 
-<h1>Edit some stations</h1>
+<header>
+  <h1>Edit station</h1>
+</header>
+
+<nav>
+  <a href="/stations">Station Index</a>
+</nav>
+
 <form action="/stations/<%= @station.id %>" method="post">
   <input type="hidden" name="_method" value="PUT">
   Station Name <input type="text" name="station[name]" value="<%= @station.name %>"><br/>
