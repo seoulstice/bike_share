@@ -26,7 +26,7 @@ class BikeShareApp < Sinatra::Base
   post '/stations' do
     station = Station.create(params[:station])
 
-    redirect "/stations"
+    redirect "/stations/#{station.id}"
   end
 
   put '/stations/:id' do |id|
@@ -36,8 +36,6 @@ class BikeShareApp < Sinatra::Base
   end
 
   delete '/stations/:id' do
-    # station = Station.find(params[:id])
-    # station.destroy
     Station.destroy(params[:id])
 
     redirect "/stations"
