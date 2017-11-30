@@ -1,0 +1,11 @@
+<h1>Station Dashboard</h1>
+<ul>
+  <li>Total # of Stations: <%= @stations.count %></li>
+  <li>Average Dock Count: <%= @stations.average_dock_count %></li>
+  <li>Station with Most Docks: <%= @stations.max_dock_count_station %></li>
+  <li>Maximum Dock Count: <%= @stations.maximum_dock_count %></li>
+  <li>Station with Least Docks: <%= @stations.min_dock_count_station %></li>
+  <li>Mininum Dock Count: <%= @stations.mininum_dock_count %></li>
+  <li>Newest Station: <%= @stations.newest_station.name %></li>
+  <li>Oldest Station: <%= @stations.oldest_station.name %></li>
+</ul>
