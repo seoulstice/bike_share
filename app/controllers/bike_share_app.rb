@@ -32,7 +32,7 @@ class BikeShareApp < Sinatra::Base
   put '/stations/:id' do |id|
     Station.update(id.to_i, params[:station])
 
-    redirect "/stations/#{id}"
+    redirect "/stations/#{id.to_i}"
   end
 
   delete '/stations/:id' do
