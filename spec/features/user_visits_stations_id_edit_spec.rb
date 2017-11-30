@@ -17,6 +17,7 @@ describe "When a visitor visits edit station" do
     expect(page).to have_selector('input[value="12"]')
     expect(page).to have_field("station[installation_date]")
     expect(page).to have_selector('input[value="2017-01-01"]')
+    expect(page).to have_selector('input[name="Update"]')
   end
 
   it "sees banner" do
