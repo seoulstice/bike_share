@@ -1,15 +1,15 @@
-### General 
+### General
 * [ ] Navigation to all links
 * [ ] Simple styling present
 
 ### Iteration 1
 
-* [ ] See all stations 
-* [ ] See one station 
-* [ ] Create a new station 
-* [ ] Update a station 
-* [ ] Delete a station (from either index or show)
-* [ ] Cannot save without name, dock count, city, installation date
+* [x] See all stations
+* [x] See one station
+* [x] Create a new station
+* [x] Update a station
+* [x] Delete a station (from either index or show)
+* [x] Cannot save without name, dock count, city, installation date
 
 ### Iteration 2
 
@@ -30,13 +30,13 @@ On `/station-dashboard`:
 
 ### Iteration 4
 
-* [ ] See all trips 
+* [ ] See all trips
 * [ ] See one trip
-* [ ] Create a new trip 
-* [ ] Update a trip 
+* [ ] Create a new trip
+* [ ] Update a trip
 * [ ] Delete a trip (from either index or show)
 * [ ] All attributes (except zip code) must be present: duration, start date, start station, end date, end station, bike ID, subscription type)
-* [ ] Trips are paginated in groups of 30 
+* [ ] Trips are paginated in groups of 30
 
 ### Iteration 5
 
