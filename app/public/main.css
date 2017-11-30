@@ -1,0 +1,23 @@
+h1 {
+  color: blue;
+  background-color: gray;
+}
+
+li {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.flex-parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.flex-child-one {
+  flex-basis: 600px;
+}
+
+.flex-child {
+  flex-basis: 300px;
+}
