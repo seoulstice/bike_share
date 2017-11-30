@@ -4,15 +4,6 @@ class Station < ActiveRecord::Base
                         :city,
                         :installation_date
 
-  def self.count
-    count
-  end
-
-  # def self.average_dock_count
-  #     find_by_sql('SELECT AVG(dock_count)
-  #                        FROM stations')
-  # end
-
   def self.average_dock_count
     average(:dock_count).to_f.round(2)
   end
@@ -34,10 +25,10 @@ class Station < ActiveRecord::Base
   end
 
   def self.newest_station
-    order(:installation_date).first.name
+    order(:installation_date).first
   end
 
   def self.oldest_station
-    order(:installation_date).last.name
+    order(:installation_date).last
   end
 end
