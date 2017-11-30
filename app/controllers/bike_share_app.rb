@@ -36,6 +36,7 @@ class BikeShareApp < Sinatra::Base
   end
 
   delete '/stations/:id' do
+    require "pry"; binding.pry
     Station.destroy(params[:id])
 
     redirect "/stations"

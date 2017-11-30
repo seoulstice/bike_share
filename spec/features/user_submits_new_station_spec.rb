@@ -23,6 +23,4 @@ describe "When a visitor submits a new station" do
     expect(page).to have_content(2)
     expect(page).to have_content("2017-01-01")
   end
-
-
 end

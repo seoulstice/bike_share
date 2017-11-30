@@ -7,7 +7,7 @@
   <li>Installation Date: <%= @station.installation_date %></li>
 </ul>
 <a href="/stations/<%= @station.id %>/edit">Edit</a>
-<form class="" action="/stations/<%= @station.id %>" method="PUT">
+<form class="" action="/stations/<%= @station.id %>" method="post">
   <input type="hidden" name="_method" value="DELETE">
-  <input type="Submit" name="" value="Delete">
+  <input type="submit" name="Delete" value="Delete">
 </form>

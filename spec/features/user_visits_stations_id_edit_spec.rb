@@ -19,18 +19,6 @@ describe "When a visitor visits edit station" do
     expect(page).to have_selector('input[value="2017-01-01"]')
   end
 
-  it "changes the station values and they are saved" do
-    visit '/stations/2/edit'
-    fill_in('station[name]', with: "North SF")
-    fill_in('station[city]', with: "SF")
-    fill_in('station[dock_count]', with: 2)
-    fill_in('station[installation_date]', with: "2017-01-01")
-    find('input[name="Update"]').click
-
-    expect(page).to have_current_path('/stations/2')
-
-  end
-
   it "sees banner" do
     visit '/stations/1/edit'
 
