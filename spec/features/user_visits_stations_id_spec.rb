@@ -23,6 +23,14 @@ describe "When a visitor visits station show" do
     expect(page).to have_link('Edit')
   end
 
+  it "clicks on Edit link" do
+    visit '/stations/1'
+
+    click_on('Edit')
+
+    expect(page).to have_current_path('/stations/1/edit')
+  end
+
   it "sees banner" do
     visit '/stations'
 

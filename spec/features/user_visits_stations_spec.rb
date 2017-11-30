@@ -20,4 +20,12 @@ describe "When a visitor visits stations" do
     expect(page).to have_content("All Stations")
     expect(page).to have_content("South SF")
   end
+
+  it "clicks on a specific station" do
+    visit '/stations'
+
+    click_on("#{@station.name}")
+
+    expect(page).to have_current_path('/stations/1')
+  end
 end
