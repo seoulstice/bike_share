@@ -80,6 +80,7 @@ img {
 .dash-flex {
   display: flex;
   justify-content: center;
+  padding: 30px 0;
 }
 
 .dashboard-results {
@@ -103,15 +104,15 @@ img {
   padding: 20px;
 }
 
-.new-child {
-  margin: 10px;
-  padding: 5px;
-}
-
-.test {
+.form-flex {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+}
+
+.new-child {
+  margin: 10px;
+  padding: 5px;
 }
 
 .button {
