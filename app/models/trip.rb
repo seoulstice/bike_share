@@ -7,6 +7,5 @@ class Trip <ActiveRecord::Base
                         :end_date,
                         :end_station,
                         :bike_id,
-                        :subscription_type,
-                        :zipcode
+                        :subscription_type
 end
