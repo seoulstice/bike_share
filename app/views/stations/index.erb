@@ -1,20 +1,26 @@
 <%= erb :banner %>
-<head><title>All Stations</title></head>
 
-<nav class="crumbs">
-  <a href="/">Home</a> /
-  Stations
-</nav>
+<head>
+  <title>All Stations</title>
+</head>
 
-<a class="new_button" href="/stations/new">New Station</a>
-<!-- build out breadcrumb path to replace above -->
+<ul class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li>Stations</li>
+</ul>
+
+<a href="/stations/new"><button class="button" type="button">New Station</button></a>
+
+<main class="flex-parent">
 <% @stations.each do |station| %>
   <ul>
     <section class = "station">
     <li class = "station_name"><a href="/stations/<%= station.id %>"> <%= station.name %></a></li>
     <li class = "station_city"><%= station.city %>, CA</li>
+    <img src ="/images/groot.gif"
     <li>Docks: <%= station.dock_count %></li>
     <li>Installation: <%= station.installation_date %></li>
   </section>
   </ul>
 <% end %>
+</main>

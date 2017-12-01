@@ -1,22 +1,22 @@
 <%= erb :banner %>
 
-<head><title>Edit Stations</title></head>
+<head>
+  <title>Edit <%= @station.name %> Station</title>
+</head>
 
+<ul class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/stations/<%= @station.id %>"><%= @station.name %></a></li>
+  <li>Edit Station</li>
+</ul>
 
-<nav class="crumbs">
-  <a href="/">Home</a> /
-  <a href="/stations">Stations</a> /
-  <a href="/stations/<%= @station.id %>"><%= @station.name %></a> /
-  Edit Station
-</nav>
-
-
-
-<form action="/stations/<%= @station.id %>" method="post">
-  <input type="hidden" name="_method" value="PUT">
-  Station Name <input type="text" name="station[name]" value="<%= @station.name %>"><br/>
-  City <input type="text" name="station[city]" value="<%= @station.city %>"><br/>
-  Number of Bike-Docks <input type="number" name="station[dock_count]" value="<%= @station.dock_count %>"><br/>
-  Installation Date <input type="date" name="station[installation_date]" value="<%= @station.installation_date %>" data-date-inline-picker="true"><br/>
-  <input name="Update" type="submit">
-</form>
+<section class="new-flex">
+  <form class="form-flex" action="/stations/<%= @station.id %>" method="post">
+    <input type="hidden" name="_method" value="PUT">
+    Station Name <input type="text" name="station[name]" value="<%= @station.name %>"><br/>
+    City <input type="text" name="station[city]" value="<%= @station.city %>"><br/>
+    Number of Bike-Docks <input type="number" name="station[dock_count]" value="<%= @station.dock_count %>"><br/>
+    Installation Date <input type="date" name="station[installation_date]" value="<%= @station.installation_date %>" data-date-inline-picker="true"><br/>
+    <input class="button" name="Update" type="submit">
+  </form>
+</section>

@@ -1,24 +1,28 @@
 <%= erb :banner %>
 
-<head><title>Station Dashboard</title></head>
+<head>
+  <title>Station Dashboard</title>
+</head>
 
-
-<nav class="crumbs">
-  <a href="/">Home</a> /
-  <a href="/stations">Stations</a> /
-  Station Dashboard
-</nav>
-
-<h1>Station Dashboard</h1>
-
-
-<ul>
-  <li>Total # of Stations: <%= @stations.count %></li>
-  <li>Average Dock Count: <%= @stations.average_dock_count %></li>
-  <li>Station with Most Docks: <%= @stations.max_dock_count_station.name %></li>
-  <li>Maximum Dock Count: <%= @stations.maximum_dock_count %></li>
-  <li>Station with Least Docks: <%= @stations.min_dock_count_station.name %></li>
-  <li>Mininum Dock Count: <%= @stations.mininum_dock_count %></li>
-  <li>Newest Station: <%= @stations.newest_station.name %></li>
-  <li>Oldest Station: <%= @stations.oldest_station.name %></li>
+<ul class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/stations">Stations</a></li>
+  <li>Station Dashboard</li>
 </ul>
+
+<body>
+  <h1 class="dashboard-header">Station Dashboard</h1>
+
+  <section class="dash-flex">
+    <ul class="dashboard-results">
+      <li>Total # of Stations: <%= @stations.count %></li>
+      <li>Average Dock Count: <%= @stations.average_dock_count %></li>
+      <li>Station with Most Docks: <%= @stations.max_dock_count_station %></li>
+      <li>Maximum Dock Count: <%= @stations.maximum_dock_count %></li>
+      <li>Station with Least Docks: <%= @stations.min_dock_count_station %></li>
+      <li>Mininum Dock Count: <%= @stations.mininum_dock_count %></li>
+      <li>Newest Station: <%= @stations.newest_station.name %></li>
+      <li>Oldest Station: <%= @stations.oldest_station.name %></li>
+    </ul>
+  </section>
+</body>
