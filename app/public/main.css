@@ -48,7 +48,7 @@ img {
   justify-content: space-around;
 }
 
-.station {
+.display_object {
   display: flex;
   flex-direction: column;
   justify-content: space-around;

@@ -14,7 +14,7 @@
 <main class="flex-parent">
 <% @stations.each do |station| %>
   <ul>
-    <section class = "station">
+    <section class = "display_object">
     <li class = "station_name"><a href="/stations/<%= station.id %>"> <%= station.name %></a></li>
     <li class = "station_city"><%= station.city %>, CA</li>
     <img src ="/images/groot.gif"
