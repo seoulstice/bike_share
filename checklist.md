@@ -13,29 +13,45 @@
 
 ### Iteration 2
 
-* [ ] 70 Stations Load from CSV
+* [x] 70 Stations Load from CSV
 
 ### Iteration 3
 
 On `/station-dashboard`:
 
-* [ ] Total count of stations
-* [ ] Average bikes available per station (based on docks).
-* [ ] Most bikes available at a station (based on docks).
-* [ ] Station(s) where the most bikes are available (based on docks).
-* [ ] Fewest bikes available at a station (based on docks).
-* [ ] Station(s) where the fewest bikes are available (based on docks).
-* [ ] Most recently installed station.
-* [ ] Oldest station.
+* [x] Total count of stations
+* [x] Average bikes available per station (based on docks).
+* [x] Most bikes available at a station (based on docks).
+* [x] Station(s) where the most bikes are available (based on docks).
+* [x] Fewest bikes available at a station (based on docks).
+* [x] Station(s) where the fewest bikes are available (based on docks).
+* [x] Most recently installed station.
+* [x] Oldest station.
 
 ### Iteration 4
 
-* [ ] See all trips
-* [ ] See one trip
+* [x] See all trips
+  * [x] route
+  * [x] view
+  * [x] test
+* [x] See one trip
+  * [x] route
+  * [x] view
+  * [x] test
 * [ ] Create a new trip
+  * [ ] route
+  * [ ] view
+  * [ ] test
 * [ ] Update a trip
+  * [ ] route
+  * [ ] view
+  * [ ] test
 * [ ] Delete a trip (from either index or show)
-* [ ] All attributes (except zip code) must be present: duration, start date, start station, end date, end station, bike ID, subscription type)
+  * [ ] route
+  * [ ] view
+  * [ ] test
+* [x] All attributes (except zip code) must be present: duration, start date, start station, end date, end station, bike ID, subscription type)
+  * [x] model test
 * [ ] Trips are paginated in groups of 30
 
 ### Iteration 5
@@ -46,27 +62,45 @@ On `/station-dashboard`:
 
 On `/trips-dashboard`:
 
-* [ ] Average duration of a ride.
-* [ ] Longest ride.
-* [ ] Shortest ride.
+* [x] Average duration of a ride.
+ - [ ] tested
+* [x] Longest ride.
+ - [ ] tested
+* [x] Shortest ride.
+ - [ ] tested
 * [ ] Station with the most rides as a starting place.
+ - [ ] tested
 * [ ] Station with the most rides as an ending place.
+ - [ ] tested
 * [ ] Month by Month breakdown of number of rides with subtotals for each year.
+ - [ ] tested
 * [ ] Most ridden bike with total number of rides for that bike.
+ - [ ] tested
 * [ ] Least ridden bike with total number of rides for that bike.
+ - [ ] tested
 * [ ] User subscription type breakout with both count and percentage.
+ - [ ] tested
 * [ ] Single date with the highest number of trips with a count of those trips.
+ - [ ] tested
 * [ ] Single date with the lowest number of trips with a count of those trips.
+ - [ ] tested
 
 On an individual station show page the additional information should be present:
 
 * [ ] Number of rides started at this station.
+ - [ ] tested
 * [ ] Number of rides ended at this station.
+ - [ ] tested
 * [ ] Most frequent destination station (for rides that began at this station).
+ - [ ] tested
 * [ ] Most frequent origination station (for rides that ended at this station).
+ - [ ] tested
 * [ ] Date with the highest number of trips started at this station.
+ - [ ] tested
 * [ ] Most frequent zip code for users starting trips at this station.
+ - [ ] tested
 * [ ] Bike ID most frequently starting a trip at this station.
+ - [ ] tested
 
 ### Iteration 7
 
