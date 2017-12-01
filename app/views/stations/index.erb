@@ -3,7 +3,7 @@
   <title>All Stations</title>
 </head>
 
-<a class="new_button" href="/stations/new">New Station</a>
+<%= erb :'stations/breadcrumb' %>
 <!-- build out breadcrumb path to replace above -->
 <main class="flex-parent">
 <% @stations.each do |station| %>
