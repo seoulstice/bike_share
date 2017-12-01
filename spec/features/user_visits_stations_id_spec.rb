@@ -1,7 +1,9 @@
 describe "When a visitor visits individual station" do
   before(:each) do
-    @station_1 = Station.create(name: "South SF", city: "SF", dock_count: 12, installation_date: "2017-01-01")
-    @station_2 = Station.create(name: "North SJ", city: "SJ", dock_count: 14, installation_date: "2017-01-10")
+    @station_1 = Station.create(name: "South SF",
+                                city: "SF",
+                                dock_count: 12,
+                                installation_date: "2017-01-01")
   end
 
   it "sees the correct station with an Edit link" do
