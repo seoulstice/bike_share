@@ -19,7 +19,7 @@
   </ul>
 </section>
 
-<a  href="/stations/<%= @station.id %>/edit"><button class="button" type="button">Edit</button></a>
+<a  class="button" href="/stations/<%= @station.id %>/edit">Edit</a>
 <form class="" action="/stations/<%= @station.id %>" method="post">
   <input type="hidden" name="_method" value="DELETE">
   <input class="button inline-btn" type="submit" name="Delete" value="Delete">

@@ -116,12 +116,14 @@ img {
 }
 
 .button {
+  font: bold 11px Arial;
+  margin: 10px 0 10px 0;
   padding: 10px 32px;
   background-color: limegreen;
-  font-weight: bold;
 }
 
 ul.breadcrumb {
+    margin: 0 0 10px 0;
     padding: 10px 16px;
     list-style: none;
     background-color: #eee;
