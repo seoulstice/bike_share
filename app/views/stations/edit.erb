@@ -4,6 +4,12 @@
   <title>Edit <%= @station.name %> Station</title>
 </head>
 
+<ul class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/stations/<%= @station.id %>"><%= @station.name %></a></li>
+  <li>Edit Station</li>
+</ul>
+
 <section class="new-flex">
   <form class="form-flex" action="/stations/<%= @station.id %>" method="post">
     <input type="hidden" name="_method" value="PUT">

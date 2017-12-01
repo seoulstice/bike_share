@@ -4,6 +4,12 @@
   <title><%= @station.name %> Station</title>
 </head>
 
+<ul class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/stations">Stations</a></li>
+  <li><%= @station.name %></li>
+</ul>
+
 <section class="dash-flex">
   <ul class="dashboard-results">
     <li class="station_name"><%= @station.name %></li>
