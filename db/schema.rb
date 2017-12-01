@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20171201012040) do
     t.integer "bike_id"
     t.string "subscription_type"
     t.integer "zipcode"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

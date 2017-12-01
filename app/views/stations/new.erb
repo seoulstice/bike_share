@@ -9,7 +9,7 @@
   <li><a href="/stations">Stations</a></li>
   <li>New Station</li>
 </ul>
-
+<main class="flex-parent">
 <section class="new-flex">
   <form class="form-flex" action="/stations" method="post">
     Station Name: <input class="new-child" type="text" name="station[name]" value=""><br/>
@@ -18,4 +18,5 @@
     Installation Date: <input class="new-child" type="date" name="station[installation_date]" value="<%= Date.today %>" data-date-inline-picker="true"><br/>
     <input class="button" name="New" type="submit">
   </form>
+</main>
 </section>
