@@ -1,7 +1,9 @@
 <%= erb :'stations/banner' %>
+
 <head>
   <title>Edit <%= @station.name %> Station</title>
 </head>
+
 <section class="new-flex">
   <form class="form-flex" action="/stations/<%= @station.id %>" method="post">
     <input type="hidden" name="_method" value="PUT">

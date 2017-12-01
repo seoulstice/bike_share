@@ -1,10 +1,15 @@
 <%= erb :'stations/banner' %>
+
 <head>
   <title>All Stations</title>
 </head>
 
-<%= erb :'stations/breadcrumb' %>
-<!-- build out breadcrumb path to replace above -->
+<ul class="breadcrumb">
+  <li><a href="/stations">Stations Index</a></li>
+  <li><a href="/station-dashboard">Station Dashboard</a></li>
+  <li>Index</li>
+</ul>
+
 <main class="flex-parent">
 <% @stations.each do |station| %>
   <ul>
