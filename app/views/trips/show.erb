@@ -1,15 +1,15 @@
 <%= erb :banner %>
 <head><title>Trip <%= @trip.id %></title></head>
 
-<nav class="crumbs">
-  <a href="/">Home</a> /
-  <a href="/trips">Trips</a> /
-  <%= @trip.name %>
-</nav>
+<ul class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/trips">Trips</a></li>
+  <li><%= @trip.id %></li>
+</ul>
 
 <ul>
   <section class = "trip">
-    <li class = "trip_id"><a href="/trips/<%= @trip.id %>"> <%= @trip.id %></a>Trip <%= @trip.id %></li>
+    <li class = "trip_id">Trip <%= @trip.id %></li>
     <li>Duration: <%= @trip.duration %></li>
     <li>Start Date: <%= @trip.start_date %> </li>
     <li>Start Station: <%= @trip.start_station %> </li>
@@ -17,6 +17,6 @@
     <li>End Station: <%= @trip.end_station %></li>
     <li>Bike ID: <%= @trip.bike_id %> </li>
     <li>Subscription Type: <%= @trip.subscription_type %></li>
-    <li>Zip Code: <%= trip.zipcode %> </li>
+    <li>Zip Code: <%= @trip.zipcode %> </li>
   </section>
 </ul>
