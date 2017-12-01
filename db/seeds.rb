@@ -1,9 +1,14 @@
 require 'csv'
+require 'database_cleaner'
 require './app/models/station'
 require './app/models/trip'
 
-Station.destroy_all
-Trip.destroy_all
+# Station.destroy_all
+# Station.reset_pk_sequence
+# Trip.destroy_all
+# Trip.reset
+DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.clean
 
 #seed station
 CSV.foreach('db/csv/station.csv', {headers: true, header_converters: :symbol, converters: :numeric}) do |row|
@@ -19,8 +24,10 @@ CSV.foreach('db/csv/trip_fixture.csv', {headers: true, header_converters: :symbo
   trip = Trip.create!(duration: row[:duration],
                start_date: Date.strptime(row[:start_date], '%m/%e/%Y'),
                start_station: row[:start_station_name],
+               start_station_id: row[:start_station_id],
                end_date: Date.strptime(row[:end_date], '%m/%e/%Y'),
                end_station: row[:end_station_name],
+               end_station_id: row[:end_station_id],
                bike_id: row[:bike_id],
                subscription_type: row[:subscription_type],
                zipcode: row[:zip_code]
