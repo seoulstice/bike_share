@@ -1,5 +1,6 @@
 require 'csv'
 require './app/models/station'
+require './app/models/trip'
 
 #seed station
 CSV.foreach('db/csv/station.csv', {headers: true, header_converters: :symbol, converters: :numeric}) do |row|
@@ -14,7 +15,7 @@ end
 CSV.foreach('db/csv/trip_fixture.csv', {headers: true, header_converters: :symbol, converters: :numeric}) do |row|
   Trip.create!(duration: row[:duration],
                start_date: Date.strptime(row[:start_date], '%m/%e/%Y'),
-               start_station: row[:start_station],
+               start_station: row[:start_station_name],
                end_date: Date.strptime(row[:end_date], '%m/%e/%Y'),
                end_station: row[:end_station],
                bike_id: row[:bike_id],
