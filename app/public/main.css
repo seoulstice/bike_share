@@ -34,20 +34,31 @@ li {
   font-size: 18px;
 }
 
+img {
+  width: 150px;
+}
 
+.flex-parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
 .station {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-between;
-  margin: 10px;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(gray, lightgrey);
+  width: 400px;
+  height: 400px;
+  margin: 20px 10px;
 }
 
 .station_name {
   font-size: 24px;
   font-weight: bold;
+  text-align: center;
 }
 
 .station_city {
