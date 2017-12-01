@@ -47,4 +47,12 @@ describe "when a visitor visits the Station Dashboard" do
 
     expect(page).to have_current_path('/')
   end
+
+  it "clicks on the Stations breadcrumb" do
+    visit '/station-dashboard'
+
+    click_on("Stations")
+
+    expect(page).to have_current_path('/stations')
+  end
 end
