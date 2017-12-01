@@ -1,8 +1,12 @@
 class BikeShareApp < Sinatra::Base
   set :method_override, true
 
+  get '/' do
+    erb :home
+  end
+
   get '/stations' do
-    @stations = Station.all
+    @stations = Station.all.view_order
 
     erb :"stations/index"
   end
@@ -45,5 +49,17 @@ class BikeShareApp < Sinatra::Base
     Station.destroy(params[:id])
 
     redirect "/stations"
+  end
+
+  get '/trips' do
+    @trips = Trips.all
+
+    erb :'trips/index'
+  end
+
+  get '/trips/:id' do
+    @trip = Trips.find(params[:id])
+
+    erb :'trips/show'
   end
 end

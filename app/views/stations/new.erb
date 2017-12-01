@@ -1,4 +1,11 @@
-<%= erb :'stations/banner' %>
+<%= erb :banner %>
+<head><title>New Station</title></head>
+
+<nav class="crumbs">
+  <a href="/">Home</a> /
+  <a href="/stations">Stations</a> /
+  New Station
+</nav>
 
 <form action="/stations" method="post">
   Station Name <input type="text" name="station[name]" value=""><br/>

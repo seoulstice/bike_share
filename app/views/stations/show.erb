@@ -1,4 +1,12 @@
-<%= erb :'stations/banner' %>
+<%= erb :banner %>
+<head><title><%= @station.name %></title></head>
+
+
+<nav class="crumbs">
+  <a href="/">Home</a> /
+  <a href="/stations">Stations</a> /
+  <%= @station.name %>
+</nav>
 
 <ul>
   <li class="station_name"><%= @station.name %></li>

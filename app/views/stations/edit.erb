@@ -1,4 +1,16 @@
-<%= erb :'stations/banner' %>
+<%= erb :banner %>
+
+<head><title>Edit Stations</title></head>
+
+
+<nav class="crumbs">
+  <a href="/">Home</a> /
+  <a href="/stations">Stations</a> /
+  <a href="/stations/<%= @station.id %>"><%= @station.name %></a> /
+  Edit Station
+</nav>
+
+
 
 <form action="/stations/<%= @station.id %>" method="post">
   <input type="hidden" name="_method" value="PUT">

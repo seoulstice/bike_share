@@ -1,0 +1,22 @@
+<%= erb :banner %>
+<head><title>All Trips</title></head>
+
+<nav class="crumbs">
+  <a href="/">Home</a>
+  Trips
+</nav>
+<section class = "trip">
+<% @trips.each do |trip| %>
+  <ul>
+    <li class = "trip_id"><a href="/trips/<%= trip.id %>"> <%= trip.id %></a>Trip <%= trip.id %></li>
+    <li>Duration: <%= trip.duration %></li>
+    <li>Start Date: <%= trip.start_date %> </li>
+    <li>Start Station: <%= trip.start_station %> </li>
+    <li>End Date: <%= trip.end_date %></li>
+    <li>End Station: <%= trip.end_station %></li>
+    <li>Bike ID: <%= trip.bike_id %> </li>
+    <li>Subscription Type: <%= trip.subscription_type %></li>
+    <li>Zip Code: <%= trip.zipcode %> </li>
+  </ul>
+<% end %>
+</section>
