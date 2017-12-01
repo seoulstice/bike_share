@@ -13,29 +13,45 @@
 
 ### Iteration 2
 
-* [ ] 70 Stations Load from CSV
+* [x] 70 Stations Load from CSV
 
 ### Iteration 3
 
 On `/station-dashboard`:
 
-* [ ] Total count of stations
-* [ ] Average bikes available per station (based on docks).
-* [ ] Most bikes available at a station (based on docks).
-* [ ] Station(s) where the most bikes are available (based on docks).
-* [ ] Fewest bikes available at a station (based on docks).
-* [ ] Station(s) where the fewest bikes are available (based on docks).
-* [ ] Most recently installed station.
-* [ ] Oldest station.
+* [x] Total count of stations
+* [x] Average bikes available per station (based on docks).
+* [x] Most bikes available at a station (based on docks).
+* [x] Station(s) where the most bikes are available (based on docks).
+* [x] Fewest bikes available at a station (based on docks).
+* [x] Station(s) where the fewest bikes are available (based on docks).
+* [x] Most recently installed station.
+* [x] Oldest station.
 
 ### Iteration 4
 
-* [ ] See all trips
-* [ ] See one trip
+* [x] See all trips
+  * [x] route
+  * [x] view
+  * [x] test
+* [x] See one trip
+  * [x] route
+  * [x] view
+  * [x] test
 * [ ] Create a new trip
+  * [ ] route
+  * [ ] view
+  * [ ] test
 * [ ] Update a trip
+  * [ ] route
+  * [ ] view
+  * [ ] test
 * [ ] Delete a trip (from either index or show)
-* [ ] All attributes (except zip code) must be present: duration, start date, start station, end date, end station, bike ID, subscription type)
+  * [ ] route
+  * [ ] view
+  * [ ] test
+* [x] All attributes (except zip code) must be present: duration, start date, start station, end date, end station, bike ID, subscription type)
+  * [x] model test
 * [ ] Trips are paginated in groups of 30
 
 ### Iteration 5
