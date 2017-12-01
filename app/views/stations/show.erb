@@ -1,20 +1,18 @@
-<%= erb :banner %>
-<head><title><%= @station.name %></title></head>
+<%= erb :'stations/banner' %>
+<head>
+  <title><%= @station.name %> Station</title>
+</head>
+<section class="dash-flex">
+  <ul class="dashboard-results">
+    <li class="station_name"><%= @station.name %></li>
+    <li class="station_city"><%= @station.city %>, CA</li>
+    <li>Docks: <%= @station.dock_count %></li>
+    <li>Installation Date: <%= @station.installation_date %></li>
+  </ul>
+</section>
 
-<nav class="crumbs">
-  <a href="/">Home</a> /
-  <a href="/stations">Stations</a> /
-  <%= @station.name %>
-</nav>
-
-<ul>
-  <li class="station_name"><%= @station.name %></li>
-  <li class="station_city"><%= @station.city %>, CA</li>
-  <li>Docks: <%= @station.dock_count %></li>
-  <li>Installation Date: <%= @station.installation_date %></li>
-</ul>
-<a href="/stations/<%= @station.id %>/edit">Edit</a>
+<a  href="/stations/<%= @station.id %>/edit"><button class="button" type="button">Edit</button></a>
 <form class="" action="/stations/<%= @station.id %>" method="post">
   <input type="hidden" name="_method" value="DELETE">
-  <input type="submit" name="Delete" value="Delete">
+  <input class="button inline-btn" type="submit" name="Delete" value="Delete">
 </form>

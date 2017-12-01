@@ -1,16 +1,13 @@
-<%= erb :banner %>
-<head><title>New Station</title></head>
-
-<nav class="crumbs">
-  <a href="/">Home</a> /
-  <a href="/stations">Stations</a> /
-  New Station
-</nav>
-
-<form action="/stations" method="post">
-  Station Name <input type="text" name="station[name]" value=""><br/>
-  City <input type="text" name="station[city]" value=""><br/>
-  Number of Bike-Docks <input type="number" name="station[dock_count]" value=""><br/>
-  Installation Date <input type="date" name="station[installation_date]" value="<%= Date.today %>" data-date-inline-picker="true"><br/>
-  <input name="New" type="submit">
-</form>
+<%= erb :'stations/banner' %>
+<head>
+  <title>Create a station</title>
+</head>
+<section class="new-flex">
+  <form class="form-flex" action="/stations" method="post">
+    Station Name: <input class="new-child" type="text" name="station[name]" value=""><br/>
+    City: <input class="new-child" type="text" name="station[city]" value=""><br/>
+    Number of Bike-Docks: <input class="new-child" type="number" name="station[dock_count]" value=""><br/>
+    Installation Date: <input class="new-child" type="date" name="station[installation_date]" value="<%= Date.today %>" data-date-inline-picker="true"><br/>
+    <input class="button" name="New" type="submit">
+  </form>
+</section>
