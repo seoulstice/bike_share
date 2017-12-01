@@ -43,4 +43,12 @@ describe "When a visitor visits stations" do
 
     expect(page).to have_current_path('/stations/new')
   end
+
+  it "clicks on the Home breadcrumb" do
+    visit '/stations'
+
+    click_on("Home")
+
+    expect(page).to have_current_path('/')
+  end
 end
