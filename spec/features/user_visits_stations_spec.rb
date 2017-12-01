@@ -41,6 +41,8 @@ describe "When a visitor visits stations" do
 
     click_on("New Station")
 
+    # save_and_open_page
+
     expect(page).to have_current_path('/stations/new')
   end
 end
