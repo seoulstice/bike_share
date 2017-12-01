@@ -8,7 +8,6 @@ describe "When a visitor visits new station page" do
     expect(page).to have_field("station[city]")
     expect(page).to have_field("station[dock_count]")
     expect(page).to have_field("station[installation_date]")
-
   end
 
   it "sees banner" do
@@ -19,5 +18,21 @@ describe "When a visitor visits new station page" do
     expect(page).to have_content("SF Bike Share")
     expect(page).to have_link("Station Dashboard")
     expect(page).to have_link("Station Index")
+  end
+
+  it "clicks on the Home breadcrumb" do
+    visit '/stations/new'
+
+    click_on("Home")
+
+    expect(page).to have_current_path('/')
+  end
+
+  it "clicks on the Stations breadcrumb" do
+    visit '/stations/new'
+
+    click_on("Stations")
+
+    expect(page).to have_current_path('/stations')
   end
 end
