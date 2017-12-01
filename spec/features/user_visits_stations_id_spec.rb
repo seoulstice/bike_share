@@ -20,7 +20,7 @@ describe "When a visitor visits individual station" do
   it "clicks on Edit link" do
     visit '/stations/1'
 
-    click_on('Edit')
+    click_link('Edit')
 
     expect(page).to have_current_path('/stations/1/edit')
   end

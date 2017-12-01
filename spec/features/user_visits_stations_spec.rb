@@ -39,7 +39,7 @@ describe "When a visitor visits stations" do
   it "click on a new station link" do
     visit '/stations'
 
-    click_on("New Station")
+    click_link("New Station")
 
     expect(page).to have_current_path('/stations/new')
   end
