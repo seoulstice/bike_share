@@ -93,3 +93,29 @@ img {
   padding: 10px;
   font-weight: bold;
 }
+
+.new-flex {
+  display: flex;
+  justify-content: center;
+  border: 2px solid black;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+}
+
+.new-child {
+  margin: 10px;
+  padding: 5px;
+}
+
+.test {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.button {
+  padding: 10px 32px;
+  background-color: limegreen;
+  font-weight: bold;
+}
