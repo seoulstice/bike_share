@@ -1,3 +1,7 @@
+body {
+    background: linear-gradient(lightgray, gray)
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -12,7 +16,7 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-color: lightgrey;
+  background-color: lightgray;
 }
 
 nav > a {
@@ -63,5 +67,29 @@ img {
 
 .station_city {
   font-size: 20px;
+  font-weight: bold;
+}
+
+.dashboard-header {
+  color: black;
+  text-align: center;
+  padding: 30px 0;
+  text-decoration: underline;
+}
+
+.dash-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard-results {
+  display: flex;
+  flex-direction: column;
+  display: inline-block;
+  border: 2px solid black;
+}
+
+.dashboard-results > li {
+  padding: 10px;
   font-weight: bold;
 }
