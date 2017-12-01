@@ -11,7 +11,7 @@
 <main class="flex-parent">
 <% @trips.each do |trip| %>
   <ul>
-    <section class = "trip">
+    <section class = "display_object">
     <li class = "trip_id"><a href="/trips/<%= trip.id %>">Trip <%= trip.id %></a></li>
     <li>Duration: <%= trip.duration %></li>
     <li>Start Date: <%= trip.start_date %> </li>
