@@ -1,5 +1,7 @@
 <%= erb :banner %>
 
+
+
 <head>
   <title><%= @station.name %> Station</title>
 </head>
@@ -11,29 +13,42 @@
 </ul>
 
 <section class="dash-flex">
-  <ul class="dashboard-results">
+  <div class="dashboard-results">
+    <ul>
     <li class="station_name"><%= @station.name %></li>
     <li class="station_city"><%= @station.city %>, CA</li>
     <li>Docks: <%= @station.dock_count %></li>
     <li>Installation Date: <%= @station.installation_date %></li>
+    <br/>
+    <li>Rides Started Here: ###</li>
+    <li>Rides Ended Here: ###</li>
+    <li>Most Frequent Destination: Station Name(link)</li>
+    <li>Most Frequent Origin: Station Name(link)</li>
+    <li>Most Popular Date: </li>
+    <li>Most Common Rider Zipcode: </li>
+    <li>Most Ridden Bike: </li>
+    </ul>
+  </div>
+  <div class="dashboard-results">
     <div id="map"></div>
     <script>
-      function initMap() {
-        var uluru = {lat: <%= @station.latitude %>, lng: <%= @station.longitude %>};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
+    function initMap() {
+      var uluru = {lat: <%= @station.latitude %>, lng: <%= @station.longitude %>};
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 20,
+        center: uluru,
+        mapTypeId: 'satellite'
+      });
+      var marker = new google.maps.Marker({
+        position: uluru,
+        map: map
+      });
+    }
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPiZRNt7SNQqhm39Aug86hg9HXrTLBLZQ&callback=initMap">
     </script>
-  </ul>
+  </div>
 </section>
 
 <a  class="button" href="/stations/<%= @station.id %>/edit">Edit</a>
