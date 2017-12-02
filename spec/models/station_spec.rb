@@ -2,10 +2,10 @@ RSpec.describe Station do
   describe "Instance Methods" do
     before(:each) do
       Trip.create(duration: 2,
-                  start_date: "1-19-2017",
+                  start_date: "2017-1-19",
                   start_station: "South SF",
                   start_station_id: 1,
-                  end_date: "1-19-2017",
+                  end_date: "2017-1-19",
                   end_station: "North SF",
                   end_station_id: 2,
                   bike_id: 21,
@@ -14,10 +14,10 @@ RSpec.describe Station do
                   )
 
       Trip.create(duration: 6,
-                  start_date: "7-4-2017",
+                  start_date: "2017-7-4",
                   start_station: "North SF",
                   start_station_id: 2,
-                  end_date: "7-4-2017",
+                  end_date: "2017-7-4",
                   end_station: "North SF",
                   end_station_id: 2,
                   bike_id: 21,
@@ -26,10 +26,10 @@ RSpec.describe Station do
                   )
 
       Trip.create(duration: 4,
-                  start_date: "7-4-2017",
+                  start_date: "2017-7-4",
                   start_station: "North SF",
                   start_station_id: 2,
-                  end_date: "7-4-2017",
+                  end_date: "2017-7-4",
                   end_station: "North SF",
                   end_station_id: 2,
                   bike_id: 33,
@@ -37,8 +37,8 @@ RSpec.describe Station do
                   zipcode: 12345
                   )
 
-      Station.create(name: "South SF", dock_count: 55, city: "San Juniperno", installation_date: "11/21/1992")
-      Station.create(name: "North SF", dock_count: 55, city: "San Juniperno", installation_date: "11/21/1992")
+      Station.create(name: "South SF", dock_count: 55, city: "San Juniperno", installation_date: "1992-11-21")
+      Station.create(name: "North SF", dock_count: 55, city: "San Juniperno", installation_date: "1992-11-21")
       station_1 = Station.find(1)
       station_2 = Station.find(2)
     end
@@ -65,7 +65,7 @@ RSpec.describe Station do
 
     it '#date_most_rides_started' do
       skip
-      expect(station_2.date_most_rides_started).to eq('7-4-2017')
+      expect(station_2.date_most_rides_started).to eq('2017-7-4')
     end
 
     it '#most_common_zipcode' do
@@ -81,19 +81,19 @@ RSpec.describe Station do
 
   describe "validations" do
     it "is not valid without a name" do
-      station = Station.new(dock_count: 55, city: "San Juniperno", installation_date: "11/21/1992")
+      station = Station.new(dock_count: 55, city: "San Juniperno", installation_date: "11-21-1992")
 
       expect(station).to be_invalid
     end
 
     it "is not valid without a dock_count" do
-      station = Station.new(name: "This station", city: "San Juniperno", installation_date: "11/21/1992")
+      station = Station.new(name: "This station", city: "San Juniperno", installation_date: "11-21-1992")
 
       expect(station).to be_invalid
     end
 
     it "is not valid without a city" do
-      station = Station.new(name: "This station", dock_count: 55, installation_date: "11/21/1992")
+      station = Station.new(name: "This station", dock_count: 55, installation_date: "11-21-1992")
 
       expect(station).to be_invalid
     end

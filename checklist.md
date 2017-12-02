@@ -50,6 +50,7 @@ On `/station-dashboard`:
   * [ ] route
   * [ ] view
   * [ ] test
+
 * [x] All attributes (except zip code) must be present: duration, start date, start station, end date, end station, bike ID, subscription type)
   * [x] model test
 * [ ] Trips are paginated in groups of 30
