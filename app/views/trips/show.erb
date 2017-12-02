@@ -7,8 +7,9 @@
   <li><%= @trip.id %></li>
 </ul>
 
-<ul>
-  <section class = "trip">
+<section class="dash-flex">
+  <div class="dashboard-results">
+    <ul>
     <li class = "trip_id">Trip <%= @trip.id %></li>
     <li>Duration: <%= @trip.duration %></li>
     <li>Start Date: <%= @trip.start_date %> </li>
@@ -18,10 +19,60 @@
     <li>Bike ID: <%= @trip.bike_id %> </li>
     <li>Subscription Type: <%= @trip.subscription_type %></li>
     <li>Zip Code: <%= @trip.zipcode %> </li>
-  </section>
+    <li><%= @trip.start_station_latitude %>,
+    <%= @trip.start_station_longitude %></li>
+    </ul>
+  </div>
+  <div id="map">
+    <!-- <script>
+    function initMap() {
+      var uluru = {lat: <%= @trip.start_station_latitude %>, lng: <%= @trip.start_station_longitude %>};
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 20,
+        center: uluru,
+      });
+      var marker = new google.maps.Marker({
+        position: uluru,
+        map: map
+      });
+    }
+    </script> -->
+    <script>
+     function initMap() {
+       var stations = [
+           ['Starting Station',
+           <%= @trip.start_station_latitude %>,
+           <%= @trip.start_station_longitude %>,
+           0],
+           ['Ending Station',
+           <%= @trip.end_station_latitude %>,
+           <%= @trip.end_station_longitude %>,
+           1]
+         ];
 
+       var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: new google.maps.LatLng(<%= @trip.start_station_latitude %>,
+                                         <%= @trip.start_station_longitude %>)
+         });
+
+       var marker, i;
+
+       for( i = 0; i < stations.length; i++ ) {
+         marker = new google.maps.Marker({
+             position: new google.maps.LatLng(stations[i][1], stations[i][2]),
+             map: map
+         })(marker, i));
+       }
+     }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPiZRNt7SNQqhm39Aug86hg9HXrTLBLZQ&callback=initMap">
+    </script>
+  </div>
+
+</section>
   <form class="" action="/trips/<%= @trip.id %>" method="post">
     <input type="hidden" name="_method" value="DELETE">
     <input class="button inline-btn" type="submit" name="Delete" value="Delete">
   </form>
-</ul>

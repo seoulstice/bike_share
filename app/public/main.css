@@ -81,13 +81,11 @@ img {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-  /*width: %100;*/
   padding: 30px 0;
 }
 
 .dashboard-results {
   display: inline-block;
-  /*border: 2px solid black;*/
 }
 
 .dashboard-results > li {
