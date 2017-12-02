@@ -48,19 +48,26 @@
            lng: <%= @trip.end_station_longitude %>}]
          ];
 
+      var map_center = {
+        lat: ((stations[0][1]['lat'] + stations[1][1]['lat'])/2) ,
+        lng: ((stations[0][1]['lng'] + stations[1][1]['lng'])/2)
+      };
+
       var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 15,
-          center: stations[0][1]
+          zoom: 8,
+          center: map_center
          });
 
       var start = new google.maps.Marker({
              position: stations[0][1],
-             map: map
+             map: map,
+             title: stations[0][0]
            });
 
       var end = new google.maps.Marker({
            position: stations[1][1],
-           map: map
+           map: map,
+           title: stations[1][0]
          });
 
       start.setMap(map)
