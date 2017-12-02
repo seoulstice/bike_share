@@ -39,8 +39,8 @@ On `/station-dashboard`:
   * [x] view
   * [x] test
 * [ ] Create a new trip
-  * [ ] route
-  * [ ] view
+  * [x] route
+  * [x] view
   * [ ] test
 * [ ] Update a trip
   * [ ] route
@@ -56,51 +56,73 @@ On `/station-dashboard`:
 
 ### Iteration 5
 
-* [ ] Trips load from CSV
+* [x] Trips load from CSV
 
 ### Iteration 6
 
 On `/trips-dashboard`:
 
-* [x] Average duration of a ride.
- - [ ] tested
-* [x] Longest ride.
- - [ ] tested
-* [x] Shortest ride.
- - [ ] tested
+* [x] test setup
+
+* [ ] Average duration of a ride.
+ - [x] test
+ - [ ] method
+* [ ] Longest ride.
+ - [x] test
+ - [ ] method
+* [ ] Shortest ride.
+ - [x] test
+ - [ ] method
 * [ ] Station with the most rides as a starting place.
- - [ ] tested
+ - [x] test
+ - [ ] method
 * [ ] Station with the most rides as an ending place.
- - [ ] tested
+ - [x] test
+ - [ ] method
 * [ ] Month by Month breakdown of number of rides with subtotals for each year.
- - [ ] tested
+ - [x] test
+ - [ ] method (rides by Month) & (rides by month and year)
 * [ ] Most ridden bike with total number of rides for that bike.
- - [ ] tested
+ - [x] test
+ - [ ] method
 * [ ] Least ridden bike with total number of rides for that bike.
- - [ ] tested
+ - [x] test
+ - [ ] method
 * [ ] User subscription type breakout with both count and percentage.
- - [ ] tested
+ - [x] test
+ - [ ] method
 * [ ] Single date with the highest number of trips with a count of those trips.
- - [ ] tested
+ - [x] test
+ - [ ] method
 * [ ] Single date with the lowest number of trips with a count of those trips.
- - [ ] tested
+ - [x] test
+ - [ ] method
 
 On an individual station show page the additional information should be present:
 
+* [x] test setup
+
 * [ ] Number of rides started at this station.
- - [ ] tested
+ - [x] test
+ - [ ] method
 * [ ] Number of rides ended at this station.
- - [ ] tested
+ - [x] test
+ - [ ] method
 * [ ] Most frequent destination station (for rides that began at this station).
- - [ ] tested
+ - [x] test
+ - [ ] method
 * [ ] Most frequent origination station (for rides that ended at this station).
- - [ ] tested
+ - [x] test
+ - [ ] method
 * [ ] Date with the highest number of trips started at this station.
- - [ ] tested
+ - [x] test
+ - [ ] method
 * [ ] Most frequent zip code for users starting trips at this station.
- - [ ] tested
+ - [x] test
+ - [ ] method
 * [ ] Bike ID most frequently starting a trip at this station.
- - [ ] tested
+ - [x] test
+ - [ ] method
 
 ### Iteration 7
 
