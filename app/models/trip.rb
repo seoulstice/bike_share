@@ -10,5 +10,7 @@ class Trip <ActiveRecord::Base
                         :subscription_type
 
   scope :longest_ride, -> {maximum(:duration)}
+  scope :shortest_ride, -> {minimum(:duration)}
+  scope :average_ride_length, -> {average(:duration).to_f.round(2)}
 
 end
