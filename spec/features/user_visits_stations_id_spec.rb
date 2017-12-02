@@ -3,7 +3,9 @@ describe "When a visitor visits individual station" do
     @station_1 = Station.create(name: "South SF",
                                 city: "SF",
                                 dock_count: 12,
-                                installation_date: "2017-01-01")
+                                installation_date: "2017-01-01",
+                                latitude: 40.1023,
+                                longitude: -30.1235)
   end
 
   it "sees the correct station with an Edit link" do

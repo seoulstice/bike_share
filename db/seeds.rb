@@ -11,7 +11,9 @@ CSV.foreach('db/csv/station.csv', {headers: true, header_converters: :symbol, co
   Station.create!(name:             row[:name],
                  city:              row[:city],
                  dock_count:        row[:dock_count],
-                 installation_date: Date.strptime(row[:installation_date], '%m/%e/%Y')
+                 installation_date: Date.strptime(row[:installation_date], '%m/%e/%Y'),
+                 latitude:          row[:lat],
+                 longitude:         row[:long]
                )
 end
 

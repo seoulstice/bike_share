@@ -5,6 +5,8 @@ describe "When a visitor submits a new station" do
     fill_in('station[city]', with: "SF")
     fill_in('station[dock_count]', with: 2)
     fill_in('station[installation_date]', with: "2017-01-01")
+    fill_in('station[latitude]', with: 40.1023)
+    fill_in('station[longitude]', with: -30.1235)
     find('input[name="New"]').click
 
     expect(page).to have_current_path('/stations/1')
@@ -16,6 +18,9 @@ describe "When a visitor submits a new station" do
     fill_in('station[city]', with: "SF")
     fill_in('station[dock_count]', with: 2)
     fill_in('station[installation_date]', with: "2017-01-01")
+    fill_in('station[latitude]', with: 40.1023)
+    fill_in('station[longitude]', with: -30.1235)
+
     find('input[name="New"]').click
 
     expect(page).to have_content("North SF")

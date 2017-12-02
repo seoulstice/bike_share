@@ -1,6 +1,6 @@
 describe "When a visitor visits stations" do
   before(:each) do
-    @station = Station.create(name: "South SF", city: "SF", dock_count: 12, installation_date: "2017-01-01")
+    @station = Station.create(name: "South SF", city: "SF", dock_count: 12, installation_date: "2017-01-01", latitude: 40.1023, longitude: -30.1235)
   end
 
   # background do
