@@ -37,8 +37,8 @@ RSpec.describe Station do
                   zipcode: 12345
                   )
 
-      Station.create(name: "South SF", dock_count: 55, city: "San Juniperno", installation_date: "1992-11-21")
-      Station.create(name: "North SF", dock_count: 55, city: "San Juniperno", installation_date: "1992-11-21")
+      Station.create(name: "South SF", dock_count: 55, city: "San Juniperno", installation_date: "1992-11-21", latitude: 30.1023, longitude: -30.1235)
+      Station.create(name: "North SF", dock_count: 55, city: "San Juniperno", installation_date: "1992-11-21", latitude: 40.1023, longitude: -30.1235)
       station_1 = Station.find(1)
       station_2 = Station.find(2)
     end
@@ -81,25 +81,37 @@ RSpec.describe Station do
 
   describe "validations" do
     it "is not valid without a name" do
-      station = Station.new(dock_count: 55, city: "San Juniperno", installation_date: "11-21-1992")
+      station = Station.new(dock_count: 55, city: "San Juniperno", installation_date: "1992-1-19", latitude: 30.1023, longitude: -30.1235)
 
       expect(station).to be_invalid
     end
 
     it "is not valid without a dock_count" do
-      station = Station.new(name: "This station", city: "San Juniperno", installation_date: "11-21-1992")
+      station = Station.new(name: "This station", city: "San Juniperno", installation_date: "1992-1-19", latitude: 30.1023, longitude: -30.1235)
 
       expect(station).to be_invalid
     end
 
     it "is not valid without a city" do
-      station = Station.new(name: "This station", dock_count: 55, installation_date: "11-21-1992")
+      station = Station.new(name: "This station", dock_count: 55, installation_date: "1992-1-19", latitude: 30.1023, longitude: -30.1235)
 
       expect(station).to be_invalid
     end
 
     it "is not valid without an installation_date" do
-      station = Station.new(name: "This station", dock_count: 55, city: "San Juniperno")
+      station = Station.new(name: "This station", dock_count: 55, city: "San Juniperno", latitude: 30.1023, longitude: -30.1235)
+
+      expect(station).to be_invalid
+    end
+
+    it "is not valid without a latitude" do
+      station = Station.new(name: "This station", dock_count: 55, city: "San Juniperno", installation_date: "1992-1-19", longitude: -30.1235)
+
+      expect(station).to be_invalid
+    end
+
+    it "is not valid without a longitude" do
+      station = Station.new(name: "This station", dock_count: 55, city: "San Juniperno", installation_date: "1992-1-19", latitude: 30.1023)
 
       expect(station).to be_invalid
     end

@@ -5,7 +5,9 @@ class Station < ActiveRecord::Base
   validates_presence_of :name,
                         :dock_count,
                         :city,
-                        :installation_date
+                        :installation_date,
+                        :latitude,
+                        :longitude
 
   scope :view_order, -> {order(:city, :name)}
   scope :city_groups, -> {group(:city)}
