@@ -27,5 +27,7 @@ describe "When a visitor visits edit station" do
 
     expect(page).to have_content("SF Bike Share")
     expect(page).to have_link("Station Dashboard")
+    expect(page).to have_link("Station Index")
+    expect(page).to have_link("Trips Index")
   end
 end
