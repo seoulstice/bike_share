@@ -18,5 +18,4 @@ class Station < ActiveRecord::Base
   scope :min_dock_count_station, -> {order(:dock_count).last}
   scope :newest_station, -> {order(:installation_date).first}
   scope :oldest_station, -> {order(:installation_date).last}
-
 end

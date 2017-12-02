@@ -7,7 +7,6 @@ class BikeShareApp < Sinatra::Base
 
   get '/stations' do
     @stations = Station.all.view_order.limit(20)
-
     erb :"stations/index"
   end
 
@@ -62,7 +61,6 @@ class BikeShareApp < Sinatra::Base
 
     erb :'trips/dashboard'
   end
-
 
   get '/trips/new' do
     erb :'trips/new'
