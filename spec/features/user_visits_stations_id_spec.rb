@@ -32,7 +32,7 @@ describe "When a visitor visits individual station" do
   it "sees banner" do
     visit '/stations/1'
 
-    expect(page).to have_current_path('/stations')
+    expect(page).to have_current_path('/stations/1')
 
     expect(page).to have_content("SF Bike Share")
     expect(page).to have_link("Station Dashboard")
