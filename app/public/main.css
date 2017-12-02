@@ -8,7 +8,6 @@ header {
   justify-content: space-around;
   background-color: black;
   padding: 20px 0 20px 0;
-
 }
 
 nav {
@@ -53,16 +52,17 @@ img {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background: linear-gradient(gray, lightgrey);
-  width: 400px;
-  height: 400px;
+  background-color: lightgrey;
+  width: 300px;
+  height: 300px;
   margin: 20px 10px;
 }
 
 .station_name {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   text-align: center;
+  padding: 0 10px;
 }
 
 .station_city {
@@ -129,26 +129,22 @@ ul.breadcrumb {
     background-color: #eee;
 }
 
-/* Display list items side by side */
 ul.breadcrumb li {
     display: inline;
     font-size: 18px;
 }
 
-/* Add a slash symbol (/) before/behind each list item */
 ul.breadcrumb li+li:before {
     padding: 8px;
     color: black;
     content: "/\00a0";
 }
 
-/* Add a color to all links inside the list */
 ul.breadcrumb li a {
     color: #0275d8;
     text-decoration: none;
 }
 
-/* Add a color on mouse-over */
 ul.breadcrumb li a:hover {
     color: #01447e;
     text-decoration: underline;
