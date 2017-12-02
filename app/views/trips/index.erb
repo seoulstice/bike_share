@@ -25,3 +25,9 @@
   </ul>
 <% end %>
 </main>
+<center>
+  <% if  @trips.present? %>
+    <a href="/trips?page=<%= :page %>">Prev</a>
+  <% end %>
+    <a href="/trips?page=<%= :page %>">Next</a>
+</center>
