@@ -1,5 +1,5 @@
 class Trip <ActiveRecord::Base
-  belongs_to :stations
+  belongs_to :station
 
   validates_presence_of :duration,
                         :start_date,

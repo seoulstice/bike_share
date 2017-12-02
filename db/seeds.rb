@@ -20,11 +20,10 @@ CSV.foreach('db/csv/station.csv', {headers: true, header_converters: :symbol, co
 end
 
 #seed trip
-CSV.foreach('db/csv/trip_fixture.csv', {headers: true, header_converters: :symbol,converters: :numeric}) do |row|
-  trip = Trip.create!(duration: row[:duration],
+CSV.foreach('db/csv/trip_fixture.csv', {headers: true, header_converters: :symbol, converters: :numeric}) do |row|
+  Trip.create!(duration: row[:duration],
                start_date: Date.strptime(row[:start_date], '%m/%e/%Y'),
                start_station: row[:start_station_name],
-               start_station_id: row[:start_station_id],
                end_date: Date.strptime(row[:end_date], '%m/%e/%Y'),
                end_station: row[:end_station_name],
                end_station_id: row[:end_station_id],
