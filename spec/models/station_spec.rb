@@ -1,7 +1,6 @@
 RSpec.describe Station do
   describe "Instance Methods" do
     before(:each) do
-      skip
       Trip.create(duration: 2,
                   start_date: "1-19-2017",
                   start_station: "South SF",
@@ -45,30 +44,37 @@ RSpec.describe Station do
     end
 
     it '#rides_started' do
+      skip
       expect(station_1.rides_started).to eq(1)
     end
 
     it '#rides_ended' do
+      skip
       expect(station_2.rides_ended).to eq(3)
     end
 
     it '#most_popular_end_station' do
+      skip
       expect(station_2.most_popular_end_station.id).to eq(2)
     end
 
     it '#most_popular_start_station' do
+      skip
       expect(station.most_popular_start_station.id).to eq(2)
     end
 
     it '#date_most_rides_started' do
+      skip
       expect(station_2.date_most_rides_started).to eq('7-4-2017')
     end
 
     it '#most_common_zipcode' do
+      skip
       expect(station_2.most_common_zipcode).to eq(12345)
     end
 
     it '#bike_most_commonly_started_on' do
+      skip
       expect(station_1.bike_most_commonly_started_on).to eq(21)
     end
   end
