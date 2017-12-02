@@ -38,14 +38,14 @@ On `/station-dashboard`:
   * [x] route
   * [x] view
   * [x] test
-* [ ] Create a new trip
+* [x] Create a new trip
   * [x] route
   * [x] view
-  * [ ] test
-* [ ] Update a trip
-  * [ ] route
-  * [ ] view
-  * [ ] test
+  * [x] test
+* [x] Update a trip
+  * [x] route
+  * [x] view
+  * [x] test
 * [ ] Delete a trip (from either index or show)
   * [ ] route
   * [ ] view
@@ -69,8 +69,8 @@ On `/trips-dashboard`:
   * [ ] view
   * [x] test
 * [ ] Longest ride.
-  * [ ] method
-  * [ ] view
+  * [x] method
+  * [x] view
   * [x] test
 * [ ] Shortest ride.
   * [ ] method

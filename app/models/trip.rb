@@ -8,4 +8,7 @@ class Trip <ActiveRecord::Base
                         :end_station,
                         :bike_id,
                         :subscription_type
+
+  scope :longest_ride, -> {maximum(:duration)}
+
 end
