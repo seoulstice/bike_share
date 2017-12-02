@@ -38,18 +38,19 @@ On `/station-dashboard`:
   * [x] route
   * [x] view
   * [x] test
-* [ ] Create a new trip
+* [x] Create a new trip
   * [x] route
   * [x] view
-  * [ ] test
-* [ ] Update a trip
-  * [ ] route
-  * [ ] view
-  * [ ] test
+  * [x] test
+* [x] Update a trip
+  * [x] route
+  * [x] view
+  * [x] test
 * [ ] Delete a trip (from either index or show)
   * [ ] route
   * [ ] view
   * [ ] test
+
 * [x] All attributes (except zip code) must be present: duration, start date, start station, end date, end station, bike ID, subscription type)
   * [x] model test
 * [ ] Trips are paginated in groups of 30
@@ -69,8 +70,8 @@ On `/trips-dashboard`:
   * [ ] view
   * [x] test
 * [ ] Longest ride.
-  * [ ] method
-  * [ ] view
+  * [x] method
+  * [x] view
   * [x] test
 * [ ] Shortest ride.
   * [ ] method

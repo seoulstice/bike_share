@@ -7,8 +7,9 @@
   <li><%= @trip.id %></li>
 </ul>
 
-<ul>
-  <section class = "trip">
+<section class="dash-flex">
+  <div class="dashboard-results">
+    <ul>
     <li class = "trip_id">Trip <%= @trip.id %></li>
     <li>Duration: <%= @trip.duration %></li>
     <li>Start Date: <%= @trip.start_date %> </li>
@@ -18,10 +19,55 @@
     <li>Bike ID: <%= @trip.bike_id %> </li>
     <li>Subscription Type: <%= @trip.subscription_type %></li>
     <li>Zip Code: <%= @trip.zipcode %> </li>
-  </section>
+    <li><%= @trip.start_station_latitude %>,
+    <%= @trip.start_station_longitude %></li>
+    </ul>
+  </div>
+  <div id="map">
+    <script>
+    function initMap() {
+      var stations = [
+           ['Starting Station',
+           {lat: <%= @trip.start_station_latitude %>,
+           lng: <%= @trip.start_station_longitude %>}],
+           ['Ending Station',
+           {lat: <%= @trip.end_station_latitude %>,
+           lng: <%= @trip.end_station_longitude %>}]
+         ];
 
+      var map_center = {
+        lat: ((stations[0][1]['lat'] + stations[1][1]['lat'])/2) ,
+        lng: ((stations[0][1]['lng'] + stations[1][1]['lng'])/2)
+      };
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8,
+          center: map_center
+         });
+
+      var start = new google.maps.Marker({
+             position: stations[0][1],
+             map: map,
+             title: stations[0][0]
+           });
+
+      var end = new google.maps.Marker({
+           position: stations[1][1],
+           map: map,
+           title: stations[1][0]
+         });
+
+      start.setMap(map)
+      end.setMap(map)
+     }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPiZRNt7SNQqhm39Aug86hg9HXrTLBLZQ&callback=initMap">
+    </script>
+  </div>
+
+</section>
   <form class="" action="/trips/<%= @trip.id %>" method="post">
     <input type="hidden" name="_method" value="DELETE">
     <input class="button inline-btn" type="submit" name="Delete" value="Delete">
   </form>
-</ul>

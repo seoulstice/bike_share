@@ -3,7 +3,9 @@ describe "When a visitor visits individual station" do
     @station_1 = Station.create(name: "South SF",
                                 city: "SF",
                                 dock_count: 12,
-                                installation_date: "2017-01-01")
+                                installation_date: "2017-01-01",
+                                latitude: 40.1023,
+                                longitude: -30.1235)
   end
 
   it "sees the correct station with an Edit link" do
@@ -28,13 +30,14 @@ describe "When a visitor visits individual station" do
   end
 
   it "sees banner" do
-    visit '/stations'
+    visit '/stations/1'
 
-    expect(page).to have_current_path('/stations')
+    expect(page).to have_current_path('/stations/1')
 
     expect(page).to have_content("SF Bike Share")
     expect(page).to have_link("Station Dashboard")
     expect(page).to have_link("Station Index")
+    expect(page).to have_link("Trips Index")
   end
 
   it "clicks on the Home breadcrumb" do

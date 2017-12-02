@@ -27,11 +27,14 @@ describe "When a visistor visits individual trip" do
   end
 
   it "sees banner" do
-    visit '/trips'
+    visit '/trips/1'
 
-    expect(page).to have_current_path('/trips')
+    expect(page).to have_current_path('/trips/1')
 
     expect(page).to have_content("SF Bike Share")
     expect(page).to have_link("Station Dashboard")
+    expect(page).to have_link("Station Index")
+    expect(page).to have_link("Trips Index")
+
   end
 end

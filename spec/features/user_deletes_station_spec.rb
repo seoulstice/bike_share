@@ -1,6 +1,6 @@
 describe "When a user deletes a station" do
   before(:each) do
-    @station_1 = Station.create(name: "South SF", city: "SJ", dock_count: 12, installation_date: "2017-01-01")
+    @station_1 = Station.create(name: "South SF", city: "SJ", dock_count: 12, installation_date: "2017-01-01", latitude: 40.1023, longitude: -30.1235)
   end
 
   it "the station is deleted" do
