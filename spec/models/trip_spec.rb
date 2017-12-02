@@ -2,10 +2,10 @@ describe Trip do
   describe "Class methods" do
     before(:each) do
       Trip.create(duration: 2,
-                  start_date: "1-19-2017",
+                  start_date: "2017-1-19",
                   start_station: "South SF",
                   start_station_id: 1,
-                  end_date: "1-19-2017",
+                  end_date: "2017-1-19",
                   end_station: "North SF",
                   end_station_id: 2,
                   bike_id: 21,
@@ -14,10 +14,10 @@ describe Trip do
                   )
 
       Trip.create(duration: 6,
-                  start_date: "7-4-2017",
+                  start_date: "2017-7-4",
                   start_station: "North SF",
                   start_station_id: 2,
-                  end_date: "7-4-2017",
+                  end_date: "2017-7-4",
                   end_station: "North SF",
                   end_station_id: 2,
                   bike_id: 21,
@@ -26,19 +26,18 @@ describe Trip do
                   )
 
       Trip.create(duration: 4,
-                  start_date: "7-4-2017",
+                  start_date: "2017-7-4",
                   start_station: "North SF",
                   start_station_id: 2,
-                  end_date: "7-4-2017",
+                  end_date: "2017-7-4",
                   end_station: "North SF",
                   end_station_id: 2,
                   bike_id: 33,
                   subscription_type: "Customer",
                   zipcode: 12345
                   )
-
-      Station.create(name: "South SF", dock_count: 55, city: "San Juniperno", installation_date: "11/21/1992")
-      Station.create(name: "North SF", dock_count: 55, city: "San Juniperno", installation_date: "11/21/1992")
+      Station.create(name: "South SF", dock_count: 55, city: "San Juniperno", installation_date: "1992-11-21")
+      Station.create(name: "North SF", dock_count: 55, city: "San Juniperno", installation_date: "1992-11-21")
     end
 
     it ".average_duration" do
@@ -100,12 +99,12 @@ describe Trip do
 
     it ".date_with_most_rides" do
       skip
-      expect(Trip.date_with_most_rides).to eq("7-4-2017")
+      expect(Trip.date_with_most_rides).to eq("2017-7-4")
     end
 
     it ".date_with_least_rides" do
       skip
-      expect(Trip.date_with_least_rides).to eq("1-19-2017")
+      expect(Trip.date_with_least_rides).to eq("2017-1-19")
     end
   end
 
