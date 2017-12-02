@@ -1,0 +1,27 @@
+<%= erb :banner %>
+
+<head>
+  <title>Edit Trip</title>
+</head>
+
+<ul class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/trips/<%= @trip.id %>"><%= @trip.id %></a></li>
+  <li>Edit Trip</li>
+</ul>
+
+<section class="new-flex">
+  <form class="form-flex" action="/trips/<%= @trip.id %>" method="post">
+    <input type="hidden" name="_method" value="PUT">
+    Trip Duration: <input type="number" name="trip[duration]" value="<%= @trip.duration %>"><br/>
+    Start Date: <input type="date" name="trip[start_date]" value="<%= @trip.start_date %>"><br/>
+    Start Station: <input type="text" name="trip[start_station]" value="<%= @trip.start_station %>"><br/>
+    End Date: <input type="date" name="trip[end_date]" value="<%= @trip.end_date %>"><br/>
+    End Station: <input type="text" name="trip[end_station]" value="<%= @trip.end_station %>"><br/>
+    Bike ID: <input type="number" name="trip[bike_id]" value="<%= @trip.bike_id %>"><br/>
+    Subscription Type: <input type="text" name="trip[subscription_type]" value="<%= @trip.subscription_type %>"><br/>
+    Zipcode: <input type="number" name="trip[zipcode]" value="<%= @trip.zipcode %>"><br/>
+
+    <input class="button" name="Update" type="submit">
+  </form>
+</section>
