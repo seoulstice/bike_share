@@ -2,7 +2,7 @@ describe 'When a visitor visits new trip page' do
   it 'sees new trip form' do
     visit '/trips/new'
 
-    expect(page).to have_current_path('/stations/new')
+    expect(page).to have_current_path('/trips/new')
 
     expect(page).to have_field('trip[duration]')
     expect(page).to have_field('trip[start_date]')
@@ -14,7 +14,7 @@ describe 'When a visitor visits new trip page' do
   end
 
   it 'sees banner' do
-    visit 'trips/new'
+    visit '/trips/new'
 
     expect(page).to have_current_path('/trips/new')
 
@@ -32,7 +32,7 @@ describe 'When a visitor visits new trip page' do
     expect(page).to have_current_path('/')
   end
 
-  it "clicks on the Stations breadcrumb" do
+  it "clicks on the Trips breadcrumb" do
     visit '/trips/new'
 
     click_on("Trips")
