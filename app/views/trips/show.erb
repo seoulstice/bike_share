@@ -19,4 +19,9 @@
     <li>Subscription Type: <%= @trip.subscription_type %></li>
     <li>Zip Code: <%= @trip.zipcode %> </li>
   </section>
+
+  <form class="" action="/trips/<%= @trip.id %>" method="post">
+    <input type="hidden" name="_method" value="DELETE">
+    <input class="button inline-btn" type="submit" name="Delete" value="Delete">
+  </form>
 </ul>
