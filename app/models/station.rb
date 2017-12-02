@@ -19,4 +19,31 @@ class Station < ActiveRecord::Base
   scope :newest_station, -> {order(:installation_date).first}
   scope :oldest_station, -> {order(:installation_date).last}
 
+  def rides_started
+    start_trip.count
+  end
+
+  def rides_ended
+    end_trip.count
+  end
+
+  def most_popular_end_station
+    Station.find(start_trip.maximum(:end_station_id))
+  end
+
+  def most_popular_start_station
+    Station.find(end_trip.maximum(:start_station_id))
+  end
+
+  def date_most_rides_started
+    start_trip.maximum(:start_date)
+  end
+
+  def most_common_zipcode
+    start_trip.maximum(:zipcode)
+  end
+
+  def bike_most_commonly_started_on
+    start_trip.maximum(:bike_id)
+  end
 end
