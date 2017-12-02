@@ -62,47 +62,49 @@ On `/station-dashboard`:
 
 On `/trips-dashboard`:
 
-* [x] Average duration of a ride.
-  * [ ] tested
-* [x] Longest ride.
-  * [ ] tested
-* [x] Shortest ride.
-  * [ ] tested
+* [x] test setup
+
+* [ ] Average duration of a ride.
+  * [x] tested
+* [ ] Longest ride.
+  * [x] tested
+* [ ] Shortest ride.
+  * [x] tested
 * [ ] Station with the most rides as a starting place.
-  * [ ] tested
+  * [x] tested
 * [ ] Station with the most rides as an ending place.
-  * [ ] tested
+  * [x] tested
 * [ ] Month by Month breakdown of number of rides with subtotals for each year.
-  * [ ] tested
+  * [x] tested
 * [ ] Most ridden bike with total number of rides for that bike.
-  * [ ] tested
+  * [x] tested
 * [ ] Least ridden bike with total number of rides for that bike.
-  * [ ] tested
+  * [x] tested
 * [ ] User subscription type breakout with both count and percentage.
-  * [ ] tested
+  * [x] tested
 * [ ] Single date with the highest number of trips with a count of those trips.
-  * [ ] tested
+  * [x] tested
 * [ ] Single date with the lowest number of trips with a count of those trips.
-  * [ ] tested
+  * [x] tested
 
 On an individual station show page the additional information should be present:
 
 * [x] test setup
 
 * [ ] Number of rides started at this station.
-  * [ ] tested
+  * [x] tested
 * [ ] Number of rides ended at this station.
-  * [ ] tested
+  * [x] tested
 * [ ] Most frequent destination station (for rides that began at this station).
-  * [ ] tested
+  * [x] tested
 * [ ] Most frequent origination station (for rides that ended at this station).
-  * [ ] tested
+  * [x] tested
 * [ ] Date with the highest number of trips started at this station.
-  * [ ] tested
+  * [x] tested
 * [ ] Most frequent zip code for users starting trips at this station.
-  * [ ] tested
+  * [x] tested
 * [ ] Bike ID most frequently starting a trip at this station.
-  * [ ] tested
+  * [x] tested
 
 ### Iteration 7
 
