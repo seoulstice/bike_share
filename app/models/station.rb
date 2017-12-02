@@ -8,9 +8,6 @@ class Station < ActiveRecord::Base
                         :installation_date
 
   scope :view_order, -> {order(:city, :name)}
-  def self.view_order
-    order(:city, :name)
-  end
   scope :city_groups, -> {group(:city)}
   scope :average_dock_count, -> {average(:dock_count).to_f.round(2)}
   scope :maximum_dock_count, -> {maximum(:dock_count)}
