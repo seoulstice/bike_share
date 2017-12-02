@@ -27,13 +27,13 @@
   <div id="map">
     <script>
     function initMap() {
-      var uluru = {lat: <%= @station.latitude %>, lng: <%= @station.longitude %>};
+      var station = {lat: <%= @station.latitude %>, lng: <%= @station.longitude %>};
       var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 17,
-        center: uluru,
+        center: station,
       });
       var marker = new google.maps.Marker({
-        position: uluru,
+        position: station,
         map: map
       });
     }

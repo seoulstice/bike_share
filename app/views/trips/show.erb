@@ -38,32 +38,33 @@
     }
     </script> -->
     <script>
-     function initMap() {
-       var stations = [
+    function initMap() {
+      var stations = [
            ['Starting Station',
-           <%= @trip.start_station_latitude %>,
-           <%= @trip.start_station_longitude %>,
-           0],
+           {lat: <%= @trip.start_station_latitude %>,
+           lng: <%= @trip.start_station_longitude %>}],
            ['Ending Station',
-           <%= @trip.end_station_latitude %>,
-           <%= @trip.end_station_longitude %>,
-           1]
+           {lat: <%= @trip.end_station_latitude %>,
+           lng: <%= @trip.end_station_longitude %>}]
          ];
 
-       var map = new google.maps.Map(document.getElementById('map'), {
+      var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 15,
-          center: new google.maps.LatLng(<%= @trip.start_station_latitude %>,
-                                         <%= @trip.start_station_longitude %>)
+          center: stations[0][1]
          });
 
-       var marker, i;
-
-       for( i = 0; i < stations.length; i++ ) {
-         marker = new google.maps.Marker({
-             position: new google.maps.LatLng(stations[i][1], stations[i][2]),
+      var start = new google.maps.Marker({
+             position: stations[0][1],
              map: map
-         })(marker, i));
-       }
+           });
+
+      var end = new google.maps.Marker({
+           position: stations[1][1],
+           map: map
+         });
+
+      start.setMap(map)
+      end.setMap(map)
      }
     </script>
     <script async defer
