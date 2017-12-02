@@ -3,10 +3,6 @@ require 'database_cleaner'
 require './app/models/station'
 require './app/models/trip'
 
-# Station.destroy_all
-# Station.reset_pk_sequence
-# Trip.destroy_all
-# Trip.reset
 DatabaseCleaner.strategy = :truncation
 DatabaseCleaner.clean
 
