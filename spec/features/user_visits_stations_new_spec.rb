@@ -11,13 +11,14 @@ describe "When a visitor visits new station page" do
   end
 
   it "sees banner" do
-    visit '/stations'
+    visit '/stations/new'
 
-    expect(page).to have_current_path('/stations')
+    expect(page).to have_current_path('/stations/new')
 
     expect(page).to have_content("SF Bike Share")
     expect(page).to have_link("Station Dashboard")
     expect(page).to have_link("Station Index")
+    expect(page).to have_link("Trips Index")
   end
 
   it "clicks on the Home breadcrumb" do
