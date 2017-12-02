@@ -65,46 +65,82 @@ On `/trips-dashboard`:
 * [x] test setup
 
 * [ ] Average duration of a ride.
-  * [x] tested
+  * [ ] method
+  * [ ] view
+  * [x] test
 * [ ] Longest ride.
-  * [x] tested
+  * [ ] method
+  * [ ] view
+  * [x] test
 * [ ] Shortest ride.
-  * [x] tested
+  * [ ] method
+  * [ ] view
+  * [x] test
 * [ ] Station with the most rides as a starting place.
-  * [x] tested
+  * [ ] method
+  * [ ] view
+  * [x] test
 * [ ] Station with the most rides as an ending place.
-  * [x] tested
+  * [ ] method
+  * [ ] view
+  * [x] test
 * [ ] Month by Month breakdown of number of rides with subtotals for each year.
-  * [x] tested
+  * [ ] method
+  * [ ] view
+  * [x] test
 * [ ] Most ridden bike with total number of rides for that bike.
-  * [x] tested
+  * [ ] method
+  * [ ] view
+  * [x] test
 * [ ] Least ridden bike with total number of rides for that bike.
-  * [x] tested
+  * [ ] method
+  * [ ] view
+  * [x] test
 * [ ] User subscription type breakout with both count and percentage.
-  * [x] tested
+  * [ ] method
+  * [ ] view
+  * [x] test
 * [ ] Single date with the highest number of trips with a count of those trips.
-  * [x] tested
+  * [ ] method
+  * [ ] view
+  * [x] test
 * [ ] Single date with the lowest number of trips with a count of those trips.
-  * [x] tested
+  * [ ] method
+  * [ ] view
+  * [x] test
 
 On an individual station show page the additional information should be present:
 
 * [x] test setup
 
 * [ ] Number of rides started at this station.
-  * [x] tested
+  * [ ] method
+  * [ ] view
+  * [x] test
 * [ ] Number of rides ended at this station.
-  * [x] tested
+  * [ ] method
+  * [ ] view
+  * [x] test
 * [ ] Most frequent destination station (for rides that began at this station).
-  * [x] tested
+  * [ ] method
+  * [ ] view
+  * [x] test
 * [ ] Most frequent origination station (for rides that ended at this station).
-  * [x] tested
+  * [ ] method
+  * [ ] view
+  * [x] test
 * [ ] Date with the highest number of trips started at this station.
-  * [x] tested
+  * [ ] method
+  * [ ] view
+  * [x] test
 * [ ] Most frequent zip code for users starting trips at this station.
-  * [x] tested
+  * [ ] method
+  * [ ] view
+  * [x] test
 * [ ] Bike ID most frequently starting a trip at this station.
-  * [x] tested
+  * [ ] method
+  * [ ] view
+  * [x] test
 
 ### Iteration 7
 
