@@ -91,6 +91,14 @@ describe Trip do
       expect(Trip.least_ridden_bike).to eq(33)
     end
 
+    it ".most_ridden_bike_ride_count" do
+      expect(Trip.most_ridden_bike_ride_count).to eq(2)
+    end
+
+    it ".least_ridden_bike_ride_count" do
+      expect(Trip.least_ridden_bike_ride_count).to eq(1)
+    end
+
     it ".subscription_groups" do
       result = {"Subscriber" => 2, "Customer" => 1}
 
