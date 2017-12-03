@@ -15,12 +15,11 @@
 <% @stations.each do |station| %>
   <ul>
     <section class = "display_object">
-    <li class = "station_name"><a href="/stations/<%= station.id %>"> <%= station.name %></a></li>
+    <li class = "station_name"><a href="/stations/<%= station.id %>"><%= station.name %></a></li>
     <li class = "station_city"><%= station.city %>, CA</li>
-    <img src ="/images/groot.gif"
     <li>Docks: <%= station.dock_count %></li>
     <li>Installation: <%= station.installation_date %></li>
-  </section>
+    </section>
   </ul>
 <% end %>
 </main>
