@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(lightgray, gray)
+    background: linear-gradient(lightgray, gray);
 }
 
 header {
@@ -169,9 +169,4 @@ ul.breadcrumb li a:hover {
 
 .paginate {
   display: inline;
-}
-
-.pee {
-  border: 5px solid black;
-
 }
