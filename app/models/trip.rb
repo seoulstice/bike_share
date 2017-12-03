@@ -30,7 +30,10 @@ class Trip <ActiveRecord::Base
   scope :average_duration, -> {average(:duration).to_f.round(2)}
   scope :station_most_start_rides, -> {maximum(:start_station)}
   scope :station_most_end_rides, -> {maximum(:end_station)}
-  scope :date_with_most_rides, -> {group(:start_date).order('count(*) DESC').count.first.first}
-  scope :date_with_most_rides_trip_count, -> {group(:start_date).order('count(*) DESC').count.first.last}
+  scope :date_with_most_rides, -> {maximum(:start_date)}
+  scope :date_with_most_rides_trip_count, -> {group(:start_date).count.values.max}
+  scope :date_with_least_rides, -> {minimum(:start_date)}
+  scope :date_with_least_rides_trip_count, -> {group(:start_date).count.values.min}
+
 
 end
