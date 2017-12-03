@@ -54,6 +54,9 @@ On `/station-dashboard`:
 * [x] All attributes (except zip code) must be present: duration, start date, start station, end date, end station, bike ID, subscription type)
   * [x] model test
 * [x] Trips are paginated in groups of 30
+  * [ ] route
+  * [ ] view
+  * [ ] test
 
 ### Iteration 5
 
@@ -65,25 +68,25 @@ On `/trips-dashboard`:
 
 * [x] test setup
 
-* [ ] Average duration of a ride.
+* [x] Average duration of a ride.
   * [x] method
   * [x] view
   * [x] test
-* [ ] Longest ride.
+* [x] Longest ride.
   * [x] method
   * [x] view
   * [x] test
-* [ ] Shortest ride.
+* [x] Shortest ride.
   * [x] method
   * [x] view
   * [x] test
-* [ ] Station with the most rides as a starting place.
+* [x] Station with the most rides as a starting place.
   * [x] method
   * [x] view
   * [x] test
-* [ ] Station with the most rides as an ending place.
-  * [ ] method
-  * [ ] view
+* [x] Station with the most rides as an ending place.
+  * [x] method
+  * [x] view
   * [x] test
 * [ ] Month by Month breakdown of number of rides with subtotals for each year.
   * [ ] method
@@ -101,9 +104,9 @@ On `/trips-dashboard`:
   * [ ] method
   * [ ] view
   * [x] test
-* [ ] Single date with the highest number of trips with a count of those trips.
-  * [ ] method
-  * [ ] view
+* [x] Single date with the highest number of trips with a count of those trips.
+  * [x] method
+  * [x] view
   * [x] test
 * [ ] Single date with the lowest number of trips with a count of those trips.
   * [ ] method
@@ -115,43 +118,64 @@ On an individual station show page the additional information should be present:
 * [x] test setup
 
 * [ ] Number of rides started at this station.
-  * [ ] method
+  * [x] method
   * [ ] view
   * [x] test
 * [ ] Number of rides ended at this station.
-  * [ ] method
+  * [x] method
   * [ ] view
   * [x] test
 * [ ] Most frequent destination station (for rides that began at this station).
-  * [ ] method
+  * [x] method
   * [ ] view
   * [x] test
 * [ ] Most frequent origination station (for rides that ended at this station).
-  * [ ] method
+  * [x] method
   * [ ] view
   * [x] test
 * [ ] Date with the highest number of trips started at this station.
-  * [ ] method
+  * [x] method
   * [ ] view
   * [x] test
 * [ ] Most frequent zip code for users starting trips at this station.
-  * [ ] method
+  * [x] method
   * [ ] view
   * [x] test
 * [ ] Bike ID most frequently starting a trip at this station.
-  * [ ] method
+  * [x] method
   * [ ] view
   * [x] test
 
 ### Iteration 7
 
 * [ ] See all conditions
+  * [ ] route
+  * [ ] view
+  * [ ] test
 * [ ] See one condition
+  * [ ] route
+  * [ ] view
+  * [ ] test
 * [ ] Create a new condition
+  * [ ] route
+  * [ ] view
+  * [ ] test
 * [ ] Update a condition
+  * [ ] route
+  * [ ] view
+  * [ ] test
 * [ ] Delete a station (from both index or show)
+  * [ ] route
+  * [ ] view
+  * [ ] test
 * [ ] Attributes include: duration, start date, start station, end date, end station, bike ID, subscription type
+  * [ ] route
+  * [ ] view
+  * [ ] test
 * [ ] Conditions are paginated by groups of 30
+  * [ ] route
+  * [ ] view
+  * [ ] test
 
 ### Iteration 8
 
@@ -162,11 +186,29 @@ On an individual station show page the additional information should be present:
 On `/weather-dashboard`:
 
 * [ ] Breakout of average number of rides, highest number of rides, and lowest number of rides on days with a high temperature in 10 degree chunks (e.g. average number of rides on days with high temps between fifty and sixty degrees)
+  * [ ] method
+  * [ ] view
+  * [ ] test
 * [ ] Breakout of average number of rides, highest number of rides, and lowest number of rides on days with precipitation in half-inch increments.
+  * [ ] method
+  * [ ] view
+  * [ ] test
 * [ ] Breakout of average number of rides, highest number of rides, and lowest number of rides on days with mean wind speeds in four mile increments.
+  * [ ] method
+  * [ ] view
+  * [ ] test
 * [ ] Breakout of average number of rides, highest number of rides, and lowest number of rides on days with mean visibility in miles in four mile increments.
+  * [ ] method
+  * [ ] view
+  * [ ] test
 
 Additional information on the `trip-dashboard`:
 
 * [ ] Weather on the day with the highest rides.
+  * [ ] method
+  * [ ] view
+  * [ ] test
 * [ ] Weather on the day with the lowest rides.
+  * [ ] method
+  * [ ] view
+  * [ ] test
