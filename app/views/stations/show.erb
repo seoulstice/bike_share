@@ -15,35 +15,18 @@
     <ul>
     <li class="station_name"><%= @station.name %></li>
     <li class="station_city"><%= @station.city %>, CA</li>
+    <br/>
     <li>Docks: <%= @station.dock_count %></li>
     <li>Installation Date: <%= @station.installation_date %></li>
     <br/>
-    <li>Rides Started Here: ###</li>
-    <li>Rides Ended Here: ###</li>
-    <li>Most Frequent Destination: Station Name(link)</li>
-    <li>Most Frequent Origin: Station Name(link)</li>
+    <li>Rides Started Here: <%= @station.rides_started_here %></li>
+    <li>Rides Ended Here: <%= @station.rides_ended_here %></li>
+    <li>Most Frequent Destination: <a href="#">Station Name</a></li>
+    <li>Most Frequent Origin: <a href="#">Station Name</a></li>
     <li>Most Popular Date: </li>
     <li>Most Common Rider Zipcode: </li>
     <li>Most Ridden Bike: </li>
     </ul>
-  </div>
-  <div id="map">
-    <script>
-    function initMap() {
-      var station = {lat: <%= @station.latitude %>, lng: <%= @station.longitude %>};
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 17,
-        center: station,
-      });
-      var marker = new google.maps.Marker({
-        position: station,
-        map: map
-      });
-    }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPiZRNt7SNQqhm39Aug86hg9HXrTLBLZQ&callback=initMap">
-    </script>
   </div>
 </section>
 

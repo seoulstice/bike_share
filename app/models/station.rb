@@ -46,4 +46,12 @@ class Station < ActiveRecord::Base
   def bike_most_commonly_started_on
     start_trip.maximum(:bike_id)
   end
+
+  def rides_started_here
+    Trip.where("start_station_id = #{:id}").count
+  end
+
+  def rides_ended_here
+    end_trip.sum(:end_station_id)
+  end
 end
