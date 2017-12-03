@@ -1,6 +1,10 @@
 <%= erb :banner %>
-<head><title>All Trips</title></head>
 
+<head>
+  <title>All Trips</title>
+</head>
+
+<body>
 <ul class="breadcrumb">
   <li><a href="/">Home</a></li>
   <li>Trips</li>
@@ -12,16 +16,26 @@
 <% @trips.each do |trip| %>
   <ul>
     <section class = "display_object">
-    <li class = "trip_id"><a href="/trips/<%= trip.id %>">Trip <%= trip.id %></a></li>
-    <li>Duration: <%= trip.duration %></li>
-    <li>Start Date: <%= trip.start_date %> </li>
-    <li>Start Station: <%= trip.start_station %> </li>
-    <li>End Date: <%= trip.end_date %></li>
-    <li>End Station: <%= trip.end_station %></li>
-    <li>Bike ID: <%= trip.bike_id %> </li>
-    <li>Subscription Type: <%= trip.subscription_type %></li>
-    <li>Zip Code: <%= trip.zipcode %> </li>
+    <li class = "trip_id top-pad"><a href="/trips/<%= trip.id %>">Trip <%= trip.id %></a></li>
+    <li class = "trip-padding">Duration: <%= trip.duration %></li>
+    <li class = "trip-padding">Start Date: <%= trip.start_date %> </li>
+    <li class = "trip-padding">Start Station: <%= trip.start_station %> </li>
+    <li class = "trip-padding">End Date: <%= trip.end_date %></li>
+    <li class = "trip-padding">End Station: <%= trip.end_station %></li>
+    <li class = "trip-padding">Bike ID: <%= trip.bike_id %> </li>
+    <li class = "trip-padding">Subscription Type: <%= trip.subscription_type %></li>
+    <li class = "trip-padding bot-pad">Zip Code: <%= trip.zipcode %> </li>
   </section>
   </ul>
 <% end %>
 </main>
+
+<center class="paginate">
+  <% if @paginate.present? && @paginate != "1" %>
+    <a href="/trips?page=<%= @pagdown %>">&laquo;</a>
+    <%= @paginate %>
+    <a href="/trips?page=<%= @paginate.next %>">&raquo;</a>
+  <% else %>
+    <a href="/trips?page=2">&raquo;</a>
+  <% end %>
+</center>
