@@ -9,14 +9,17 @@ class Trip <ActiveRecord::Base
                         :bike_id,
                         :subscription_type
 
-  def self.most_popular_day
-    date = Trip.group(:start_date).order('count(*) DESC').pluck(:start_date).first
-    Trip.most_popular_trip_date_count(date)
+  def self.date_with_most_rides_trip_count_display
+    date = Trip.date_with_most_rides
+    Trip.date_with_most_rides_trip_count(date)
   end
 
-  def self.most_popular_trip_date_count(date)
-    count = Trip.group(:start_date).order('count(*) DESC').count[date]
-    "#{date} with #{count} trips."
+  def self.date_with_most_rides
+    Trip.group(:start_date).order('count(*) DESC').pluck(:start_date).first
+  end
+
+  def self.date_with_most_rides_trip_count(date)
+    Trip.group(:start_date).order('count(*) DESC').count[date]
   end
 
   def start_station_latitude
