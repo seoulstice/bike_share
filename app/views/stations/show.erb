@@ -19,13 +19,13 @@
     <li>Docks: <%= @station.dock_count %></li>
     <li>Installation Date: <%= @station.installation_date %></li>
     <br/>
-    <li>Rides Started Here: <%= @station.rides_started_here %></li>
-    <li>Rides Ended Here: <%= @station.rides_ended_here %></li>
+    <li>Rides Started Here: <%= @station.rides_started %></li>
+    <li>Rides Ended Here: <%= @station.rides_ended %></li>
     <li>Most Frequent Destination: <a href="#">Station Name</a></li>
     <li>Most Frequent Origin: <a href="#">Station Name</a></li>
-    <li>Most Popular Date: </li>
-    <li>Most Common Rider Zipcode: </li>
-    <li>Most Ridden Bike: </li>
+    <li>Most Popular Date: <%= @station.date_most_rides_started %></li>
+    <li>Most Common Rider Zipcode: <%= @station.most_common_zipcode %></li>
+    <li>Most Ridden Bike: <%= @station.bike_most_commonly_started_on %></li>
     </ul>
   </div>
 </section>
