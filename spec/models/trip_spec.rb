@@ -53,7 +53,7 @@ describe Trip do
     end
 
     it ".station_most_start_rides" do
-      expect(Trip.station_most_start_rides).to eq("South SF")
+      expect(Trip.station_most_start_rides).to eq("North SF")
     end
 
     it ".station_most_end_rides" do
@@ -75,12 +75,10 @@ describe Trip do
     end
 
     it ".most_ridden_bike" do
-      skip
       expect(Trip.most_ridden_bike).to eq(21)
     end
 
     it ".least_ridden_bike" do
-      skip
       expect(Trip.least_ridden_bike).to eq(33)
     end
 
@@ -101,9 +99,13 @@ describe Trip do
     end
 
     it ".date_with_least_rides" do
-      skip
-      expect(Trip.date_with_least_rides).to eq("2017-1-19")
+      expect(Trip.date_with_least_rides).to eq(Date.strptime("2017-1-19", '%Y-%m-%e'))
     end
+
+    it ".date_with_least_rides_trip_count" do
+      expect(Trip.date_with_least_rides_trip_count).to eq(1)
+    end
+
   end
 
   describe "validations" do
