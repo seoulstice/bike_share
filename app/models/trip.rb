@@ -44,4 +44,10 @@ class Trip <ActiveRecord::Base
   def self.min_occurrence(column)
     group(column).order('count(*)').count.first.first
   end
+
+  def self.subscription_types
+    group(:subscription_type).order('count(*)').count
+  end
+
+
 end
