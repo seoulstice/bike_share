@@ -41,28 +41,23 @@ describe Trip do
     end
 
     it ".average_duration" do
-      skip
       expect(Trip.average_duration).to eq(4)
     end
 
     it ".longest_ride" do
-      skip
       expect(Trip.longest_ride).to eq(6)
     end
 
     it ".shortest_ride" do
-      skip
       expect(Trip.shortest_ride).to eq(2)
     end
 
     it ".station_most_start_rides" do
-      skip
-      expect(Trip.station_most_start_rides.id).to eq(2)
+      expect(Trip.station_most_start_rides).to eq("South SF")
     end
 
     it ".station_most_end_rides" do
-      skip
-      expect(Trip.station_most_end_rides.id).to eq(2)
+      expect(Trip.station_most_end_rides).to eq("North SF")
     end
 
     it ".rides_by_month" do
@@ -98,12 +93,10 @@ describe Trip do
     end
 
     it ".date_with_most_rides" do
-      expect(Trip.date_with_most_rides).to eq("2017-7-4")
+      expect(Trip.date_with_most_rides).to eq(Date.strptime("2017-7-4", '%Y-%m-%e'))
     end
 
     it ".date_with_most_rides_trip_count" do
-      date = Trip.date_with_most_rides
-
       expect(Trip.date_with_most_rides_trip_count).to eq(2)
     end
 

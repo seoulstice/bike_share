@@ -35,10 +35,6 @@ class Station < ActiveRecord::Base
     Station.find(end_trip.maximum(:start_station_id))
   end
 
-  def most_popular_start_station_name
-    end_trip.maximum(:start_station)
-  end
-
   def date_most_rides_started
     start_trip.maximum(:start_date)
   end
