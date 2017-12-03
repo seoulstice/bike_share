@@ -8,7 +8,9 @@ DatabaseCleaner.clean
 
 #seed station
 CSV.foreach('db/csv/station.csv', {headers: true, header_converters: :symbol, converters: :numeric}) do |row|
-  Station.create!(name:             row[:name],
+  Station.create!(
+                 id:                row[:id],
+                 name:              row[:name],
                  city:              row[:city],
                  dock_count:        row[:dock_count],
                  installation_date: Date.strptime(row[:installation_date], '%m/%e/%Y'),
