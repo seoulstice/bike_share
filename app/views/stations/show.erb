@@ -28,6 +28,24 @@
     <li>Most Ridden Bike: <%= @station.bike_most_commonly_started_on %></li>
     </ul>
   </div>
+  <div id="map">
+    <script>
+    function initMap() {
+      var station = {lat: <%= @station.latitude %>, lng: <%= @station.longitude %>};
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 17,
+        center: station,
+      });
+      var marker = new google.maps.Marker({
+        position: station,
+        map: map
+      });
+    }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPiZRNt7SNQqhm39Aug86hg9HXrTLBLZQ&callback=initMap">
+    </script>
+  </div>
 </section>
 
 <a  class="button" href="/stations/<%= @station.id %>/edit">Edit</a>
