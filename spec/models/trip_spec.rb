@@ -56,11 +56,11 @@ describe Trip do
     end
 
     it ".station_most_start_rides" do
-      expect(Trip.station_most_start_rides.id).to eq(2)
+      expect(Trip.station_most_start_rides).to eq("South SF")
     end
 
     it ".station_most_end_rides" do
-      expect(Trip.station_most_end_rides.id).to eq(2)
+      expect(Trip.station_most_end_rides).to eq("North SF")
     end
 
     it ".rides_by_month" do
