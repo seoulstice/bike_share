@@ -98,8 +98,13 @@ describe Trip do
     end
 
     it ".date_with_most_rides" do
-      skip
       expect(Trip.date_with_most_rides).to eq("2017-7-4")
+    end
+
+    it ".date_with_most_rides_trip_count" do
+      date = Trip.date_with_most_rides
+
+      expect(Trip.date_with_most_rides_trip_count).to eq(2)
     end
 
     it ".date_with_least_rides" do
