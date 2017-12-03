@@ -9,19 +9,6 @@ class Trip <ActiveRecord::Base
                         :bike_id,
                         :subscription_type
 
-  def self.date_with_most_rides_trip_count_display
-    date = Trip.date_with_most_rides
-    Trip.date_with_most_rides_trip_count(date)
-  end
-
-  def self.date_with_most_rides
-    Trip.group(:start_date).order('count(*) DESC').pluck(:start_date).first
-  end
-
-  def self.date_with_most_rides_trip_count(date)
-    Trip.group(:start_date).order('count(*) DESC').count[date]
-  end
-
   def start_station_latitude
     Station.find(start_station_id).latitude
   end
@@ -43,7 +30,7 @@ class Trip <ActiveRecord::Base
   scope :average_ride_length, -> {average(:duration).to_f.round(2)}
   scope :most_popular_starting_station, -> {maximum(:start_station)}
   scope :most_popular_ending_station, -> {maximum(:end_station)}
-  # scope :most_popular_trip_date, -> {group(:start_date).order('count(*) DESC').limit(1).pluck(:start_date)}
-  # scope :most_popular_trip_date_count, -> {group(:start_date).order('count(*) DESC').limit(1) }
+  scope :date_with_most_rides, -> {group(:start_date).order('count(*) DESC').count.first.first}
+  scope :date_with_most_rides_trip_count, -> {group(:start_date).order('count(*) DESC').count.first.last}
 
 end
