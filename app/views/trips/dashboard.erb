@@ -18,8 +18,8 @@
       <li>Average Ride Duration: <%= @trips.average_ride_length %></li>
       <li>Longest Ride: <%= @trips.longest_ride %></li>
       <li>Shortest Ride: <%= @trips.shortest_ride %></li>
-      <li>Most Popular Starting Station: <%= @trips.most_popular_starting_station %></li>
-      <li>Most Popular Destination Station: <%= @trips.most_popular_ending_station %></li>
+      <li>Most Popular Starting Station: <%= @trips.station_most_start_rides %></li>
+      <li>Most Popular Destination Station: <%= @trips.station_most_end_rides %></li>
       <li>Most Popular Trip Date: <%= @trips.date_with_most_rides %> - <%= @trips.date_with_most_rides_trip_count %> trips</li>
 
     </ul>

@@ -56,12 +56,10 @@ describe Trip do
     end
 
     it ".station_most_start_rides" do
-      skip
       expect(Trip.station_most_start_rides.id).to eq(2)
     end
 
     it ".station_most_end_rides" do
-      skip
       expect(Trip.station_most_end_rides.id).to eq(2)
     end
 
@@ -98,12 +96,10 @@ describe Trip do
     end
 
     it ".date_with_most_rides" do
-      expect(Trip.date_with_most_rides).to eq("2017-7-4")
+      expect(Trip.date_with_most_rides).to eq(Date.strptime("2017-7-4", '%Y-%m-%e'))
     end
 
     it ".date_with_most_rides_trip_count" do
-      date = Trip.date_with_most_rides
-
       expect(Trip.date_with_most_rides_trip_count).to eq(2)
     end
 
