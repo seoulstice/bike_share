@@ -88,9 +88,9 @@ On `/trips-dashboard`:
   * [x] method
   * [x] view
   * [x] test
-* [ ] Month by Month breakdown of number of rides with subtotals for each year.
-  * [ ] method
-  * [ ] view
+* [x] Month by Month breakdown of number of rides with subtotals for each year.
+  * [x] method
+  * [x] view
   * [x] test
 * [ ] Most ridden bike with total number of rides for that bike.
   * [ ] method

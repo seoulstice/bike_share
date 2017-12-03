@@ -1,3 +1,5 @@
+require 'date'
+
 describe Trip do
   describe "Class methods" do
     before(:each) do
@@ -69,9 +71,16 @@ describe Trip do
 
     it ".rides_by_month_and_year" do
       skip
-      expected = {2017 => {1  => 1, 7  => 2}}
+      expected = {[year_2017, month_7]=>2, [year_2017, month_1]=>1}
 
       expect(Trip.rides_by_month_and_year).to eq(expected)
+    end
+
+    it ".rides_by_month" do
+      skip
+      expected = {"month_7"=>2, "month_1"=>1}
+
+      expect(Trip.rides_by_month).to eq(expected)
     end
 
     it ".most_ridden_bike" do
