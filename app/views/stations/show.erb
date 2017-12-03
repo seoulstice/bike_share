@@ -15,16 +15,17 @@
     <ul>
     <li class="station_name"><%= @station.name %></li>
     <li class="station_city"><%= @station.city %>, CA</li>
+    <br/>
     <li>Docks: <%= @station.dock_count %></li>
     <li>Installation Date: <%= @station.installation_date %></li>
     <br/>
-    <li>Rides Started Here: ###</li>
-    <li>Rides Ended Here: ###</li>
-    <li>Most Frequent Destination: Station Name(link)</li>
-    <li>Most Frequent Origin: Station Name(link)</li>
-    <li>Most Popular Date: </li>
-    <li>Most Common Rider Zipcode: </li>
-    <li>Most Ridden Bike: </li>
+    <li>Rides Started Here: <%= @station.rides_started %></li>
+    <li>Rides Ended Here: <%= @station.rides_ended %></li>
+    <li>Most Frequent Destination: <a href="/stations/<%= @station.most_popular_end_station.id %>"> <%= @station.most_popular_end_station.name %></a></li>
+    <li>Most Frequent Origin: <a href="/stations/<%= @station.most_popular_start_station.id %>"> <%= @station.most_popular_start_station.name %></a></li>
+    <li>Most Popular Date: <%= @station.date_most_rides_started %></li>
+    <li>Most Common Rider Zipcode: <%= @station.most_common_zipcode %></li>
+    <li>Most Ridden Bike: <%= @station.bike_most_commonly_started_on %></li>
     </ul>
   </div>
   <div id="map">
