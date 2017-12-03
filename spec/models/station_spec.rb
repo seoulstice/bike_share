@@ -49,10 +49,10 @@ RSpec.describe Station do
                   zipcode: 12345
                   )
 
-      Station.create(name: "South SF", dock_count: 55, city: "San Juniperno", installation_date: "1992-11-21", latitude: 30.1023, longitude: -30.1235)
-      Station.create(name: "North SF", dock_count: 55, city: "San Juniperno", installation_date: "1992-11-21", latitude: 40.1023, longitude: -30.1235)
-      Station.create(name: "Mid SF", dock_count: 25, city: "San Juniperno", installation_date: "1992-11-25", latitude: 35.1023, longitude: -30.1235)
-      
+      Station.create(name: "South SF", dock_count: 60, city: "San Juniperno", installation_date: "1992-11-21", latitude: 30.1023, longitude: -30.1235)
+      Station.create(name: "North SF", dock_count: 40, city: "San Juniperno", installation_date: "1992-11-21", latitude: 40.1023, longitude: -30.1235)
+      Station.create(name: "Mid SF", dock_count: 20, city: "San Juniperno", installation_date: "1993-12-25", latitude: 35.1023, longitude: -30.1235)
+
       @station_1 = Station.find(1)
       @station_2 = Station.find(2)
       @station_3 = Station.find(3)
@@ -88,39 +88,43 @@ RSpec.describe Station do
 
     describe "Class Methods" do
       it ".view_order" do
-        expect(Station.view_order.first).to eq("San Juniperno, Mid SF")
+        expect(Station.view_order.first.city).to eq("San Juniperno")
+      end
+
+      it ".view_order" do
+        expect(Station.view_order.first.name).to eq("Mid SF")
       end
 
       it ".city_groups" do
-        expect(Station.city_groups).to eq("San Juniperno")
+        expect(Station.city_groups.name).to eq(3)
       end
 
       it ".average_dock_count" do
-        expect(Station.average_dock_count).to eq(45)
+        expect(Station.average_dock_count).to eq(40)
       end
 
       it ".maximum_dock_count" do
-        expect(Station.maximum_dock_count).to eq(55)
+        expect(Station.maximum_dock_count).to eq(60)
       end
 
-      it ".minimum_dock_count" do
-        expect(Station.minimum_dock_count).to eq(25)
+      it ".mininum_dock_count" do
+        expect(Station.mininum_dock_count).to eq(20)
       end
 
       it ".max_dock_count_station" do
-        expect(Station.max_dock_count_station).to eq("North SF")
+        expect(Station.max_dock_count_station.name).to eq("South SF")
       end
 
       it ".min_dock_count_station" do
-        expect(Station.min_dock_count_station).to eq("Mid SF")
+        expect(Station.min_dock_count_station.name).to eq("Mid SF")
       end
 
       it ".newest_station" do
-        expect(Station.newest_station).to eq("Mid SF")
+        expect(Station.newest_station.name).to eq("South SF")
       end
 
       it ".oldest_station" do
-        expect(Station.newest_station).to eq("North SF")
+        expect(Station.oldest_station.name).to eq("Mid SF")
       end
     end
   end
