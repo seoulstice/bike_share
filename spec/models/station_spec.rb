@@ -81,6 +81,44 @@ RSpec.describe Station do
     it '#bike_most_commonly_started_on' do
       expect(@station_1.bike_most_commonly_started_on).to eq(21)
     end
+
+    describe "Class Methods" do
+      it ".view_order" do
+
+      end
+
+      it ".city_groups" do
+
+      end
+
+      it ".average_dock_count" do
+
+      end
+
+      it ".maximum_dock_count" do
+
+      end
+
+      it ".minimum_dock_count" do
+
+      end
+
+      it ".max_dock_count_station" do
+
+      end
+
+      it ".min_dock_count_station" do
+
+      end
+
+      it ".newest_station" do
+
+      end
+
+      it "oldest_station" do
+        
+      end
+    end
   end
 
   describe "validations" do
