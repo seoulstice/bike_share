@@ -66,20 +66,20 @@ On `/trips-dashboard`:
 * [x] test setup
 
 * [ ] Average duration of a ride.
-  * [ ] method
-  * [ ] view
+  * [x] method
+  * [x] view
   * [x] test
 * [ ] Longest ride.
   * [x] method
   * [x] view
   * [x] test
 * [ ] Shortest ride.
-  * [ ] method
-  * [ ] view
+  * [x] method
+  * [x] view
   * [x] test
 * [ ] Station with the most rides as a starting place.
-  * [ ] method
-  * [ ] view
+  * [x] method
+  * [x] view
   * [x] test
 * [ ] Station with the most rides as an ending place.
   * [ ] method
