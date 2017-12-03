@@ -28,27 +28,23 @@ class Station < ActiveRecord::Base
   end
 
   def most_popular_end_station
-    Station.find(start_trip.max_occurance(:end_station_id))
+    Station.find(start_trip.group(:end_station_id).order('count(*) DESC').count.first.first)
   end
 
   def most_popular_start_station
-    Station.find(end_trip.max_occurance(:start_station_id))
+    Station.find(end_trip.group(:end_station_id).order('count(*) DESC').count.first.first)
   end
 
   def date_most_rides_started
-    start_trip.max_occurance(:start_date)
+    start_trip.group(:end_station_id).order('count(*) DESC').count.first.first
   end
 
   def most_common_zipcode
-    start_trip.max_occurance(:zipcode)
+    start_trip.group(:end_station_id).order('count(*) DESC').count.first.first
   end
 
   def bike_most_commonly_started_on
-    start_trip.max_occurance(:bike_id)
-  end
-
-  def max_occurance(column)
-    group(column).order('count(*) DESC').count.first.first
+    start_trip.group(:end_station_id).order('count(*) DESC').count.first.first
   end
 
   def self.max_occurance(column)
