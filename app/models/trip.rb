@@ -34,6 +34,4 @@ class Trip <ActiveRecord::Base
   scope :date_with_most_rides_trip_count, -> {group(:start_date).count.values.max}
   scope :date_with_least_rides, -> {minimum(:start_date)}
   scope :date_with_least_rides_trip_count, -> {group(:start_date).count.values.min}
-
-
 end
