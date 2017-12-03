@@ -35,7 +35,9 @@ class Trip <ActiveRecord::Base
   scope :date_with_least_rides, -> {min_occurrence(:start_date)}
   scope :date_with_least_rides_trip_count, -> {group(:start_date).count.values.min}
   scope :most_ridden_bike, -> {max_occurrence(:bike_id)}
+  scope :most_ridden_bike_ride_count, -> {group(:bike_id).count.values.max}
   scope :least_ridden_bike, -> {min_occurrence(:bike_id)}
+  scope :least_ridden_bike_ride_count, -> {group(:bike_id).count.values.min}
   scope :rides_by_year, -> {group("DATE_TRUNC('year', start_date)").count}
   scope :rides_by_month, -> {group("DATE_TRUNC('month', start_date)").count}
   scope :subscription_groups, -> {group(:subscription_type)}
