@@ -39,16 +39,6 @@ class Trip <ActiveRecord::Base
   scope :rides_by_year, -> {group("DATE_TRUNC('year', start_date)").count}
   scope :rides_by_month, -> {group("DATE_TRUNC('month', start_date)").count}
 
-  # def self.rides_by_month_and_year
-  #   trips_by_year = Trip.all.group_by do |trip|
-  #     trip.start_date.year
-  #   end
-  #   trips_by_year.reduce({}) do |result, (key, value)|
-  #     result[key] = value.count
-  #     result
-  #   end
-  # end
-
   def self.max_occurrence(column)
     group(column).order('count(*) DESC').count.first.first
   end
@@ -57,7 +47,7 @@ class Trip <ActiveRecord::Base
     group(column).order('count(*)').count.first.first
   end
 
-  def max_occurance(column)
-    group(column).order('count(*) DESC').count.first.first
+  def self.count_by_subscription_type
+    group(:subscription_type).order('count(*)').count
   end
 end

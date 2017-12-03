@@ -24,6 +24,7 @@
       <li>Least Popular Trip Date: <%= @trips.date_with_least_rides %> - <%= @trips.date_with_least_rides_trip_count %> trips</li>
       <li>Most Ridden Bike ID: <%= @trips.most_ridden_bike %></li>
       <li>Least Ridden Bike ID: <%= @trips.least_ridden_bike %></li>
+
       <table>
         <tr>
           <th>Year</th> <th>Month</th> <th>Rides</th>
@@ -47,6 +48,17 @@
         </tr>
         <% end %>
       </table>
+
+      <li>Rider Analysis:<br/>
+      <ul>
+        <% @trips.count_by_subscription_type.each do |key, value| %>
+        <li>Rider Type: <%= key %></li>
+        <li># of <%= key %> Accounts: <%= value %></li>
+        <li>% of Total Accounts: <%= (100.0 * value/Trip.count) %>%</li><br/>
+        <% end %>
+      </ul>
+      </li>
+
     </ul>
   </section>
 </body>
