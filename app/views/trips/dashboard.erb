@@ -26,7 +26,7 @@
       <li>Least Ridden Bike ID: <%= @trips.least_ridden_bike %></li>
       <li>Rider Analysis:<br/>
       <ul>
-        <% @trips.subscription_types.each do |key, value| %>
+        <% @trips.count_by_subscription_type.each do |key, value| %>
         <li>Rider Type: <%= key %></li>
         <li># of <%= key %> Accounts: <%= value %></li>
         <li>% of Total Accounts: <%= (100.0 * value/Trip.count) %>%</li><br/>
