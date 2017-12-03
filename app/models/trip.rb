@@ -44,8 +44,4 @@ class Trip <ActiveRecord::Base
   def self.min_occurrence(column)
     group(column).order('count(*)').count.first.first
   end
-  
-  def max_occurance(column)
-    group(column).order('count(*) DESC').count.first.first
-  end
 end

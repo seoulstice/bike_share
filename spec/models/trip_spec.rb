@@ -83,8 +83,6 @@ describe Trip do
     end
 
     it ".count_by_subscription_type" do
-      skip
-      #Build a hash of a count of each (accumulate)
       result = {"Subscriber" => 2, "Customer" => 1}
 
       expect(Trip.count_by_subscription_type).to eq(result)
@@ -106,6 +104,13 @@ describe Trip do
       expect(Trip.date_with_least_rides_trip_count).to eq(1)
     end
 
+    it '.max_occurrence(column)' do
+      expect(Trip.max_occurrence(:bike_id)).to eq(21)
+    end
+
+    it '.min_occurrence(column)' do
+      expect(Trip.min_occurrence(:bike_id)).to eq(33)
+    end
   end
 
   describe "validations" do
