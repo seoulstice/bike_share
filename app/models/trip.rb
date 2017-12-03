@@ -36,6 +36,7 @@ class Trip <ActiveRecord::Base
   scope :date_with_least_rides_trip_count, -> {group(:start_date).count.values.min}
   scope :most_ridden_bike, -> {max_occurrence(:bike_id)}
   scope :least_ridden_bike, -> {min_occurrence(:bike_id)}
+  scope :subscription_groups, -> {group(:subscription_type)}
 
   def self.max_occurrence(column)
     group(column).order('count(*) DESC').count.first.first

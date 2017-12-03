@@ -96,7 +96,7 @@ RSpec.describe Station do
       end
 
       it ".city_groups" do
-        expect(Station.city_groups.name).to eq(3)
+        expect(Station.city_groups.count).to eq({"San Juniperno"=>3})
       end
 
       it ".average_dock_count" do
