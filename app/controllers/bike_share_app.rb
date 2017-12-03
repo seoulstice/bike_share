@@ -6,7 +6,8 @@ class BikeShareApp < Sinatra::Base
   end
 
   get '/stations' do
-    @stations = Station.all.view_order.limit(20)
+    @stations = Station.all.view_order
+
     erb :"stations/index"
   end
 
@@ -51,11 +52,13 @@ class BikeShareApp < Sinatra::Base
   end
 
   get '/trips' do
+    @trips = Trip.limit(30)
     if params[:page]
       @trips = Trip.limit(30).offset((params[:page].to_i - 1) * 30)
-    else
-      @trips = Trip.limit(30)
+      @paginate = params[:page]
+      @pagdown = params[:page].to_i - 1
     end
+
     erb :'trips/index'
   end
 

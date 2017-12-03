@@ -35,7 +35,6 @@ h1 {
 
 li {
   font-size: 18px;
-  padding: 0 20px;
   text-align: center;
 }
 
@@ -56,7 +55,7 @@ img {
   align-items: center;
   background-color: lightgrey;
   width: 225px;
-  height: 300px;
+  height: 325px;
   margin: 20px 10px;
 }
 
@@ -115,6 +114,18 @@ img {
   padding: 5px;
 }
 
+.trip-padding {
+  padding: 0 10px;
+}
+
+.top-pad {
+  padding-top: 10px;
+}
+
+.bot-pad {
+  padding-bottom: 10px;
+}
+
 .button {
   font: bold 11px Arial;
   margin: 10px 0 10px 0;
@@ -148,10 +159,18 @@ ul.breadcrumb li a {
 ul.breadcrumb li a:hover {
     color: #01447e;
     text-decoration: underline;
-}
 
 #map {
   height: 300px;
   width: 300px;
   margin: 5px 5px;
+}
+
+.paginate {
+  display: inline;
+}
+
+.pee {
+  border: 5px solid black;
+  
 }
