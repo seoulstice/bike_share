@@ -45,7 +45,7 @@ class Trip <ActiveRecord::Base
     group(column).order('count(*)').count.first.first
   end
 
-  def self.subscription_types
+  def self.count_by_subscription_type
     group(:subscription_type).order('count(*)').count
   end
 
