@@ -41,17 +41,14 @@ describe Trip do
     end
 
     it ".average_duration" do
-      skip
       expect(Trip.average_duration).to eq(4)
     end
 
     it ".longest_ride" do
-      skip
       expect(Trip.longest_ride).to eq(6)
     end
 
     it ".shortest_ride" do
-      skip
       expect(Trip.shortest_ride).to eq(2)
     end
 

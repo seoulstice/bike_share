@@ -27,7 +27,7 @@ class Trip <ActiveRecord::Base
 
   scope :longest_ride, -> {maximum(:duration)}
   scope :shortest_ride, -> {minimum(:duration)}
-  scope :average_ride_length, -> {average(:duration).to_f.round(2)}
+  scope :average_duration, -> {average(:duration).to_f.round(2)}
   scope :station_most_start_rides, -> {maximum(:start_station)}
   scope :station_most_end_rides, -> {maximum(:end_station)}
   scope :date_with_most_rides, -> {group(:start_date).order('count(*) DESC').count.first.first}
