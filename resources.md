@@ -15,6 +15,9 @@ Maximum in group by counter_cache:
 
 Counter-Culture gem:
   * https://github.com/magnusvk/counter_culture
+  
+Create Primary Key that isn't id: 
+ * https://stackoverflow.com/questions/6402189/specify-custom-primary-key-in-migration
 
 Known bugs/errors:
 * NoMethodError at /stations/24 undefined method `first' for nil:NilClass
