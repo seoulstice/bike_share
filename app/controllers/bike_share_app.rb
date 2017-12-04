@@ -103,8 +103,13 @@ class BikeShareApp < Sinatra::Base
   end
 
   get '/conditions' do
-    @conditions = Condition.all
-
+    @conditions = Condition.limit(30)
+    if params[:page]
+      @conditions = Condition.limit(30).offset((params[:page].to_i - 1) * 30)
+      @paginate = params[:page]
+      @pagdown = params[:page].to_i - 1
+    end
+    
     erb :'conditions/index'
   end
 

@@ -4,7 +4,7 @@ describe "When a visitor submits a new trip" do
     fill_in('trip[duration]', with: 60)
     fill_in('trip[start_date]', with: "2017-01-01")
     fill_in('trip[start_station]', with: "Alcatraz")
-    fill_in('trip[start_station_id]', with: 1)
+    fill_in('trip[start_station_id]', with: 2)
     fill_in('trip[end_date]', with: "2017-01-01")
     fill_in('trip[end_station]', with: "SF City Hall")
     fill_in('trip[end_station_id]', with: 2)
@@ -12,7 +12,7 @@ describe "When a visitor submits a new trip" do
     fill_in('trip[subscription_type]', with: "Customer")
     find('input[name="New"]').click
 
-    expect(page).to have_current_path('/trips/1')
+    expect(page).to have_current_path('/trips/1001')
   end
 
   it "new trip is saved" do
@@ -20,7 +20,7 @@ describe "When a visitor submits a new trip" do
     fill_in('trip[duration]', with: 60)
     fill_in('trip[start_date]', with: "2017-01-01")
     fill_in('trip[start_station]', with: "Alcatraz")
-    fill_in('trip[start_station_id]', with: 1)
+    fill_in('trip[start_station_id]', with: 2)
     fill_in('trip[end_date]', with: "2017-01-01")
     fill_in('trip[end_station]', with: "SF City Hall")
     fill_in('trip[end_station_id]', with: 2)

@@ -27,6 +27,7 @@ class Seed
         longitude:         row[:long]
       )
     end
+    ActiveRecord::Base.connection.reset_pk_sequence!('stations')
   end
 
   def self.trip_fixture
