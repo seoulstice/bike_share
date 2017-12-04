@@ -1,0 +1,25 @@
+<%= erb :banner %>
+
+<head>
+  <title>New Condition</title>
+</head>
+
+<ul class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/conditions">Conditions</a></li>
+  <li>New Condition</li>
+</ul>
+
+<main class="flex-parent">
+  <form class="form-flex" action="/conditions" method="post">
+    Date: <input class="new-child" type="date" name="condition[date]" value="" data-date-inline-picker="true"><br/>
+    Max Temperature (F): <input class="new-child" type="number" step="0.1" name="condition[max_temperature_f]" value=""><br/>
+    Mean Temperature (F): <input class="new-child" type="number" step="0.1" name="condition[mean_temperature_f]" value=""><br/>
+    Min Temperature (F): <input class="new-child" type="number" step="0.1" name="condition[min_temperature_f]" value=""><br/>
+    Mean Humidity: <input class="new-child" type="number" step="0.1" name="condition[mean_humidity]" value=""><br/>
+    Mean Visibility (mile): <input class="new-child" type="number" step="0.1" name="condition[mean_visibility_miles]" value=""><br/>
+    Mean Wind Speed (mph): <input class="new-child" type="number" step="0.1" name="condition[mean_wind_speed_mph]" value=""><br/>
+    Mean Precipitation (inches): <input class="new-child" type="number" step="0.1" name="condition[precipitation_inches]" value=""><br/>
+    <input class="button" name="New" type="submit">
+  </form>
+</main>
