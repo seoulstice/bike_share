@@ -114,7 +114,6 @@ class BikeShareApp < Sinatra::Base
     erb :'conditions/show'
   end
 
-
   get '/conditions/new' do
     erb :'conditions/new'
   end
