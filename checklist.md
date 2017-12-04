@@ -163,8 +163,8 @@ On an individual station show page the additional information should be present:
   * [x] view
   * [ ] test
 * [ ] Update a condition
-  * [ ] route
-  * [ ] view
+  * [x] route
+  * [x] view
   * [ ] test
 * [ ] Delete a station (from both index or show)
   * [ ] route
