@@ -1,5 +1,4 @@
 class Condition < ActiveRecord::Base
-  has_many :trip
-  belongs_to :city
+  has_many :trips, primary_key: :date, foreign_key: :start_date
 
 end
