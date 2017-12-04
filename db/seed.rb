@@ -7,13 +7,13 @@ class Seed
   def self.production
     Seed.stations
     Seed.trip
-    Seed.weater
+    Seed.weather
   end
 
   def self.test
     Seed.stations
     Seed.trip_fixture
-    Seed.weater
+    Seed.weather
   end
 
   def self.stations
