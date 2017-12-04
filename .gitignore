@@ -2,3 +2,5 @@ db/csv/*.csv
 Gemfile.lock
 /tmp
 /tmp/capybara
+checklist.md
+resources.md
