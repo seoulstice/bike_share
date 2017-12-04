@@ -1,4 +1,9 @@
 describe "When a visitor visits conditions" do
+  before(:each) do
+    @condition = Condition.create(Date: "2017-08-11", max_temperature: 98, mean_temperature: 77, min_temperature: 53, mean_humidity: 40, mean_visibility: 40, mean_wind_speed: 22,
+    precipitation: 5)
+  end
+
   it "sees banner" do
     visit '/conditions'
 
