@@ -151,16 +151,16 @@ On an individual station show page the additional information should be present:
 ### Iteration 7
 
 * [ ] See all conditions
-  * [ ] route
-  * [ ] view
+  * [x] route
+  * [x] view
   * [ ] test
 * [ ] See one condition
   * [ ] route
   * [ ] view
   * [ ] test
 * [ ] Create a new condition
-  * [ ] route
-  * [ ] view
+  * [x] route
+  * [x] view
   * [ ] test
 * [ ] Update a condition
   * [ ] route
