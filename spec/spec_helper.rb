@@ -5,6 +5,7 @@ Bundler.require(:default, :test)
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec'
 require 'capybara/dsl'
+require_relative '../db/seeds'
 
 Capybara.app = BikeShareApp
 Capybara.save_path = "tmp/capybara"
@@ -17,9 +18,6 @@ RSpec.configure do |c|
 
   c.before(:all) do
     DatabaseCleaner.clean
-  end
-
-  c.after(:each) do
-    DatabaseCleaner.clean
+    Seed.test
   end
 end

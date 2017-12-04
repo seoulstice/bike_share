@@ -1,9 +1,4 @@
 describe "When a visitor submits a new trip" do
-  before(:each) do
-    Station.create(name: "South SF", dock_count: 55, city: "San Juniperno", installation_date: "1992-11-21", latitude: 30.1023, longitude: -30.1235)
-    Station.create(name: "North SF", dock_count: 55, city: "San Juniperno", installation_date: "1992-11-21", latitude: 40.1023, longitude: -30.1235)
-  end
-
   it "is redirected to that trip's page" do
     visit '/trips/new'
     fill_in('trip[duration]', with: 60)
