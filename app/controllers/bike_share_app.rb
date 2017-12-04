@@ -108,4 +108,23 @@ class BikeShareApp < Sinatra::Base
     erb :'conditions/index'
   end
 
+  get '/conditions/new' do
+    erb :'conditions/new'
+  end
+
+  post '/conditions' do
+    condition = Condition.create(params[:condition])
+
+    redirect "/conditions/#{condition.date}"
+  end
+
+  get '/conditions/:date/edit' do
+    @condition = Condition.find(params[:date])
+
+    erb :"conditions/edit"
+  end
+
+  put '/conditions/:date' do
+
+  end
 end
