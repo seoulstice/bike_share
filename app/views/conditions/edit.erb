@@ -1,11 +1,25 @@
 <%= erb :banner %>
 
 <head>
-  <title>Edit <%= @station.name %> Station</title>
+  <title>Edit Conditions on: <%= @condition.date %></title>
 </head>
 
 <ul class="breadcrumb">
   <li><a href="/">Home</a></li>
-  <li><a href="/stations/<%= @station.id %>"><%= @station.name %></a></li>
-  <li>Edit Station</li>
+  <li><a href="/condition/<%= @condition.date %>"><%= @condition.date %></a></li>
+  <li>Edit Condition</li>
 </ul>
+
+<main class="flex-parent">
+  <form class="form-flex" action="/conditions" method="post">
+    Date: <input class="new-child" type="date" name="condition[date]" value="<%= @condition.date %>" data-date-inline-picker="true"><br/>
+    Max Temperature (F): <input class="new-child" type="number" step="0.1" name="condition[max_temperature_f]" value="<%= @condition.max_temperature_f %>"><br/>
+    Mean Temperature (F): <input class="new-child" type="number" step="0.1" name="condition[mean_temperature_f]" value="<%= @condition.mean_temperature_f %>"><br/>
+    Min Temperature (F): <input class="new-child" type="number" step="0.1" name="condition[min_temperature_f]" value="<%= @condition.min_temperature_f %>"><br/>
+    Mean Humidity: <input class="new-child" type="number" step="0.1" name="condition[mean_humidity]" value="<%= @condition.mean_humidity %>"><br/>
+    Mean Visibility (mile): <input class="new-child" type="number" step="0.1" name="condition[mean_visibility_miles]" value="<%= @condition.mean_visibility_miles %>"><br/>
+    Mean Wind Speed (mph): <input class="new-child" type="number" step="0.1" name="condition[mean_wind_speed_mph]" value="<%= @condition.mean_wind_speed_mph %>"><br/>
+    Mean Precipitation (inches): <input class="new-child" type="number" step="0.1" name="condition[precipitation_inches]" value="<%= @condition.precipitation_inches =>"><br/>
+    <input class="button" name="New" type="submit">
+  </form>
+</main>
