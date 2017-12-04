@@ -1,9 +1,4 @@
 describe "When a visitor visits edit trip" do
-  before(:each) do
-    Trip.create(duration: 60, start_date: "2017-01-01", start_station: "Alcatraz", end_date: "2017-01-01", end_station: "SF City Hall", bike_id: 2, subscription_type: "Customer")
-    Trip.create(duration: 120, start_date: "2017-01-02", start_station: "Japantown", end_date: "2017-01-03", end_station: "Lower Haight", bike_id: 11, subscription_type: "Subscriber")
-  end
-
   it "displays an edit form with current values" do
     visit '/trips/1/edit'
 

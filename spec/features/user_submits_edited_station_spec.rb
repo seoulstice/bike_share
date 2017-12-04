@@ -1,10 +1,4 @@
-describe "When a user updates an existing station" do
-  before(:each) do
-    @station_1 = Station.create(name: "South SF", city: "SF", dock_count: 12, installation_date: "2017-01-01", latitude: 40.1023, longitude: -30.1235)
-    @station_2 = Station.create(name: "North SJ", city: "SJ", dock_count: 14, installation_date: "2017-01-10", latitude: 40.1023, longitude: -30.1235)
-  end
-
-  it "the submit button redirects to station show page" do
+describe "When a user updates an existing station" do  it "the submit button redirects to station show page" do
     visit '/stations/2/edit'
     fill_in('station[name]', with: "North SF")
     fill_in('station[city]', with: "SF")
