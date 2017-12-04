@@ -48,17 +48,18 @@
         </tr>
         <% end %>
       </table>
-
-      <li>Rider Analysis:<br/>
-      <ul>
-        <% @trips.count_by_subscription_type.each do |key, value| %>
-        <li>Rider Type: <%= key %></li>
-        <li># of <%= key %> Accounts: <%= value %></li>
-        <li>% of Total Accounts: <%= (100.0 * value/Trip.count) %>%</li><br/>
+      <table>
+        <tr>
+          <th>Rider Type</th> <th># of Accounts</th> <th> % </th>
+        </tr>
+        <% @trips.count_by_subscription_type.each do |key, value|%>
+        <tr>
+          <td><%= key %></td>
+          <td><%= value%></td>
+          <td><%= (100.0 * value/Trip.count) %></td>
+        </tr>
         <% end %>
-      </ul>
-      </li>
-
+      </table>
     </ul>
   </section>
 </body>
