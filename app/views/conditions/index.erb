@@ -30,10 +30,10 @@
 
 <center class="paginate">
   <% if @paginate.present? && @paginate != "1" %>
-    <a href="/conditions?page=<%= @pagdown %>">&laquo;</a>
+    <a href="/conditions?page=<%= @pagdown %>"><<</a>
     <%= @paginate %>
-    <a href="/conditions?page=<%= @paginate.next %>">&raquo;</a>
+    <a href="/conditions?page=<%= @paginate.next %>">>></a>
   <% else %>
-    <a href="/conditions?page=2">&raquo;</a>
+    <a href="/conditions?page=2">>></a>
   <% end %>
 </center>

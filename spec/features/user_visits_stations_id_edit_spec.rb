@@ -5,13 +5,13 @@ describe "When a visitor visits edit station" do
     expect(page).to have_current_path('/stations/12/edit')
 
     expect(page).to have_field("station[name]")
-    expect(page).to have_selector('input[value="South SF"]')
+    expect(page).to have_selector('input[value="SJSU 4th at San Carlos"]')
     expect(page).to have_field("station[city]")
-    expect(page).to have_selector('input[value="SF"]')
+    expect(page).to have_selector('input[value="San Jose"]')
     expect(page).to have_field("station[dock_count]")
-    expect(page).to have_selector('input[value="12"]')
+    expect(page).to have_selector('input[value="19"]')
     expect(page).to have_field("station[installation_date]")
-    expect(page).to have_selector('input[value="2017-01-01"]')
+    expect(page).to have_selector('input[value="2013-08-07"]')
     expect(page).to have_selector('input[name="Update"]')
   end
 
