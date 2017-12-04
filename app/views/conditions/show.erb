@@ -1,0 +1,33 @@
+<%= erb :banner %>
+
+<head>
+  <title>Condition <%= @condition.id %></title>
+</head>
+
+<ul class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/conditions">Conditions</a></li>
+  <li><%= @condition.id %></li>
+</ul>
+
+<section class="dash-flex">
+  <div class="dashboard-results">
+    <ul>
+    <li>Condition ID: <%= @condition.id %></li>
+    <li>Date: <%= @condition.date %></li>
+    <li>Max Temperature (F): <%= @condition.max_temperature_f %> </li>
+    <li>Mean Temperature (F): <%= @condition.mean_temperature_f %> </li>
+    <li>Min Temperature (F): <%= @condition.min_temperature_f %> </li>
+    <li>Mean Humidity: <%= @condition.mean_humidity %> </li>
+    <li>Mean Visibility (Miles): <%= @condition.mean_visibility_miles %> miles </li>
+    <li>Mean Wind Speed (MPH): <%= @condition.mean_wind_speed_mph %> mph</li>
+    <li>Precipitation Inches (inches): <%= @condition.precipitation_inches %> inches</li>
+    </ul>
+  </div>
+</section>
+
+<a  class="button" href="/conditions/<%= @condition.id %>/edit">Edit</a>
+<form class="" action="/conditions/<%= @conditionid %>" method="post">
+  <input type="hidden" name="_method" value="DELETE">
+  <input class="button inline-btn" type="submit" name="Delete" value="Delete">
+</form>
