@@ -1,11 +1,19 @@
 require './app/models/station'
 require './app/models/trip'
+require './app/models/condition'
 require 'csv'
 
 class Seed
+  def self.production
+    Seed.stations
+    Seed.trips
+    Seed.weather
+  end
+
   def self.test
     Seed.stations
     Seed.trip_fixture
+    Seed.weather
   end
 
   def self.stations
@@ -50,6 +58,20 @@ class Seed
         subscription_type: row[:subscription_type],
         zipcode: row[:zip_code]
       )
+    end
+  end
+
+  def self.weather
+    CSV.foreach('db/csv/weather.csv', {headers: true, header_converters: :symbol, converters: :numeric}) do |row|
+      Condition.create!(date: Date.strptime(row[:date], '%m/%e/%Y'),
+                        max_temperature_f: row[:max_temperature_f],
+                        mean_temperature_f: row[:mean_temperature_f],
+                        min_temperature_f: row[:min_temperature_f],
+                        mean_humidity: row[:mean_humidity],
+                        mean_visibility_miles: row[:mean_visibility_miles],
+                        mean_wind_speed_mph: row[:mean_wind_speed_mph],
+                        precipitation_inches: row[:precipitation_inches]
+                        )
     end
   end
 end
