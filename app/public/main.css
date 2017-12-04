@@ -81,7 +81,7 @@ img {
 .dash-flex {
   display: flex;
   justify-content: space-around;
-  flex-direction: row;
+  flex-direction: column;
   padding: 30px 0;
 }
 
