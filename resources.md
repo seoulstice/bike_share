@@ -18,6 +18,9 @@ Counter-Culture gem:
   
 Create Primary Key that isn't id: 
  * https://stackoverflow.com/questions/6402189/specify-custom-primary-key-in-migration
+ 
+Reset primary key count on stations (see solution in seed):
+  * https://stackoverflow.com/questions/28723505/rails-reset-all-postgres-sequences
 
 Known bugs/errors:
 * NoMethodError at /stations/24 undefined method `first' for nil:NilClass
