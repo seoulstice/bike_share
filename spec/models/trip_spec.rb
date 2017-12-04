@@ -1,98 +1,50 @@
-require 'date'
-
 describe Trip do
   describe "Class methods" do
-    before(:each) do
-      Trip.create(duration: 2,
-                  start_date: "2017-1-19",
-                  start_station: "South SF",
-                  start_station_id: 1,
-                  end_date: "2017-1-19",
-                  end_station: "North SF",
-                  end_station_id: 2,
-                  bike_id: 21,
-                  subscription_type: "Subscriber",
-                  zipcode: 12345
-                  )
-
-      Trip.create(duration: 6,
-                  start_date: "2017-7-4",
-                  start_station: "North SF",
-                  start_station_id: 2,
-                  end_date: "2017-7-4",
-                  end_station: "North SF",
-                  end_station_id: 2,
-                  bike_id: 21,
-                  subscription_type: "Subscriber",
-                  zipcode: 12345
-                  )
-
-      Trip.create(duration: 4,
-                  start_date: "2017-7-4",
-                  start_station: "North SF",
-                  start_station_id: 2,
-                  end_date: "2017-7-4",
-                  end_station: "North SF",
-                  end_station_id: 2,
-                  bike_id: 33,
-                  subscription_type: "Customer",
-                  zipcode: 12345
-                  )
-      Station.create(name: "South SF", dock_count: 55, city: "San Juniperno", installation_date: "1992-11-21")
-      Station.create(name: "North SF", dock_count: 55, city: "San Juniperno", installation_date: "1992-11-21")
-    end
-
     it ".average_duration" do
-      expect(Trip.average_duration).to eq(4)
+      expect(Trip.average_duration).to eq(1261.61)
     end
 
     it ".longest_ride" do
-      expect(Trip.longest_ride).to eq(6)
+      expect(Trip.longest_ride).to eq(97713)
     end
 
     it ".shortest_ride" do
-      expect(Trip.shortest_ride).to eq(2)
+      expect(Trip.shortest_ride).to eq(63)
     end
 
     it ".station_most_start_rides" do
-      expect(Trip.station_most_start_rides).to eq("North SF")
+      expect(Trip.station_most_start_rides).to eq("South Van Ness at Market")
     end
 
     it ".station_most_end_rides" do
-      expect(Trip.station_most_end_rides).to eq("North SF")
+      expect(Trip.station_most_end_rides).to eq("South Van Ness at Market")
     end
 
     it ".rides_by_month" do
-      skip
-      expected = {1  => 1, 7  => 2}
+      rides_by_month = Trip.rides_by_month
 
-      expect(Trip.rides_by_month).to eq(expected)
+      expect(rides_by_month.first.first.month).to eq(8)
+      expect(rides_by_month.first.last).to eq(1000)
     end
 
-    it ".rides_by_month_and_year" do
-      skip
-      expected = {[year_2017, month_7]=>2, [year_2017, month_1]=>1}
+    it ".rides_by_year" do
+      rides_by_year = Trip.rides_by_year
 
-      expect(Trip.rides_by_month_and_year).to eq(expected)
+      expect(rides_by_year.first.first.year).to eq(2013)
+      expect(rides_by_year.first.last).to eq(1000)
     end
 
-    it ".rides_by_month" do
-      skip
-      expected = {"month_7"=>2, "month_1"=>1}
-
-      expect(Trip.rides_by_month).to eq(expected)
-    end
 
     it ".most_ridden_bike" do
-      expect(Trip.most_ridden_bike).to eq(21)
+      expect(Trip.most_ridden_bike).to eq(538)
     end
 
     it ".least_ridden_bike" do
-      expect(Trip.least_ridden_bike).to eq(33)
+      expect(Trip.least_ridden_bike).to eq(11)
     end
 
     it ".most_ridden_bike_ride_count" do
-      expect(Trip.most_ridden_bike_ride_count).to eq(2)
+      expect(Trip.most_ridden_bike_ride_count).to eq(14)
     end
 
     it ".least_ridden_bike_ride_count" do
@@ -100,33 +52,33 @@ describe Trip do
     end
 
     it ".subscription_groups" do
-      result = {"Subscriber" => 2, "Customer" => 1}
+      result = {"Customer"=>385, "Subscriber"=>615}
 
       expect(Trip.subscription_groups.count).to eq(result)
     end
 
     it ".date_with_most_rides" do
-      expect(Trip.date_with_most_rides).to eq(Date.strptime("2017-7-4", '%Y-%m-%e'))
+      expect(Trip.date_with_most_rides).to eq(Date.strptime("2013-8-29", '%Y-%m-%e'))
     end
 
     it ".date_with_most_rides_trip_count" do
-      expect(Trip.date_with_most_rides_trip_count).to eq(2)
+      expect(Trip.date_with_most_rides_trip_count).to eq(748)
     end
 
     it ".date_with_least_rides" do
-      expect(Trip.date_with_least_rides).to eq(Date.strptime("2017-1-19", '%Y-%m-%e'))
+      expect(Trip.date_with_least_rides).to eq(Date.strptime("2013-8-30", '%Y-%m-%e'))
     end
 
     it ".date_with_least_rides_trip_count" do
-      expect(Trip.date_with_least_rides_trip_count).to eq(1)
+      expect(Trip.date_with_least_rides_trip_count).to eq(252)
     end
 
     it '.max_occurrence(column)' do
-      expect(Trip.max_occurrence(:bike_id)).to eq(21)
+      expect(Trip.max_occurrence(:bike_id)).to eq(538)
     end
 
     it '.min_occurrence(column)' do
-      expect(Trip.min_occurrence(:bike_id)).to eq(33)
+      expect(Trip.min_occurrence(:bike_id)).to eq(11)
     end
   end
 

@@ -1,13 +1,8 @@
 describe "When a visitor visits edit station" do
-  before(:each) do
-    @station_1 = Station.create(name: "South SF", city: "SF", dock_count: 12, installation_date: "2017-01-01", latitude: 40.1023, longitude: -30.1235)
-    @station_2 = Station.create(name: "North SJ", city: "SJ", dock_count: 14, installation_date: "2017-01-10", latitude: 40.1023, longitude: -30.1235)
-  end
-
   it "displays an edit form with current values" do
-    visit '/stations/1/edit'
+    visit '/stations/12/edit'
 
-    expect(page).to have_current_path('/stations/1/edit')
+    expect(page).to have_current_path('/stations/12/edit')
 
     expect(page).to have_field("station[name]")
     expect(page).to have_selector('input[value="South SF"]')
@@ -21,9 +16,9 @@ describe "When a visitor visits edit station" do
   end
 
   it "sees banner" do
-    visit '/stations/1/edit'
+    visit '/stations/12/edit'
 
-    expect(page).to have_current_path('/stations/1/edit')
+    expect(page).to have_current_path('/stations/12/edit')
 
     expect(page).to have_content("SF Bike Share")
     expect(page).to have_link("Station Dashboard")
