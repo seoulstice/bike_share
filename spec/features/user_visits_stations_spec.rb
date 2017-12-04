@@ -32,7 +32,7 @@ describe "When a visitor visits stations" do
   it "clicks on a specific station link" do
     visit '/stations'
 
-    click_on("#{@station.name}")
+    click_link("#{@station.name}")
 
     expect(page).to have_current_path('/stations/1')
   end
@@ -48,7 +48,7 @@ describe "When a visitor visits stations" do
   it "clicks on the Home breadcrumb" do
     visit '/stations'
 
-    click_on("Home")
+    click_link("Home")
 
     expect(page).to have_current_path('/')
   end
