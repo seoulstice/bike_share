@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20171204194903) do
   enable_extension "plpgsql"
 
   create_table "conditions", force: :cascade do |t|
-    t.date "date"
+    t.date  "date"
     t.float "max_temperature_f"
     t.float "mean_temperature_f"
     t.float "min_temperature_f"
@@ -27,22 +27,22 @@ ActiveRecord::Schema.define(version: 20171204194903) do
   end
 
   create_table "stations", force: :cascade do |t|
-    t.string "name"
+    t.string  "name"
     t.integer "dock_count"
-    t.string "city"
-    t.date "installation_date"
-    t.float "latitude"
-    t.float "longitude"
+    t.string  "city"
+    t.date    "installation_date"
+    t.float   "latitude"
+    t.float   "longitude"
   end
 
   create_table "trips", force: :cascade do |t|
     t.integer "duration"
-    t.date "start_date"
-    t.string "start_station"
-    t.date "end_date"
-    t.string "end_station"
+    t.date    "start_date"
+    t.string  "start_station"
+    t.date    "end_date"
+    t.string  "end_station"
     t.integer "bike_id"
-    t.string "subscription_type"
+    t.string  "subscription_type"
     t.integer "zipcode"
     t.integer "start_station_id"
     t.integer "end_station_id"
