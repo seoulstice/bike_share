@@ -1,4 +1,4 @@
-body {
+  body {
     background: linear-gradient(lightgray, gray);
 }
 
@@ -169,4 +169,5 @@ ul.breadcrumb li a:hover {
 
 .paginate {
   display: inline;
+  font-size: 50px;
 }
