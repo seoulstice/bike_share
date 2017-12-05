@@ -57,7 +57,7 @@ class Condition < ActiveRecord::Base
   end
 
   def self.rides_on_days_in_precipitation_range_order_desc(lower, upper)
-    where("conditions.precipitation_inches > #{lower} AND conditions.precipitation_inches <= #{upper}")
+    where("conditions.precipitation_inches >= #{lower} AND conditions.precipitation_inches <= #{upper}")
     .joins(:trips)
     .group(:date)
     .order("count_all DESC")

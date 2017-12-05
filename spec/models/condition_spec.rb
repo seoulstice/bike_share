@@ -53,7 +53,7 @@ describe Condition do
       result = Condition.rides_on_days_in_precipitation_range_order_desc(0, 90)
 
 
-      expect(result).to eq([])
+      expect(result).to eq([748, 252])
     end
 
     it ".precipitation_ranges" do
