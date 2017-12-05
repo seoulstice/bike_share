@@ -40,7 +40,7 @@ describe Trip do
     end
 
     it ".least_ridden_bike" do
-      expect(Trip.least_ridden_bike).to eq(11)
+      expect(Trip.least_ridden_bike).to eq(56)
     end
 
     it ".most_ridden_bike_ride_count" do
@@ -78,7 +78,29 @@ describe Trip do
     end
 
     it '.min_occurrence(column)' do
-      expect(Trip.min_occurrence(:bike_id)).to eq(11)
+      expect(Trip.min_occurrence(:bike_id)).to eq(56)
+    end
+
+    it '.weather_on_date_most_rides' do
+      expect(Trip.weather_on_date_most_rides.date.to_s).to eq("2013-08-29")
+      expect(Trip.weather_on_date_most_rides.max_temperature_f).to eq(74.0)
+      expect(Trip.weather_on_date_most_rides.mean_temperature_f).to eq(68.0)
+      expect(Trip.weather_on_date_most_rides.min_temperature_f).to eq(61.0)
+      expect(Trip.weather_on_date_most_rides.mean_humidity).to eq(75.0)
+      expect(Trip.weather_on_date_most_rides.mean_visibility_miles).to eq(10.0)
+      expect(Trip.weather_on_date_most_rides.mean_wind_speed_mph).to eq(11.0)
+      expect(Trip.weather_on_date_most_rides.precipitation_inches).to eq(0.0)
+    end
+
+    it '.weather_on_date_least_rides' do
+      expect(Trip.weather_on_date_least_rides.date.to_s).to eq("2013-08-30")
+      expect(Trip.weather_on_date_least_rides.max_temperature_f).to eq(78.0)
+      expect(Trip.weather_on_date_least_rides.mean_temperature_f).to eq(69.0)
+      expect(Trip.weather_on_date_least_rides.min_temperature_f).to eq(60.0)
+      expect(Trip.weather_on_date_least_rides.mean_humidity).to eq(70.0)
+      expect(Trip.weather_on_date_least_rides.mean_visibility_miles).to eq(10.0)
+      expect(Trip.weather_on_date_least_rides.mean_wind_speed_mph).to eq(13.0)
+      expect(Trip.weather_on_date_least_rides.precipitation_inches).to eq(0.0)
     end
   end
 
