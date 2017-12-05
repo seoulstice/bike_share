@@ -203,10 +203,10 @@ On `/weather-dashboard`:
 Additional information on the `trip-dashboard`:
 
 * [ ] Weather on the day with the highest rides.
-  * [ ] method
-  * [ ] view
+  * [x] method
+  * [x] view
   * [ ] test
 * [ ] Weather on the day with the lowest rides.
-  * [ ] method
-  * [ ] view
+  * [x] method
+  * [x] view
   * [ ] test
