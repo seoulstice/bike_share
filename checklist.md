@@ -170,18 +170,14 @@ On an individual station show page the additional information should be present:
   * [x] route
   * [x] view
   * [ ] test
-* [ ] Attributes include: duration, start date, start station, end date, end station, bike ID, subscription type
-  * [ ] route
-  * [ ] view
-  * [ ] test
 * [ ] Conditions are paginated by groups of 30
-  * [ ] route
-  * [ ] view
+  * [x] route
+  * [x] view
   * [ ] test
 
 ### Iteration 8
 
-* [ ] Weathers load from CSV
+* [x] Weathers load from CSV
 
 ### Iteration 9
 

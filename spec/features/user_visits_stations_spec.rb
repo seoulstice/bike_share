@@ -16,17 +16,17 @@ describe "When a visitor visits stations" do
     expect(page).to have_current_path('/stations')
 
     expect(page).to have_content("All Stations")
-    expect(page).to have_content("South SF")
-    expect(page).to have_link("South SF")
+    expect(page).to have_content("SJSU 4th")
+    expect(page).to have_link("Castro Street and El Camino")
     expect(page).to have_link("New Station")
   end
 
   it "clicks on a specific station link" do
     visit '/stations'
 
-    click_link("#{@station.name}")
+    click_link("Mountain View Caltrain Station")
 
-    expect(page).to have_current_path('/stations/1')
+    expect(page).to have_current_path('/stations/28')
   end
 
   it "click on a new station link" do

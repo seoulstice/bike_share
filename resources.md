@@ -18,8 +18,17 @@ Counter-Culture gem:
   
 Create Primary Key that isn't id: 
  * https://stackoverflow.com/questions/6402189/specify-custom-primary-key-in-migration
+ 
+Reset primary key count on stations (see solution in seed):
+  * https://stackoverflow.com/questions/28723505/rails-reset-all-postgres-sequences
 
 Known bugs/errors:
 * NoMethodError at /stations/24 undefined method `first' for nil:NilClass
   * This is a known error the seems to pop up if there is a trip/station mismatch on the data. Since the fixture is small there are some stations without trips.
   
+
+
+SELECT conditions.*, count(date) AS trip_count FROM conditions
+JOIN trips ON conditions.date=trips.start_date
+WHERE '70' <= conditions.max_temperature_f AND conditions.max_temperature_f <= '80'
+GROUP BY conditions.id;

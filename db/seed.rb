@@ -6,14 +6,14 @@ require 'csv'
 class Seed
   def self.production
     Seed.stations
-    Seed.trip
     Seed.weather
+    Seed.trip
   end
 
   def self.test
     Seed.stations
-    Seed.trip_fixture
     Seed.weather
+    Seed.trip_fixture
   end
 
   def self.stations
@@ -27,6 +27,7 @@ class Seed
         longitude:         row[:long]
       )
     end
+    ActiveRecord::Base.connection.reset_pk_sequence!('stations')
   end
 
   def self.trip_fixture
@@ -40,7 +41,8 @@ class Seed
         end_station_id: row[:end_station_id],
         bike_id: row[:bike_id],
         subscription_type: row[:subscription_type],
-        zipcode: row[:zip_code]
+        zipcode: row[:zip_code],
+        condition_id: Condition.find_by(date: Date.strptime(row[:start_date], '%m/%e/%Y')).id
       )
     end
   end
@@ -56,8 +58,10 @@ class Seed
         end_station_id: row[:end_station_id],
         bike_id: row[:bike_id],
         subscription_type: row[:subscription_type],
-        zipcode: row[:zip_code]
+        zipcode: row[:zip_code],
+        condition_id: Condition.find_by(date: row[:start_date])
       )
+
     end
   end
 
