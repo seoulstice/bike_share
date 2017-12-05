@@ -1,4 +1,13 @@
 describe "When a user updates an existing condition" do
+  it "sees banner" do
+    visit '/conditions/8'
+
+    expect(page).to have_current_path('/conditions/8')
+
+    expect(page).to have_link("Trips Dashboard")
+    expect(page).to have_link("Weather Dashboard")
+  end
+
   it "the submit button redirects to condition show page" do
     visit '/conditions/84/edit'
 
@@ -37,5 +46,29 @@ describe "When a user updates an existing condition" do
     expect(page).to have_content(7)
     expect(page).to have_content(0.63)
     expect(page).to have_content("Edit")
+  end
+
+  it "clicks on the Home breadcrumb" do
+    visit '/weather-dashboard'
+
+    click_link("Home")
+
+    expect(page).to have_current_path('/')
+  end
+
+  it "clicks on the Conditions breadcrumb" do
+    visit '/weather-dashboard'
+
+    click_link("Conditions")
+
+    expect(page).to have_current_path('/conditions')
+  end
+
+  it "clicks on the individual condition id breadcrumb" do
+    visit '/conditions/2/edit'
+
+    click_link("2")
+
+    expect(page).to have_current_path('/conditions/2')
   end
 end

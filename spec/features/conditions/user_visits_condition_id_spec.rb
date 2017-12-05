@@ -1,4 +1,15 @@
 describe 'When a visitor visits individual condition page' do
+  it "sees banner" do
+    visit '/conditions/2'
+
+    expect(page).to have_current_path('/conditions/2')
+
+    expect(page).to have_content("SF Bike Share")
+    expect(page).to have_link("Station Dashboard")
+    expect(page).to have_link("Station Index")
+    expect(page).to have_link("Trips Index")
+  end
+
   it 'sees the correct condition show page with Edit and Delete links' do
     visit '/conditions/2'
 
@@ -17,14 +28,19 @@ describe 'When a visitor visits individual condition page' do
     expect(page).to have_selector('input[name="Delete"]')
   end
 
-  it "sees banner" do
-    visit '/conditions/2'
+  it "clicks on the Home breadcrumb" do
+    visit '/weather-dashboard'
 
-    expect(page).to have_current_path('/conditions/2')
+    click_link("Home")
 
-    expect(page).to have_content("SF Bike Share")
-    expect(page).to have_link("Station Dashboard")
-    expect(page).to have_link("Station Index")
-    expect(page).to have_link("Trips Index")
+    expect(page).to have_current_path('/')
+  end
+
+  it "clicks on the Conditions breadcrumb" do
+    visit '/weather-dashboard'
+
+    click_link("Conditions")
+
+    expect(page).to have_current_path('/conditions')
   end
 end

@@ -1,4 +1,14 @@
 describe "When a visitor submits a new condition" do
+  it "shows banner" do
+    visit '/conditions/2/edit'
+
+    expect(page).to have_current_path('/conditions/2/edit')
+
+    expect(page).to have_link("Station Index")
+    expect(page).to have_link("Trips Index")
+    expect(page).to have_link("Conditions Index")
+  end
+
   it "new condition is saved" do
     visit '/conditions/new'
 
@@ -11,7 +21,7 @@ describe "When a visitor submits a new condition" do
     fill_in('condition[mean_wind_speed_mph]',  with:  7)
     fill_in('condition[precipitation_inches]', with: 0.63)
 
-    find('input[name="New"]').click
+    find('input[name="Submit"]').click
 
     expect(page).to have_content("2013-11-20")
     expect(page).to have_content(59)
@@ -36,8 +46,24 @@ describe "When a visitor submits a new condition" do
     fill_in('condition[mean_wind_speed_mph]',  with:  7)
     fill_in('condition[precipitation_inches]', with: 0.63)
 
-    find('input[name="New"]').click
+    find('input[name="Submit"]').click
 
-    expect(page).to have_current_path("/conditions/84")
+    expect(page).to have_current_path("/conditions/#{@condition.last.id}")
+  end
+
+  it "clicks on the Home breadcrumb" do
+    visit '/weather-dashboard'
+
+    click_link("Home")
+
+    expect(page).to have_current_path('/')
+  end
+
+  it "clicks on the Conditions breadcrumb" do
+    visit '/weather-dashboard'
+
+    click_link("Conditions")
+
+    expect(page).to have_current_path('/conditions')
   end
 end
