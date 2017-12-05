@@ -5,7 +5,7 @@ Bundler.require(:default, :test)
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec'
 require 'capybara/dsl'
-require_relative '../db/seeds'
+require_relative '../db/seed'
 
 Capybara.app = BikeShareApp
 Capybara.save_path = "tmp/capybara"
