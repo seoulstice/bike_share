@@ -48,7 +48,7 @@ describe "When a visitor submits a new condition" do
 
     find('input[name="Submit"]').click
 
-    expect(page).to have_current_path("/conditions/#{@condition.last.id}")
+    expect(page).to have_current_path("/conditions/735")
   end
 
   it "clicks on the Home breadcrumb" do
