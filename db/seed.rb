@@ -63,7 +63,7 @@ class Seed
         condition_id: Condition.find_by(date: Date.strptime(row[:start_date], '%m/%e/%Y')).id
       )
     rescue
-      puts Trip.last.id
+      puts "Caught Seed Error"
       end
     end
   end
