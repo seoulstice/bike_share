@@ -60,4 +60,12 @@ class Trip <ActiveRecord::Base
   def self.count_by_subscription_type
     group(:subscription_type).order('count(*)').count
   end
+
+  def self.weather_on_date_most_rides
+    Condition.find_by(date: Trip.date_with_most_rides)
+  end
+
+  def self.weather_on_date_least_rides
+    Condition.find_by(date: Trip.date_with_least_rides)
+  end
 end
