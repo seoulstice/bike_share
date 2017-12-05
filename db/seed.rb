@@ -7,7 +7,7 @@ class Seed
   def self.production
     Seed.stations
     Seed.weather
-    Seed.trip
+    Seed.trips
   end
 
   def self.test
@@ -49,6 +49,7 @@ class Seed
 
   def self.trips
     CSV.foreach('db/csv/trip.csv', {headers: true, header_converters: :symbol, converters: :numeric}) do |row|
+      begin
       Trip.create!(duration: row[:duration],
         start_date: Date.strptime(row[:start_date], '%m/%e/%Y'),
         start_station: row[:start_station_name],
@@ -59,9 +60,11 @@ class Seed
         bike_id: row[:bike_id],
         subscription_type: row[:subscription_type],
         zipcode: row[:zip_code],
-        condition_id: Condition.find_by(date: row[:start_date])
+        condition_id: Condition.find_by(date: Date.strptime(row[:start_date], '%m/%e/%Y')).id
       )
-
+    rescue
+      puts "Caught Seed Error"
+      end
     end
   end
 
@@ -70,13 +73,13 @@ class Seed
       if row[:zip_code] == 94107
         Condition.create!(date: Date.strptime(row[:date], '%m/%e/%Y'),
                           max_temperature_f: row[:max_temperature_f],
-                          min_temperature_f: row[:min_temperature_f],
                           mean_temperature_f: row[:mean_temperature_f],
+                          min_temperature_f: row[:min_temperature_f],
                           mean_humidity: row[:mean_humidity],
                           mean_visibility_miles: row[:mean_visibility_miles],
                           mean_wind_speed_mph: row[:mean_wind_speed_mph],
                           precipitation_inches: row[:precipitation_inches]
-                        )
+                          )
       end
     end
   end

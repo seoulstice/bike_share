@@ -1,0 +1,40 @@
+<%= erb :banner %>
+
+<head>
+  <title>Weather Dashboard</title>
+</head>
+
+<ul class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/conditions">Conditions</a></li>
+  <li>Weather Dashboard</li>
+</ul>
+
+<body>
+  <h1 class="dashboard-header">Weather Dashboard</h1>
+
+  <section class="dash-flex">
+    <ul class="dashboard-results">
+      <table>
+        <tr>
+          <th>Lower Temperature</th>
+          <th>Upper Temperature</th>
+          <th>Days In Range</th>
+          <th>Average Rides</th>
+          <th>Maximum Rides</th>
+        </tr>
+        <% Condition.temperature_ranges.each do |lower, upper| %>
+          <tr>
+            <% rides_in_range = Condition.rides_on_days_in_temp_range_order_desc(lower, upper) %>
+            <td> <%= lower %> </td>
+            <td> <%= upper %> </td>
+            <td> <%= rides_in_range.count %> </td>
+            <td> <%= Condition.average(rides_in_range) %> </td>
+            <td> <%= Condition.max(rides_in_range) %> </td>
+            <td> <%= Condition.min(rides_in_range) %></td>
+          </tr>
+        <% end %>
+      </table>
+    </ul>
+  </section>
+</body>

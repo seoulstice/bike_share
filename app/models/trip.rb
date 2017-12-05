@@ -29,6 +29,12 @@ class Trip <ActiveRecord::Base
   scope :longest_ride, -> {maximum(:duration)}
   scope :shortest_ride, -> {minimum(:duration)}
   scope :average_duration, -> {average(:duration).to_f.round(2)}
+
+  def self.avergage_duration
+    average(:duration).to_f.round(2)
+  end
+
+
   scope :station_most_start_rides, -> {max_occurrence(:start_station)}
   scope :station_most_end_rides, -> {max_occurrence(:end_station)}
   scope :date_with_most_rides, -> {max_occurrence(:start_date)}
@@ -53,5 +59,13 @@ class Trip <ActiveRecord::Base
 
   def self.count_by_subscription_type
     group(:subscription_type).order('count(*)').count
+  end
+
+  def self.weather_on_date_most_rides
+    Condition.find_by(date: Trip.date_with_most_rides)
+  end
+
+  def self.weather_on_date_least_rides
+    Condition.find_by(date: Trip.date_with_least_rides)
   end
 end

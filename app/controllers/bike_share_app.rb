@@ -109,8 +109,12 @@ class BikeShareApp < Sinatra::Base
       @paginate = params[:page]
       @pagdown = params[:page].to_i - 1
     end
-    
+
     erb :'conditions/index'
+  end
+
+  get '/conditions/new' do
+    erb :'conditions/new'
   end
 
   get '/conditions/:id' do
@@ -119,20 +123,16 @@ class BikeShareApp < Sinatra::Base
     erb :'conditions/show'
   end
 
-  get '/conditions/new' do
-    erb :'conditions/new'
+  get '/conditions/:id/edit' do
+    @condition = Condition.find(params[:id])
+
+    erb :"conditions/edit"
   end
 
   post '/conditions' do
     condition = Condition.create(params[:condition])
 
     redirect "/conditions/#{condition.id}"
-  end
-
-  get '/conditions/:id/edit' do
-    @condition = Condition.find(params[:id])
-
-    erb :"conditions/edit"
   end
 
   put '/conditions/:id' do |id|
@@ -145,5 +145,11 @@ class BikeShareApp < Sinatra::Base
     Condition.destroy(params[:id])
 
     redirect '/conditions'
+  end
+
+  get '/weather-dashboard' do
+    @conditions = Condition.all
+
+    erb :"conditions/dashboard"
   end
 end
