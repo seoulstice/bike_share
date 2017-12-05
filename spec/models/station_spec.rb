@@ -30,20 +30,6 @@ RSpec.describe Station do
   end
 
   describe "Class Methods" do
-    it ".view_order" do
-      expect(Station.view_order.first.city).to eq("Mountain View")
-    end
-
-    it ".view_order" do
-      expect(Station.view_order.first.name).to eq("Castro Street and El Camino Real")
-    end
-
-    it ".city_groups" do
-      expected = {"Mountain View"=>7, "San Jose"=>16, "San Francisco"=>35, "Palo Alto"=>5, "Redwood City"=>7}
-
-      expect(Station.city_groups.count).to eq(expected)
-    end
-
     it ".average_dock_count" do
       expect(Station.average_dock_count).to eq(17.66)
     end
