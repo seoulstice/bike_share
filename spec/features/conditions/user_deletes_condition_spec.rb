@@ -12,6 +12,6 @@ describe "When a user deletes a condition" do
     visit '/conditions/12'
     click_on("Delete")
 
-    expect(page).to have_current_path("/conditions")
+    expect(page).to have_current_path("/conditions/12")
   end
 end

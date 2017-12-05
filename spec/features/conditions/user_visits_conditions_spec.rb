@@ -9,6 +9,8 @@ describe "When a visitor visits conditions" do
     expect(page).to have_link("Station Index")
     expect(page).to have_link("Trips Index")
     expect(page).to have_link("Trips Dashboard")
+    expect(page).to have_link("Conditions Index")
+    expect(page).to have_link("Weather Dashboard")
   end
 
   it "sees all conditions" do

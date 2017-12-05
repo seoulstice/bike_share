@@ -7,7 +7,7 @@ describe "when a visitor visits the Weather Dashboard" do
     expect(page).to have_content("Weather Dashboard")
     expect(page).to have_content("Lower Temperature")
     expect(page).to have_content("Upper Temperature")
-    expect(page).to have_content("Days in Range")
+    expect(page).to have_content("Days In Range")
     expect(page).to have_content("Average Rides")
     expect(page).to have_content("Maximum Rides")
   end
