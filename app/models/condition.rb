@@ -24,7 +24,7 @@ class Condition < ActiveRecord::Base
     build_range_array(max, min, interval)
   end
 
-  def self.rides_on_days_in_wind_speed_range_order_desc(upper, lower)
+  def self.rides_on_days_in_wind_speed_range_order_desc(lower, upper)
     where("conditions.mean_wind_speed_mph > #{lower} AND conditions.mean_wind_speed_mph <= #{upper}")
     .joins(:trips)
     .group(:date)
@@ -40,8 +40,24 @@ class Condition < ActiveRecord::Base
     build_range_array(max, min, interval)
   end
 
-  def self.rides_on_days_in_visibility_range_order_desc(upper, lower)
+  def self.rides_on_days_in_visibility_range_order_desc(lower, upper)
     where("conditions.mean_visibility_miles > #{lower} AND conditions.mean_visibility_miles <= #{upper}")
+    .joins(:trips)
+    .group(:date)
+    .order("count_all DESC")
+    .count
+    .values
+  end
+
+  def self.precipitation_ranges
+    max = maximum(:precipitation_inches)
+    min = minimum(:precipitation_inches)
+    interval = 0.5
+    build_range_array(max, min, interval)
+  end
+
+  def self.rides_on_days_in_precipitation_range_order_desc(lower, upper)
+    where("conditions.precipitation_inches >= #{lower} AND conditions.precipitation_inches <= #{upper}")
     .joins(:trips)
     .group(:date)
     .order("count_all DESC")
