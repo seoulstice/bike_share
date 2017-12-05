@@ -27,11 +27,11 @@ class Station < ActiveRecord::Base
   end
 
   def most_popular_end_station
-    Station.find(start_trip.group(:end_station_id).order('count(*) DESC').count.first.first)
+    Station.first.start_trip.select("trips.*, count(trips.id) AS trip_count").group(:start_station_id, :id).order('trip_count DESC').first.end_station
   end
 
   def most_popular_start_station
-    Station.find(end_trip.group(:start_station_id).order('count(*) DESC').count.first.first)
+    Station.first.end_trip.select("trips.*, count(trips.id) AS trip_count").group(:end_station_id, :id).order('trip_count DESC').first.start_station
   end
 
   def date_most_rides_started
