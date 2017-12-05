@@ -1,21 +1,34 @@
 <%= erb :banner %>
 
 <head>
-  <title>Condition Dashboard</title>
+  <title>Weather Dashboard</title>
 </head>
 
 <ul class="breadcrumb">
   <li><a href="/">Home</a></li>
   <li><a href="/conditions">Conditions</a></li>
-  <li>Condition Dashboard</li>
+  <li>Weather Dashboard</li>
 </ul>
 
 <body>
-  <h1 class="dashboard-header">Station Dashboard</h1>
+  <h1 class="dashboard-header">Weather Dashboard</h1>
 
   <section class="dash-flex">
     <ul class="dashboard-results">
-      
+      <table>
+        <tr>
+          <th>Lower Temperature</th>
+          <th>Upper Temperature</th>
+          <th>Average Rides</th>
+        </tr>
+        <% Condition.temperature_ranges.each do |lower, upper| %>
+          <tr>
+            <td> <%= lower %> </td>
+            <td> <%= upper %> </td>
+            <td> <%= Condition.days_in_temp_range(lower, upper) %> </td>
+          </tr>
+        <% end %>
+      </table>
     </ul>
   </section>
 </body>
