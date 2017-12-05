@@ -59,5 +59,9 @@ class Trip <ActiveRecord::Base
     Condition.find_by(date: Trip.date_with_most_rides)
   end
 
+  def self.weather_on_date_least_rides
+    Condition.find_by(date: Trip.ddate_with_least_rides)
+  end
+
 
 end
