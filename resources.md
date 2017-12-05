@@ -28,6 +28,8 @@ Active record, multiple where conditions:
 Embed ruby in javascript:
   * https://stackoverflow.com/questions/3597064/how-to-embed-ruby-in-javascript-rails-html-erb-file
   * https://stackoverflow.com/questions/22937676/how-do-i-call-a-javascript-function-from-an-html-erb
+  * https://stackoverflow.com/questions/28870567/rails-4-passing-variables-to-javascript
+  * https://www.quora.com/How-do-I-pass-a-Ruby-variable-to-JavaScript
 
 Known bugs/errors:
 * NoMethodError at /stations/24 undefined method `first' for nil:NilClass
