@@ -21,6 +21,9 @@ Create Primary Key that isn't id:
  
 Reset primary key count on stations (see solution in seed):
   * https://stackoverflow.com/questions/28723505/rails-reset-all-postgres-sequences
+  
+Active record, multiple where conditions:
+  * https://stackoverflow.com/questions/22267411/rails-where-multiple-values-one-not-nil
 
 Known bugs/errors:
 * NoMethodError at /stations/24 undefined method `first' for nil:NilClass
