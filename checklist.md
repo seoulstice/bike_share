@@ -155,8 +155,8 @@ On an individual station show page the additional information should be present:
   * [x] view
   * [ ] test
 * [ ] See one condition
-  * [ ] route
-  * [ ] view
+  * [x] route
+  * [x] view
   * [ ] test
 * [ ] Create a new condition
   * [x] route
@@ -202,11 +202,11 @@ On `/weather-dashboard`:
 
 Additional information on the `trip-dashboard`:
 
-* [ ] Weather on the day with the highest rides.
+* [x] Weather on the day with the highest rides.
   * [x] method
   * [x] view
-  * [ ] test
-* [ ] Weather on the day with the lowest rides.
+  * [x] test
+* [x] Weather on the day with the lowest rides.
   * [x] method
   * [x] view
-  * [ ] test
+  * [x] test
