@@ -24,7 +24,6 @@
       <li>Least Popular Trip Date: <%= @trips.date_with_least_rides %> - <%= @trips.date_with_least_rides_trip_count %> trips</li>
       <li>Most Ridden Bike ID: #<%= @trips.most_ridden_bike %> - Ride Count: <%= @trips.most_ridden_bike_ride_count %></li>
       <li>Least Ridden Bike ID: #<%= @trips.least_ridden_bike %> - Ride Count:<%= @trips.least_ridden_bike_ride_count %></li>
-
       <table>
         <tr>
           <th>Year</th> <th>Month</th> <th>Rides</th>
@@ -48,17 +47,38 @@
         </tr>
         <% end %>
       </table>
-
-      <li>Rider Analysis:<br/>
-      <ul>
-        <% @trips.count_by_subscription_type.each do |key, value| %>
-        <li>Rider Type: <%= key %></li>
-        <li># of <%= key %> Accounts: <%= value %></li>
-        <li>% of Total Accounts: <%= (100.0 * value/Trip.count) %>%</li><br/>
+      <table>
+        <tr>
+          <th>Rider Type</th> <th># of Accounts</th> <th> % </th>
+        </tr>
+        <% @trips.count_by_subscription_type.each do |key, value|%>
+        <tr>
+          <td><%= key %></td>
+          <td><%= value%></td>
+          <td><%= (100.0 * value/Trip.count) %></td>
+        </tr>
         <% end %>
-      </ul>
-      </li>
-
+      </table>
+    </ul>
+    <ul>
+      <h3 class="dashboard-header">Weather on most Popular Trip Date (<%= @trips.weather_on_date_most_rides.date %>)</h3>
+      <li>Max Temperature: <%=  @trips.weather_on_date_most_rides.max_temperature_f %> degrees</li>
+      <li>Mean Temperature: <%= @trips.weather_on_date_most_rides.mean_temperature_f %> degrees</li>
+      <li>Min Temperature: <%= @trips.weather_on_date_most_rides.min_temperature_f %> degrees</li>
+      <li>Mean Humidity: <%= @trips.weather_on_date_most_rides.mean_humidity %></li>
+      <li>Mean Visibility: <%= @trips.weather_on_date_most_rides.mean_visibility_miles %> miles</li>
+      <li>Mean Wind Speed: <%= @trips.weather_on_date_most_rides.mean_wind_speed_mph %> mph</li>
+      <li>Precipitation: <%= @trips.weather_on_date_most_rides.precipitation_inches %> inches</li>
+    </ul>
+    <ul>
+      <h3 class="dashboard-header">Weather on least Popular Trip Date (<%= @trips.weather_on_date_least_rides.date %>)</h3>
+      <li>Max Temperature: <%=  @trips.weather_on_date_least_rides.max_temperature_f %> degrees</li>
+      <li>Mean Temperature: <%= @trips.weather_on_date_least_rides.mean_temperature_f %> degrees</li>
+      <li>Min Temperature: <%= @trips.weather_on_date_least_rides.min_temperature_f %> degrees</li>
+      <li>Mean Humidity: <%= @trips.weather_on_date_least_rides.mean_humidity %></li>
+      <li>Mean Visibility: <%= @trips.weather_on_date_least_rides.mean_visibility_miles %> miles</li>
+      <li>Mean Wind Speed: <%= @trips.weather_on_date_least_rides.mean_wind_speed_mph %> mph</li>
+      <li>Precipitation: <%= @trips.weather_on_date_least_rides.precipitation_inches %> inches</li>
     </ul>
   </section>
 </body>
