@@ -12,8 +12,8 @@ class Seed
 
   def self.test
     Seed.stations
-    Seed.trip_fixture
     Seed.weather
+    Seed.trip_fixture
   end
 
   def self.stations
