@@ -1,5 +1,6 @@
 class Trip <ActiveRecord::Base
-  belongs_to :station
+  belongs_to :start_station, class_name: "Station"
+  belongs_to :end_station, class_name: "Station"
   belongs_to :condition
 
   validates_presence_of :duration,
@@ -33,7 +34,6 @@ class Trip <ActiveRecord::Base
   def self.avergage_duration
     average(:duration).to_f.round(2)
   end
-
 
   scope :station_most_start_rides, -> {max_occurrence(:start_station)}
   scope :station_most_end_rides, -> {max_occurrence(:end_station)}
