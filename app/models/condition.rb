@@ -1,4 +1,9 @@
 class Condition < ActiveRecord::Base
-  has_many :trips, primary_key: :date, foreign_key: :start_date
+  has_many :trips
+
+  def self.find_condition_id(date)
+
+  end
+
 
 end

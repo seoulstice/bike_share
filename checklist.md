@@ -151,37 +151,33 @@ On an individual station show page the additional information should be present:
 ### Iteration 7
 
 * [ ] See all conditions
-  * [ ] route
-  * [ ] view
+  * [x] route
+  * [x] view
   * [ ] test
 * [ ] See one condition
   * [ ] route
   * [ ] view
   * [ ] test
 * [ ] Create a new condition
-  * [ ] route
-  * [ ] view
+  * [x] route
+  * [x] view
   * [ ] test
 * [ ] Update a condition
-  * [ ] route
-  * [ ] view
+  * [x] route
+  * [x] view
   * [ ] test
 * [ ] Delete a station (from both index or show)
-  * [ ] route
-  * [ ] view
-  * [ ] test
-* [ ] Attributes include: duration, start date, start station, end date, end station, bike ID, subscription type
-  * [ ] route
-  * [ ] view
+  * [x] route
+  * [x] view
   * [ ] test
 * [ ] Conditions are paginated by groups of 30
-  * [ ] route
-  * [ ] view
+  * [x] route
+  * [x] view
   * [ ] test
 
 ### Iteration 8
 
-* [ ] Weathers load from CSV
+* [x] Weathers load from CSV
 
 ### Iteration 9
 

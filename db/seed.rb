@@ -6,12 +6,13 @@ require 'csv'
 class Seed
   def self.production
     Seed.stations
-    Seed.trips
     Seed.weather
+    Seed.trip
   end
 
   def self.test
     Seed.stations
+    Seed.weather
     Seed.trip_fixture
     Seed.weather
   end
@@ -27,6 +28,7 @@ class Seed
         longitude:         row[:long]
       )
     end
+    ActiveRecord::Base.connection.reset_pk_sequence!('stations')
   end
 
   def self.trip_fixture
@@ -40,7 +42,8 @@ class Seed
         end_station_id: row[:end_station_id],
         bike_id: row[:bike_id],
         subscription_type: row[:subscription_type],
-        zipcode: row[:zip_code]
+        zipcode: row[:zip_code],
+        condition_id: Condition.find_by(date: Date.strptime(row[:start_date], '%m/%e/%Y')).id
       )
     end
   end
@@ -56,8 +59,24 @@ class Seed
         end_station_id: row[:end_station_id],
         bike_id: row[:bike_id],
         subscription_type: row[:subscription_type],
-        zipcode: row[:zip_code]
+        zipcode: row[:zip_code],
+        condition_id: Condition.find_by(date: row[:start_date])
       )
+
+    end
+  end
+
+  def self.weather
+    CSV.foreach('db/csv/weather.csv', {headers: true, header_converters: :symbol, converters: :numeric}) do |row|
+      Condition.create!(date: Date.strptime(row[:date], '%m/%e/%Y'),
+                        max_temperature_f: row[:max_temperature_f],
+                        min_temperature_f: row[:min_temperature_f],
+                        mean_temperature_f: row[:mean_temperature_f],
+                        mean_humidity: row[:mean_humidity],
+                        mean_visibility_miles: row[:mean_visibility_miles],
+                        mean_wind_speed_mph: row[:mean_wind_speed_mph],
+                        precipitation_inches: row[:precipitation_inches]
+                      )
     end
   end
 
