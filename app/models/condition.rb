@@ -4,7 +4,7 @@ class Condition < ActiveRecord::Base
   def self.temperature_ranges
     max = Condition.maximum(:max_temperature_f)
     min = Condition.minimum(:max_temperature_f)
-    number_of_groups = ((max-min) / 10).ceil
+    number_of_groups = ((max-min) / 10.0).ceil
     (0..number_of_groups+1).map do |number|
       [(min + (number-1)*10), (min + number * 10)]
     end
