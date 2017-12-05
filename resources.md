@@ -24,6 +24,10 @@ Reset primary key count on stations (see solution in seed):
   
 Active record, multiple where conditions:
   * https://stackoverflow.com/questions/22267411/rails-where-multiple-values-one-not-nil
+  
+Embed ruby in javascript:
+  * https://stackoverflow.com/questions/3597064/how-to-embed-ruby-in-javascript-rails-html-erb-file
+  * https://stackoverflow.com/questions/22937676/how-do-i-call-a-javascript-function-from-an-html-erb
 
 Known bugs/errors:
 * NoMethodError at /stations/24 undefined method `first' for nil:NilClass
