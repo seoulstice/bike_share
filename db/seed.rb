@@ -1,6 +1,7 @@
 require './app/models/station'
 require './app/models/trip'
 require './app/models/condition'
+require 'database_cleaner'
 require 'csv'
 
 class Seed
@@ -11,6 +12,7 @@ class Seed
   end
 
   def self.test
+    DatabaseCleaner.clean
     Seed.stations
     Seed.weather
     Seed.trip_fixture
@@ -34,10 +36,10 @@ class Seed
     CSV.foreach('db/csv/trip_fixture.csv', {headers: true, header_converters: :symbol, converters: :numeric}) do |row|
       Trip.create!(duration: row[:duration],
         start_date: Date.strptime(row[:start_date], '%m/%e/%Y'),
-        start_station: row[:start_station_name],
+        start_station_name: row[:start_station_name],
         start_station_id: row[:start_station_id],
         end_date: Date.strptime(row[:end_date], '%m/%e/%Y'),
-        end_station: row[:end_station_name],
+        end_station_name: row[:end_station_name],
         end_station_id: row[:end_station_id],
         bike_id: row[:bike_id],
         subscription_type: row[:subscription_type],
@@ -52,10 +54,10 @@ class Seed
       begin
       Trip.create!(duration: row[:duration],
         start_date: Date.strptime(row[:start_date], '%m/%e/%Y'),
-        start_station: row[:start_station_name],
+        start_station_name: row[:start_station_name],
         start_station_id: row[:start_station_id],
         end_date: Date.strptime(row[:end_date], '%m/%e/%Y'),
-        end_station: row[:end_station_name],
+        end_station_name: row[:end_station_name],
         end_station_id: row[:end_station_id],
         bike_id: row[:bike_id],
         subscription_type: row[:subscription_type],
@@ -78,7 +80,7 @@ class Seed
                           mean_humidity: row[:mean_humidity],
                           mean_visibility_miles: row[:mean_visibility_miles],
                           mean_wind_speed_mph: row[:mean_wind_speed_mph],
-                          precipitation_inches: row[:precipitation_inches]
+                          precipitation_inches: row[:precipitation_inches].to_f
                           )
       end
     end

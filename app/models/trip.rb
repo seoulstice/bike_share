@@ -1,6 +1,6 @@
-class Trip < ActiveRecord::Base
-  belongs_to :start_station, class_name: "Station", foreign_key: :start_station_id
-  belongs_to :end_station, class_name: "Station", foreign_key: :end_station_id
+class Trip <ActiveRecord::Base
+  belongs_to :start_station, class_name: "Station"
+  belongs_to :end_station, class_name: "Station"
   belongs_to :condition
 
   validates_presence_of :duration,
@@ -27,14 +27,23 @@ class Trip < ActiveRecord::Base
     Station.find(end_station_id).longitude
   end
 
-  scope :longest_ride, -> {maximum(:duration)}
-  scope :shortest_ride, -> {minimum(:duration)}
-  scope :average_duration, -> {average(:duration).to_f.round(2)}
+  def self.longest_ride
+    maximum(:duration)
+  end
+
+  def self.shortest_ride
+    minimum(:duration)
+  end
+
+  def self.average_duration
+    average(:duration).to_f.round(2)
+  end
 
   def self.avergage_duration
     average(:duration).to_f.round(2)
   end
 
+<<<<<<< HEAD
   scope :station_most_start_rides, -> {max_occurrence(:start_station)}
   scope :station_most_end_rides, -> {max_occurrence(:end_station)}
   scope :date_with_most_rides, -> {max_occurrence(:start_date)}
@@ -48,6 +57,59 @@ class Trip < ActiveRecord::Base
   scope :rides_by_year, -> {group("DATE_TRUNC('year', start_date)").count}
   scope :rides_by_month, -> {group("DATE_TRUNC('month', start_date)").count}
   scope :subscription_groups, -> {group(:subscription_type)}
+=======
+  def self.station_most_start_rides
+    max_occurrence(:start_station)
+  end
+
+  def self.station_most_end_rides
+    max_occurrence(:end_station)
+  end
+
+  def self.date_with_most_rides
+    max_occurrence(:start_date)
+  end
+
+  def self.date_with_most_rides_trip_count
+    group(:start_date).count.values.max
+  end
+
+  def self.date_with_least_rides
+    min_occurrence(:start_date)
+  end
+
+  def self.date_with_least_rides_trip_count
+    group(:start_date).count.values.min
+  end
+
+  def self.most_ridden_bike
+    max_occurrence(:bike_id)
+  end
+
+  def self.most_ridden_bike_ride_count
+    group(:bike_id).count.values.max
+  end
+
+  def self.least_ridden_bike
+    min_occurrence(:bike_id)
+  end
+
+  def self.least_ridden_bike_ride_count
+    group(:bike_id).count.values.min
+  end
+
+  def self.rides_by_year
+    group("DATE_TRUNC('year', start_date)").count
+  end
+
+  def self.rides_by_month
+    group("DATE_TRUNC('month', start_date)").count
+  end
+
+  def self.subscription_groups
+    group(:subscription_type)
+  end
+>>>>>>> master
 
   def self.max_occurrence(column)
     group(column).order('count(*) DESC').count.first.first
