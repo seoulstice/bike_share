@@ -31,6 +31,9 @@ Embed ruby in javascript:
   * https://stackoverflow.com/questions/28870567/rails-4-passing-variables-to-javascript
   * https://www.quora.com/How-do-I-pass-a-Ruby-variable-to-JavaScript
 
+Basic SQL Query Structure:
+  * http://www.mycms.ca/index.cfm/page/sqlqueries.html
+
 Known bugs/errors:
 * NoMethodError at /stations/24 undefined method `first' for nil:NilClass
   * This is a known error the seems to pop up if there is a trip/station mismatch on the data. Since the fixture is small there are some stations without trips.
