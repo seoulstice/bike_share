@@ -17,7 +17,7 @@ describe Condition do
     end
 
     it ".rides_on_days_in_wind_speed_range_order_desc" do
-      result = Condition.rides_on_days_in_wind_speed_range_order_desc(90, 0)
+      result = Condition.rides_on_days_in_wind_speed_range_order_desc(0, 90)
 
       expected = [748, 252]
 
@@ -33,12 +33,13 @@ describe Condition do
     end
 
     it ".rides_on_days_in_visibility_range_order_desc" do
-      result = Condition.rides_on_days_in_visibility_range_order_desc(90, 0)
+      result = Condition.rides_on_days_in_visibility_range_order_desc(0, 90)
 
       expected = [748, 252]
 
       expect(result).to eq(expected)
     end
+
 
     it ".visibilty_ranges" do
       result = Condition.visibility_ranges
@@ -47,6 +48,22 @@ describe Condition do
 
       expect(result).to eq(expected)
     end
+
+    it ".rides_on_days_in_precipitation_range_order_desc" do
+      result = Condition.rides_on_days_in_precipitation_range_order_desc(0, 90)
+
+
+      expect(result).to eq([])
+    end
+
+    it ".precipitation_ranges" do
+      result = Condition.precipitation_ranges
+
+      expected =  [[0.0, 0.5], [0.5, 1.0], [1.0, 1.5], [1.5, 2.0], [2.0, 2.5], [2.5, 3.0], [3.0, 3.5], [3.5, 4.0]]
+
+      expect(result).to eq(expected)
+    end
+
 
     it ".number_of_groups" do
       result = Condition.number_of_groups(10,0,3.3)
