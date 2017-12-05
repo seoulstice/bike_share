@@ -1,8 +1,7 @@
 describe "When a user deletes a station" do
   it "the station is deleted" do
     visit '/stations/5'
-    # find('input[name="Delete"]').click
-    # we should look at replacing buttons with a click_on
+
     click_on("Delete")
 
     expect(page).to_not have_content("Adobe on Almaden")
