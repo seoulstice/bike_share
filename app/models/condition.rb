@@ -49,6 +49,22 @@ class Condition < ActiveRecord::Base
     .values
   end
 
+  def self.precipitation_ranges
+    max = maximum(:precipitation_inches)
+    min = minimum(:precipitation_inches)
+    interval = 0.5
+    build_range_array(max, min, interval)
+  end
+
+  def self.rides_on_days_in_precipitation_range_order_desc(upper, lower)
+    where("conditions.precipitation_inches > #{lower} AND conditions.precipitation_inches <= #{upper}")
+    .joins(:trips)
+    .group(:date)
+    .order("count_all DESC")
+    .count
+    .values
+  end
+
   def self.average(trips_in_range)
     return 0 if trips_in_range.empty?
     trips_in_range.sum / trips_in_range.count
