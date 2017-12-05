@@ -150,14 +150,14 @@ On an individual station show page the additional information should be present:
 
 ### Iteration 7
 
-* [ ] See all conditions
+* [x] See all conditions
   * [x] route
   * [x] view
-  * [ ] test
-* [ ] See one condition
+  * [x] test
+* [x] See one condition
   * [x] route
   * [x] view
-  * [ ] test
+  * [x] test
 * [ ] Create a new condition
   * [x] route
   * [x] view
