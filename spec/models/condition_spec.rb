@@ -1,17 +1,65 @@
 describe Condition do
   describe "Class Methods" do
-    it ".temperature_ranges" do
-      result = Condition.temperature_ranges
-
-      expected = [[37.0, 47.0], [47.0, 57.0], [57.0, 67.0], [67.0, 77.0], [77.0, 87.0], [87.0, 97.0], [97.0, 107.0]]
-
-      expect(result).to eq(expected)
-    end
-
     it ".rides_on_days_in_temp_range_order_desc" do
       result = Condition.rides_on_days_in_temp_range_order_desc(60, 90)
 
       expected = [748, 252]
+
+      expect(result).to eq(expected)
+    end
+
+    it ".temperature_ranges" do
+      result = Condition.temperature_ranges
+
+      expected = [[47.0, 57.0], [57.0, 67.0], [67.0, 77.0], [77.0, 87.0], [87.0, 97.0], [97.0, 107.0]]
+
+      expect(result).to eq(expected)
+    end
+
+    it ".rides_on_days_in_wind_speed_range_order_desc" do
+      result = Condition.rides_on_days_in_wind_speed_range_order_desc(90, 0)
+
+      expected = [748, 252]
+
+      expect(result).to eq(expected)
+    end
+
+    it ".wind_speed_ranges" do
+      result = Condition.wind_speed_ranges
+
+      expected = [[0.0, 4.0], [4.0, 8.0], [8.0, 12.0], [12.0, 16.0], [16.0, 20.0], [20.0, 24.0], [24.0, 28.0]]
+
+      expect(result).to eq(expected)
+    end
+
+    it ".rides_on_days_in_visibility_range_order_desc" do
+      result = Condition.rides_on_days_in_visibility_range_order_desc(90, 0)
+
+      expected = [748, 252]
+
+      expect(result).to eq(expected)
+    end
+
+    it ".visibilty_ranges" do
+      result = Condition.visibility_ranges
+
+      expected = [[4.0, 8.0], [8.0, 12.0], [12.0, 16.0]]
+
+      expect(result).to eq(expected)
+    end
+
+    it ".number_of_groups" do
+      result = Condition.number_of_groups(10,0,3.3)
+
+      expected = 4
+
+      expect(result).to eq(expected)
+    end
+
+    it ".build_range_array" do
+      result = Condition.build_range_array(10,0,3.3)
+
+      expected = [[0.0,3.3], [3.3, 6.6], [6.6, 9.9], [9.9, 13.2], [13.2, 16.5]]
 
       expect(result).to eq(expected)
     end
