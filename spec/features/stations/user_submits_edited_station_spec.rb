@@ -1,5 +1,7 @@
-describe "When a user updates an existing station" do  it "the submit button redirects to station show page" do
+describe "When a user updates an existing station" do
+  it "the submit button redirects to station show page" do
     visit '/stations/2/edit'
+
     fill_in('station[name]', with: "North SF")
     fill_in('station[city]', with: "SF")
     fill_in('station[dock_count]', with: 2)
@@ -11,6 +13,7 @@ describe "When a user updates an existing station" do  it "the submit button red
 
   it "user's changes are saved" do
     visit '/stations/2/edit'
+
     fill_in('station[name]', with: "North SF")
     fill_in('station[city]', with: "SF")
     fill_in('station[dock_count]', with: 2)
