@@ -7,13 +7,13 @@ class Seed
   def self.production
     Seed.stations
     Seed.weather
-    Seed.trip
+    Seed.trips
   end
 
   def self.test
     Seed.stations
-    Seed.trip_fixture
     Seed.weather
+    Seed.trip_fixture
   end
 
   def self.stations
@@ -49,6 +49,7 @@ class Seed
 
   def self.trips
     CSV.foreach('db/csv/trip.csv', {headers: true, header_converters: :symbol, converters: :numeric}) do |row|
+      begin
       Trip.create!(duration: row[:duration],
         start_date: Date.strptime(row[:start_date], '%m/%e/%Y'),
         start_station: row[:start_station_name],
@@ -61,7 +62,9 @@ class Seed
         zipcode: row[:zip_code],
         condition_id: Condition.find_by(date: Date.strptime(row[:start_date], '%m/%e/%Y')).id
       )
-
+    rescue
+      puts Trip.last.id
+      end
     end
   end
 
