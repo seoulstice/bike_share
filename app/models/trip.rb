@@ -29,6 +29,12 @@ class Trip <ActiveRecord::Base
   scope :longest_ride, -> {maximum(:duration)}
   scope :shortest_ride, -> {minimum(:duration)}
   scope :average_duration, -> {average(:duration).to_f.round(2)}
+
+  def self.avergage_duration
+    average(:duration).to_f.round(2)
+  end
+
+
   scope :station_most_start_rides, -> {max_occurrence(:start_station)}
   scope :station_most_end_rides, -> {max_occurrence(:end_station)}
   scope :date_with_most_rides, -> {max_occurrence(:start_date)}
