@@ -7,7 +7,7 @@ class Seed
   def self.production
     Seed.stations
     Seed.weather
-    Seed.trip
+    Seed.trips
   end
 
   def self.test
