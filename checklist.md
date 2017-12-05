@@ -186,19 +186,19 @@ On `/weather-dashboard`:
 * [ ] Breakout of average number of rides, highest number of rides, and lowest number of rides on days with a high temperature in 10 degree chunks (e.g. average number of rides on days with high temps between fifty and sixty degrees)
   * [x] method
   * [x] view
-  * [ ] test
+  * [x] test
 * [ ] Breakout of average number of rides, highest number of rides, and lowest number of rides on days with precipitation in half-inch increments.
-  * [ ] method
+  * [x] method
   * [ ] view
   * [ ] test
 * [ ] Breakout of average number of rides, highest number of rides, and lowest number of rides on days with mean wind speeds in four mile increments.
-  * [ ] method
+  * [x] method
   * [ ] view
-  * [ ] test
+  * [x] test
 * [ ] Breakout of average number of rides, highest number of rides, and lowest number of rides on days with mean visibility in miles in four mile increments.
-  * [ ] method
+  * [x] method
   * [ ] view
-  * [ ] test
+  * [x] test
 
 Additional information on the `trip-dashboard`:
 
