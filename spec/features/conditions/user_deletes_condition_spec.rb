@@ -1,4 +1,12 @@
 describe "When a user deletes a condition" do
+  it "sees banner" do
+    visit '/conditions/8'
+
+    expect(page).to have_current_path('/conditions/8')
+
+    expect(page).to have_link("Station Index")
+  end
+  
   it "the condition is deleted" do
     visit '/conditions/8'
     click_on("Delete")
