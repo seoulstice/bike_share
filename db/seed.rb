@@ -12,7 +12,6 @@ class Seed
 
   def self.test
     Seed.stations
-    Seed.weather
     Seed.trip_fixture
     Seed.weather
   end
@@ -60,7 +59,7 @@ class Seed
         bike_id: row[:bike_id],
         subscription_type: row[:subscription_type],
         zipcode: row[:zip_code],
-        condition_id: Condition.find_by(date: row[:start_date])
+        condition_id: Condition.find_by(date: row[:start_date]).id
       )
 
     end
