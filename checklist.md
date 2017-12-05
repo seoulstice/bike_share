@@ -158,18 +158,18 @@ On an individual station show page the additional information should be present:
   * [x] route
   * [x] view
   * [x] test
-* [ ] Create a new condition
+* [x] Create a new condition - visit new, click submit
   * [x] route
   * [x] view
-  * [ ] test
-* [ ] Update a condition
+  * [x] test
+* [x] Update a condition - visit edit, click submit
   * [x] route
   * [x] view
-  * [ ] test
-* [ ] Delete a station (from both index or show)
+  * [x] test
+* [x] Delete a condition (from both index or show)
   * [x] route
   * [x] view
-  * [ ] test
+  * [x] test
 * [ ] Conditions are paginated by groups of 30
   * [x] route
   * [x] view
@@ -184,8 +184,8 @@ On an individual station show page the additional information should be present:
 On `/weather-dashboard`:
 
 * [ ] Breakout of average number of rides, highest number of rides, and lowest number of rides on days with a high temperature in 10 degree chunks (e.g. average number of rides on days with high temps between fifty and sixty degrees)
-  * [ ] method
-  * [ ] view
+  * [x] method
+  * [x] view
   * [ ] test
 * [ ] Breakout of average number of rides, highest number of rides, and lowest number of rides on days with precipitation in half-inch increments.
   * [ ] method
