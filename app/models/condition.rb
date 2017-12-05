@@ -11,12 +11,12 @@ class Condition < ActiveRecord::Base
   end
 
   def self.rides_on_days_in_temp_range_order_desc(lower, upper)
-    Condition.where("conditions.max_temperature_f > #{lower} AND conditions.max_temperature_f <= #{upper}")
-             .joins(:trips)
-             .group(:date)
-             .order("count_all DESC")
-             .count
-             .values
+    where("conditions.max_temperature_f > #{lower} AND conditions.max_temperature_f <= #{upper}")
+    .joins(:trips)
+    .group(:date)
+    .order("count_all DESC")
+    .count
+    .values
   end
 
   def self.average(trips_in_range)
