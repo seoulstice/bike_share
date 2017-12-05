@@ -68,20 +68,6 @@ class Seed
 
   def self.weather
     CSV.foreach('db/csv/weather.csv', {headers: true, header_converters: :symbol, converters: :numeric}) do |row|
-      Condition.create!(date: Date.strptime(row[:date], '%m/%e/%Y'),
-                        max_temperature_f: row[:max_temperature_f],
-                        min_temperature_f: row[:min_temperature_f],
-                        mean_temperature_f: row[:mean_temperature_f],
-                        mean_humidity: row[:mean_humidity],
-                        mean_visibility_miles: row[:mean_visibility_miles],
-                        mean_wind_speed_mph: row[:mean_wind_speed_mph],
-                        precipitation_inches: row[:precipitation_inches]
-                      )
-    end
-  end
-
-  def self.weather
-    CSV.foreach('db/csv/weather.csv', {headers: true, header_converters: :symbol, converters: :numeric}) do |row|
       if row[:zip_code] == 94107
         Condition.create!(date: Date.strptime(row[:date], '%m/%e/%Y'),
                           max_temperature_f: row[:max_temperature_f],
