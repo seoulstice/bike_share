@@ -7,6 +7,7 @@ header {
   flex-direction: row;
   justify-content: space-around;
   background-color: black;
+  color: rgba(54, 209, 180, 0.5);
   padding: 20px 0 20px 0;
 }
 
@@ -187,8 +188,6 @@ img {
 .dash-data {
   padding: 0px 0px 0px 0px;
 }
-
-
 
 .weather-banner {
   display: flex;

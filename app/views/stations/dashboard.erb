@@ -28,12 +28,12 @@
     </div>
     <div class="dash-city-breakdown">
     <div class="">
-      <h2 class="dashboard-header"> Stations by City</h2>
+      Number of Stations by City
       <%= pie_chart @stations.group(:city).count, colors: ["#36d1b4", "#F7C59F", "#145187", "#FF6B35", "#EFEFD0"], width: "400px", height: "300px", legend: false, library: {backgroundColor: "transparent", fontStyle: "bold", fontSize: "30px"} %>
     </div>
     <div class="">
-      <h2 class="dashboard-header"> Top 5 Station Rides</h2>
-      <%= bar_chart @top_5_station_pie, ytitle: "Number of Rides", colors: ["#145187"], xtitle: "Month of Year", width: "400px", height: "200px",  library: {backgroundColor: "transparent", fontStyle: "bold", fontSize: "24px"} %>
+      Top 5 Stations with Most Rides
+      <%= bar_chart @top_5_station_pie, ytitle: "Station", colors: ["#145187"], xtitle: "Number of Rides", width: "400px", height: "180px",  library: {backgroundColor: "transparent", fontStyle: "bold", fontSize: "24px"} %>
     </div>
     </div>
     <div id="map">
