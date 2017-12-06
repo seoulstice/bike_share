@@ -23,12 +23,15 @@ describe "when a visitor visits the Station Dashboard" do
     expect(page).to have_link("Station Dashboard")
     expect(page).to have_link("Station Index")
     expect(page).to have_link("Trips Index")
+    expect(page).to have_link("Trips Dashboard")
+    expect(page).to have_link("Conditions Index")
+    expect(page).to have_link("Weather Dashboard")
   end
 
   it "clicks on Station Index link" do
     visit '/station-dashboard'
 
-    click_on("Station Index")
+    click_link("Station Index")
 
     expect(page).to have_current_path('/stations')
   end
@@ -36,7 +39,7 @@ describe "when a visitor visits the Station Dashboard" do
   it "clicks on Station Dashboard link" do
     visit '/station-dashboard'
 
-    click_on("Station Dashboard")
+    click_link("Station Dashboard")
 
     expect(page).to have_current_path('/station-dashboard')
   end
@@ -44,7 +47,7 @@ describe "when a visitor visits the Station Dashboard" do
   it "clicks on the Home breadcrumb" do
     visit '/station-dashboard'
 
-    click_on("Home")
+    click_link("Home")
 
     expect(page).to have_current_path('/')
   end
@@ -52,7 +55,7 @@ describe "when a visitor visits the Station Dashboard" do
   it "clicks on the Stations breadcrumb" do
     visit '/station-dashboard'
 
-    click_on("Stations")
+    click_link("Stations")
 
     expect(page).to have_current_path('/stations')
   end

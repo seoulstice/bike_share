@@ -27,7 +27,7 @@ describe 'When a visitor visits new trip page' do
   it "clicks on the Home breadcrumb" do
     visit '/trips/new'
 
-    click_on("Home")
+    click_link("Home")
 
     expect(page).to have_current_path('/')
   end
@@ -35,7 +35,7 @@ describe 'When a visitor visits new trip page' do
   it "clicks on the Trips breadcrumb" do
     visit '/trips/new'
 
-    click_on("Trips")
+    click_link("Trips")
 
     expect(page).to have_current_path('/trips')
   end

@@ -24,7 +24,7 @@ describe "When a user visits trips" do
   it "clicks on a specific trip link" do
     visit '/trips'
 
-    click_on("Trip 1")
+    click_link("#{@trip.id}")
 
     expect(page).to have_current_path('/trips/1')
   end
@@ -32,7 +32,7 @@ describe "When a user visits trips" do
   it "click on a new trip link" do
     visit '/trips'
 
-    click_on("New Trip")
+    click_link("New Trip")
 
     expect(page).to have_current_path('/trips/new')
   end
