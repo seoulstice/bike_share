@@ -16,10 +16,10 @@
     <input type="hidden" name="_method" value="PUT">
     Trip Duration: <input type="number" name="trip[duration]" value="<%= @trip.duration %>"><br/>
     Start Date: <input type="date" name="trip[start_date]" value="<%= @trip.start_date %>"><br/>
-    Start Station: <input type="text" name="trip[start_station]" value="<%= @trip.start_station %>"><br/>
+    Start Station Name: <input type="text" name="trip[start_station]" value="<%= @trip.start_station.name %>"><br/>
     Start Station ID: <input class="new-child" type="text" name="trip[start_station_id]" value="<%= @trip.start_station_id %>"><br/>
     End Date: <input type="date" name="trip[end_date]" value="<%= @trip.end_date %>"><br/>
-    End Station: <input type="text" name="trip[end_station]" value="<%= @trip.end_station %>"><br/>
+    End Station Name: <input type="text" name="trip[end_station]" value="<%= @trip.end_station.name %>"><br/>
     End Station ID: <input class="new-child" type="text" name="trip[end_station_id]" value="<%= @trip.end_station_id %>"><br/>
     Bike ID: <input type="number" name="trip[bike_id]" value="<%= @trip.bike_id %>"><br/>
     Subscription Type: <input type="text" name="trip[subscription_type]" value="<%= @trip.subscription_type %>"><br/>
