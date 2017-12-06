@@ -1,40 +1,83 @@
-<%= erb :banner %>
-
 <head>
   <title>All Trips</title>
+  <link rel="stylesheet" type="text/css" href="/reset.css">
+  <link rel="stylesheet" type="text/css" href="/main.css">
+  <link rel="icon" type="image/png" href="https://imgur.com/P5MWuLX.png" />
+  <script src="//www.google.com/jsapi"></script>
+  <script src="chartkick.js"></script>
 </head>
 
-<ul class="breadcrumb">
-  <li><a href="/">Home</a></li>
-  <li>Trips</li>
-</ul>
+<body class="index-background">
+  <main class="indexes-fp">
+    <section class="indexes-main">
+      <ul class="indexes-table-header">
+        <li class="table-styles trip-id-tab">Trip #:</li>
+        <li class="table-styles duration-tab">Duration:</li>
+        <li class="table-styles start-date-tab">Start Date:</li>
+        <li class="table-styles start-station-tab">Start Station:</li>
+        <li class="table-styles end-date-tab">End Date:</li>
+        <li class="table-styles end-station-tab">End Station:</li>
+        <li class="table-styles bike-id-tab">Bike ID:</li>
+        <li class="table-styles subscription-tab">Subscription:</li>
+        <li class="table-styles zip-tab">Zip:</li>
+      </ul>
+      <div class="trip-cond-table-size">
+        <% @trips.each do |trip| %>
+          <ul>
+            <section class = "display_object">
+              <li class="table-styles trip-id-tab"><a class="station_name_link" href="/trips/<%= trip.id %>">Trip <%= trip.id %></a></li>
+              <li class="table-styles duration-tab"><%= trip.duration %> min.</li>
+              <li class="table-styles start-date-tab"><%= trip.start_date %> </li>
+              <li class="table-styles start-station-tab"><%= trip.start_station_name %> </li>
+              <li class="table-styles end-date-tab"><%= trip.end_date %></li>
+              <li class="table-styles end-station-tab"><%= trip.end_station_name %></li>
+              <li class="table-styles bike-id-tab"><%= trip.bike_id %> </li>
+              <li class="table-styles subscription-tab"><%= trip.subscription_type %></li>
+              <li class="table-styles zip-tab"><%= trip.zipcode %> </li>
+            </section>
+          </ul>
+        <% end %>
+      </div>
+    </section>
 
-<a class="button" href="/trips/new">New Trip</a>
+    <aside class="indexes-aside">
+      <div class="logo-thingy">
+        <center>
+          <a href="/"><img class="logo-back" src="images/bike_share_logo.png"></a>
+        </center>
+      </div>
+      <div class="station-back">
+        <a class="aside-link" href="/stations"><img class="nav-icons station-icon" src="images/bike-icon.jpeg"><p class="aside-text">Station Index</p></a>
+      </div>
+      <div class="station-dash-back">
+        <a class="aside-link" href="/station-dashboard"><img class="nav-icons" src="images/station-dashboard-icon.png"><p class="aside-text">Station Dashboard</p></a>
+      </div>
+      <div class="trips-back">
+        <a class="aside-link" href="/trips"><img class="nav-icons" src="images/trip-icon.png"><p class="aside-text">Trips Index</p></a>
+      </div>
+      <div class="trips-dash-back">
+        <a class="aside-link" href="/trip-dashboard"><img class="nav-icons" src="images/trip-dashboard-icon.png"><p class="aside-text">Trips Dashboard</p></a>
+      </div>
+      <div class="condition-back">
+        <a class="aside-link" href="/conditions"><img class="nav-icons" src="images/weather-icon.png"><p class="aside-text">Conditions Index</p></a>
+      </div>
+      <div class="condition-dash-back">
+        <a class="aside-link" href="/weather-dashboard"><img class="nav-icons" src="images/conditions-dashboard-icon.png"><p class="aside-text">Weather Dashboard</p></a>
+      </div>
+    </aside>
+  </main>
 
-<main class="flex-parent">
-<% @trips.each do |trip| %>
-  <ul>
-    <section class = "display_object">
-    <li class = "trip_id top-pad"><a href="/trips/<%= trip.id %>">Trip <%= trip.id %></a></li>
-    <li class = "trip-padding">Duration: <%= trip.duration %></li>
-    <li class = "trip-padding">Start Date: <%= trip.start_date %> </li>
-    <li class = "trip-padding">Start Station: <%= trip.start_station %> </li>
-    <li class = "trip-padding">End Date: <%= trip.end_date %></li>
-    <li class = "trip-padding">End Station: <%= trip.end_station %></li>
-    <li class = "trip-padding">Bike ID: <%= trip.bike_id %> </li>
-    <li class = "trip-padding">Subscription Type: <%= trip.subscription_type %></li>
-    <li class = "trip-padding bot-pad">Zip Code: <%= trip.zipcode %> </li>
-  </section>
-  </ul>
-<% end %>
-</main>
+  <div class="create-new">
+    <a class="make-new" href="/trips/new">New Trip</a>
+  </div>
 
-<center class="paginate">
-  <% if @paginate.present? && @paginate != "1" %>
-    <a href="/trips?page=<%= @pagdown %>">&laquo;</a>
-    <%= @paginate %>
-    <a href="/trips?page=<%= @paginate.next %>">&raquo;</a>
-  <% else %>
-    <a href="/trips?page=2">&raquo;</a>
-  <% end %>
-</center>
+  <div class="paginate">
+    <% if @paginate.present? && @paginate != "1" %>
+      <a class="pag-link" href="/trips?page=<%= @pagdown %>">&laquo;</a>
+      <%= @paginate %>
+      <a class="pag-link" href="/trips?page=<%= @paginate.next %>">&raquo;</a>
+    <% else %>
+      <a class="pag-link" href="/trips?page=2">&raquo;</a>
+    <% end %>
+  </div>
+</body>

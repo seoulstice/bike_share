@@ -1,39 +1,83 @@
-<%= erb :banner %>
-
 <head>
   <title>All Conditions</title>
+  <link rel="stylesheet" type="text/css" href="/reset.css">
+  <link rel="stylesheet" type="text/css" href="/main.css">
+  <link rel="icon" type="image/png" href="https://imgur.com/P5MWuLX.png" />
+  <script src="//www.google.com/jsapi"></script>
+  <script src="chartkick.js"></script>
 </head>
 
-<ul class="breadcrumb">
-  <li><a href="/">Home</a></li>
-  <li>Conditions</li>
-</ul>
 
-<a class="button" href="/conditions/new">New Weather Condition</a>
+<body class="index-background">
+  <main class="indexes-fp">
+    <section class="indexes-main">
+      <ul class="indexes-table-header">
+        <li class="table-styles cond-date-tab">Date:</li>
+        <li class="table-styles max-temp-tab">Max Temp:</li>
+        <li class="table-styles mean-temp-tab">Mean Temp:</li>
+        <li class="table-styles min-temp-tab">Min Temp:</li>
+        <li class="table-styles humidity-tab">Humidity:</li>
+        <li class="table-styles visibility-tab">Visibility:</li>
+        <li class="table-styles wind-speed-tab">Wind Speed:</li>
+        <li class="table-styles precipitation-tab">Precipitation:</li>
+      </ul>
 
-<main class="flex-parent">
-<% @conditions.each do |condition| %>
-  <ul>
-    <section class = "display_object">
-    <li class><a href="/conditions/<%= condition.id %>">Conditions on <%= condition.date %></a></li>
-    <li>Max Temperature (F): <%= condition.max_temperature_f %> </li>
-    <li>Mean Temperature (F): <%= condition.mean_temperature_f %> </li>
-    <li>Min Temperature (F): <%= condition.min_temperature_f %>  </li>
-    <li>Mean Humidity: <%= condition.mean_humidity %> </li>
-    <li>Mean Visibility (mile): <%= condition.mean_visibility_miles %> </li>
-    <li>Mean Wind Speed (mph): <%= condition.mean_wind_speed_mph %> </li>
-    <li>Mean Precipitation (inches): <%= condition.precipitation_inches %> </li>
-  </section>
-  </ul>
-<% end %>
-</main>
+      <div class="trip-cond-table-size">
+        <% @conditions.each do |condition| %>
+          <ul>
+            <section class = "display_object">
+              <li class="table-styles cond-date-tab"><a class="station_name_link" href="/conditions/<%= condition.id %>"><%= condition.date %></a></li>
+              <li class="table-styles max-temp-tab"><%= condition.max_temperature_f %> &deg;F</li>
+              <li class="table-styles mean-temp-tab"><%= condition.mean_temperature_f %> &deg;F</li>
+              <li class="table-styles min-temp-tab"><%= condition.min_temperature_f %> &deg;F</li>
+              <li class="table-styles humidity-tab"><%= condition.mean_humidity %></li>
+              <li class="table-styles visibility-tab"><%= condition.mean_visibility_miles %> miles</li>
+              <li class="table-styles wind-speed-tab"><%= condition.mean_wind_speed_mph %> mph</li>
+              <li class="table-styles precipitation-tab"><%= condition.precipitation_inches %> inches</li>
+            </section>
+          </ul>
+        <% end %>
+      </div>
+    </section>
 
-<center class="paginate">
-  <% if @paginate.present? && @paginate != "1" %>
-    <a href="/conditions?page=<%= @pagdown %>"><<</a>
-    <%= @paginate %>
-    <a href="/conditions?page=<%= @paginate.next %>">>></a>
-  <% else %>
-    <a href="/conditions?page=2">>></a>
-  <% end %>
-</center>
+    <aside class="indexes-aside">
+      <div class="logo-thingy">
+        <center>
+          <a href="/"><img class="logo-back" src="images/bike_share_logo.png"></a>
+        </center>
+      </div>
+      <div class="station-back">
+        <a class="aside-link" href="/stations"><img class="nav-icons station-icon" src="images/bike-icon.jpeg"><p class="aside-text">Station Index</p></a>
+      </div>
+      <div class="station-dash-back">
+        <a class="aside-link" href="/station-dashboard"><img class="nav-icons" src="images/station-dashboard-icon.png"><p class="aside-text">Station Dashboard</p></a>
+      </div>
+      <div class="trips-back">
+        <a class="aside-link" href="/trips"><img class="nav-icons" src="images/trip-icon.png"><p class="aside-text">Trips Index</p></a>
+      </div>
+      <div class="trips-dash-back">
+        <a class="aside-link" href="/trip-dashboard"><img class="nav-icons" src="images/trip-dashboard-icon.png"><p class="aside-text">Trips Dashboard</p></a>
+      </div>
+      <div class="condition-back">
+        <a class="aside-link" href="/conditions"><img class="nav-icons" src="images/weather-icon.png"><p class="aside-text">Conditions Index</p></a>
+      </div>
+      <div class="condition-dash-back">
+        <a class="aside-link" href="/weather-dashboard"><img class="nav-icons" src="images/conditions-dashboard-icon.png"><p class="aside-text">Weather Dashboard</p></a>
+      </div>
+    </aside>
+  </main>
+
+  <div class="create-new">
+    <a class="make-new" href="/conditions/new">New Condition</a>
+  </div>
+
+  <div class="paginate">
+    <% if @paginate.present? && @paginate != "1" %>
+      <a class="pag-link" href="/conditions?page=<%= @pagdown %>">&laquo;</a>
+      <%= @paginate %>
+      <a class="pag-link" href="/conditions?page=<%= @paginate.next %>">&raquo;</a>
+    <% else %>
+      <a class="pag-link"  href="/conditions?page=2">&raquo;</a>
+    <% end %>
+  </div>
+</body>
