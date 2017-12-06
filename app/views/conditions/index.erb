@@ -21,7 +21,8 @@
         <li class="table-styles wind-speed-tab">Wind Speed:</li>
         <li class="table-styles precipitation-tab">Precipitation:</li>
       </ul>
-      <div class="table-size">
+
+      <div class="trip-cond-table-size">
         <% @conditions.each do |condition| %>
           <ul>
             <section class = "display_object">
@@ -36,7 +37,17 @@
             </section>
           </ul>
         <% end %>
+      </div>
+
       <div>
+        <% if @paginate.present? && @paginate != "1" %>
+          <a href="/trips?page=<%= @pagdown %>">&laquo;</a>
+          <%= @paginate %>
+          <a href="/trips?page=<%= @paginate.next %>">&raquo; oh my</a>
+        <% else %>
+          <a href="/trips?page=2">&raquo; oh my</a>
+        <% end %>
+      </div>
     </section>
 
     <aside class="indexes-aside">
@@ -65,4 +76,14 @@
       </div>
     </aside>
   </main>
+
+  <div class="paginate">
+    <% if @paginate.present? && @paginate != "1" %>
+      <a href="/conditions?page=<%= @pagdown %>">&laquo;</a>
+      <%= @paginate %>
+      <a href="/conditions?page=<%= @paginate.next %>">&raquo;</a>
+    <% else %>
+      <a href="/conditions?page=2">&raquo;</a>
+    <% end %>
+  </div>
 </body>

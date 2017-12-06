@@ -21,23 +21,23 @@
         <li class="table-styles subscription-tab">Subscription:</li>
         <li class="table-styles zip-tab">Zip:</li>
       </ul>
-      <div class="table-size">
+      <div class="trip-cond-table-size">
         <% @trips.each do |trip| %>
           <ul>
             <section class = "display_object">
-            <li class="table-styles trip-id-tab"><a class="station_name_link" href="/trips/<%= trip.id %>">Trip <%= trip.id %></a></li>
-            <li class="table-styles duration-tab"><%= trip.duration %> min.</li>
-            <li class="table-styles start-date-tab"><%= trip.start_date %> </li>
-            <li class="table-styles start-station-tab"><%= trip.start_station_name %> </li>
-            <li class="table-styles end-date-tab"><%= trip.end_date %></li>
-            <li class="table-styles end-station-tab"><%= trip.end_station_name %></li>
-            <li class="table-styles bike-id-tab"><%= trip.bike_id %> </li>
-            <li class="table-styles subscription-tab"><%= trip.subscription_type %></li>
-            <li class="table-styles zip-tab"><%= trip.zipcode %> </li>
-          </section>
+              <li class="table-styles trip-id-tab"><a class="station_name_link" href="/trips/<%= trip.id %>">Trip <%= trip.id %></a></li>
+              <li class="table-styles duration-tab"><%= trip.duration %> min.</li>
+              <li class="table-styles start-date-tab"><%= trip.start_date %> </li>
+              <li class="table-styles start-station-tab"><%= trip.start_station_name %> </li>
+              <li class="table-styles end-date-tab"><%= trip.end_date %></li>
+              <li class="table-styles end-station-tab"><%= trip.end_station_name %></li>
+              <li class="table-styles bike-id-tab"><%= trip.bike_id %> </li>
+              <li class="table-styles subscription-tab"><%= trip.subscription_type %></li>
+              <li class="table-styles zip-tab"><%= trip.zipcode %> </li>
+            </section>
           </ul>
         <% end %>
-      <div>
+      </div>
     </section>
 
     <aside class="indexes-aside">
@@ -66,4 +66,14 @@
       </div>
     </aside>
   </main>
+  
+  <div class="paginate">
+    <% if @paginate.present? && @paginate != "1" %>
+      <a href="/trips?page=<%= @pagdown %>">&laquo;</a>
+      <%= @paginate %>
+      <a href="/trips?page=<%= @paginate.next %>">&raquo;</a>
+    <% else %>
+      <a href="/trips?page=2">&raquo;</a>
+    <% end %>
+  </div>
 </body>
