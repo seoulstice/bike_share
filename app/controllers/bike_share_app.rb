@@ -30,18 +30,14 @@ class BikeShareApp < Sinatra::Base
   get '/stations/:id/edit' do
     @station = Station.find(params[:id])
 
-    erb :"stations/edit"
+    erb :"stations/edit_new"
   end
 
   post '/stations' do
     station = Station.create(params[:station])
-    # if station.valid?
       redirect "/stations/#{station.id}"
-    # else
-      # redirect "stations/new"
-      # flash.now[:notice] = "Station Cannot Be Created, missing fields."
-      # station.delete
-    # end
+
+      redirect "stations/new"
   end
 
   put '/stations/:id' do |id|

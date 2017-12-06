@@ -10,50 +10,63 @@
   <li><%= @station.name %></li>
 </ul>
 
-<section class="dash-flex">
-  <div class="dashboard-results">
-    <ul>
-    <li class="station_name"><%= @station.name %></li>
-    <li class="station_city"><%= @station.city %>, CA</li>
-    <br/>
-    <li>Docks: <%= @station.dock_count %></li>
-    <li>Installation Date: <%= @station.installation_date %></li>
-    <br/>
-    <li>Rides Started Here: <%= @station.rides_started %></li>
-    <li>Rides Ended Here: <%= @station.rides_ended %></li>
-    <% if !@station.end_trip.empty? %>
-    <li>Most Frequent Destination: <a href="/stations/<%= @station.most_popular_end_station.id %>"> <%= @station.most_popular_end_station.name %></a></li>
-    <% end %>
-    <% if !@station.start_trip.empty? %>
-    <li>Most Frequent Origin: <a href="/stations/<%= @station.most_popular_start_station.id %>"> <%= @station.most_popular_start_station.name %></a></li>
-    <li>Most Popular Date: <%= @station.date_most_rides_started %></li>
-    <li>Most Common Rider Zipcode: <%= @station.most_common_zipcode %></li>
-    <li>Most Ridden Bike: <%= @station.bike_most_commonly_started_on %></li>
-    <% end %>
-    </ul>
+<body class="station-main">
+  <div class="header">
+    <h1 class="header-text"><%= @station.name %> in <%= @station.city %></h1>
   </div>
-  <div id="map">
-    <script>
-    function initMap() {
-      var station = {lat: <%= @station.latitude %>, lng: <%= @station.longitude %>};
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 17,
-        center: station,
-      });
-      var marker = new google.maps.Marker({
-        position: station,
-        map: map
-      });
-    }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPiZRNt7SNQqhm39Aug86hg9HXrTLBLZQ&callback=initMap">
-    </script>
+  <div class=station-show>
+    <section class="left-show">
+      <div class="show-data">
+        <ul class="data">
+          <li>Number of Docks: <%= @station.dock_count %></li>
+          <li>Installation Date: <%= @station.installation_date %></li>
+          <li>Rides Started Here: <%= @station.rides_started %></li>
+          <li>Rides Ended Here: <%= @station.rides_ended %></li>
+          <% if !@station.end_trip.empty? %>
+          <li>Most Frequent Destination: <a class="links" href="/stations/<%= @station.most_popular_end_station.id %>"> <%= @station.most_popular_end_station.name %></a></li>
+          <% end %>
+          <% if !@station.start_trip.empty? %>
+          <li>Most Frequent Origin: <a class="links" href="/stations/<%= @station.most_popular_start_station.id %>"> <%= @station.most_popular_start_station.name %></a></li>
+          <li>Most Popular Date: <%= @station.date_most_rides_started %></li>
+          <li>Most Common Rider Zipcode: <%= @station.most_common_zipcode %></li>
+          <li>Most Ridden Bike: <%= @station.bike_most_commonly_started_on %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="buttons-spacing">
+        <section>
+          <a  class="button edit" href="/stations/<%= @station.id %>/edit">Edit</a>
+        </section>
+        <section>
+          <form class="" action="/stations/<%= @station.id %>" method="post">
+          <input type="hidden" name="_method" value="DELETE">
+          <input class="button" type="submit" name="Delete" value="Delete">
+          </form>
+        </section>
+      </div>
+    </section>
+    <section id="map">
+      <script>
+      function initMap() {
+        var station = {lat: <%= @station.latitude %>, lng: <%= @station.longitude %>};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: station,
+        });
+        var marker = new google.maps.Marker({
+          position: station,
+          map: map
+        });
+      }
+      </script>
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPiZRNt7SNQqhm39Aug86hg9HXrTLBLZQ&callback=initMap">
+      </script>
+    </section>
   </div>
-</section>
-
-<a  class="button" href="/stations/<%= @station.id %>/edit">Edit</a>
-<form class="" action="/stations/<%= @station.id %>" method="post">
-  <input type="hidden" name="_method" value="DELETE">
-  <input class="button inline-btn" type="submit" name="Delete" value="Delete">
-</form>
+  <div class="footer">
+    <section>
+      <p>Created by: <a class="links" href="https://github.com/Maxscores">Max Stackhouse</a> | <a class="links" href="https://github.com/Ecksi">Jim Dechant</a> | <a class="links" href="https://github.com/seoulstice">Young Joon Jung</a>
+    </section>
+  </div>
+</body>

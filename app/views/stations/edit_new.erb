@@ -1,0 +1,35 @@
+<%= erb :banner %>
+
+<head>
+  <title>Edit <%= @station.name %> Station</title>
+</head>
+
+<ul class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/stations/<%= @station.id %>"><%= @station.name %></a></li>
+  <li>Edit Station</li>
+</ul>
+
+<body class="station-edit">
+  <div class="header">
+    <h1 class="header-text"><%= @station.name %> in <%= @station.city %></h1>
+  </div>
+  <div class="edit-form">
+    <form class="edit-data" action="/stations/<%= @station.id %>" method="post">
+      <input type="hidden" name="_method" value="PUT">
+      Station Name <input type="text" name="station[name]" value="<%= @station.name %>"><br/>
+      City <input type="text" name="station[city]" value="<%= @station.city %>"><br/>
+      Number of Bike Docks <input type="number" name="station[dock_count]" value="<%= @station.dock_count %>"><br/>
+      Installation Date <input type="date" name="station[installation_date]" value="<%= @station.installation_date %>" data-date-inline-picker="true"><br/>
+      Latitude <input type="number" name="station[latitude]" step="any" value="<%= @station.latitude %>"><br/>
+      Longitude <input type="number" name="station[longitude]" step="any" value="<%= @station.longitude %>"><br/>
+      <input class="button" name="Update" type="submit">
+      <input class="button" type="reset">
+    </form>
+  </div>
+  <div class="footer">
+    <section>
+      <p>Created by: <a class="links" href="https://github.com/Maxscores">Max Stackhouse</a> | <a class="links" href="https://github.com/Ecksi">Jim Dechant</a> | <a class="links" href="https://github.com/seoulstice">Young Joon Jung</a>
+    </section>
+  </div>
+</body>
