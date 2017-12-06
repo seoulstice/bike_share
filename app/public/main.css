@@ -7,6 +7,7 @@ header {
   flex-direction: row;
   justify-content: space-around;
   background-color: black;
+  color: rgba(54, 209, 180, 0.5);
   padding: 20px 0 20px 0;
 }
 
@@ -76,12 +77,21 @@ img {
   padding: 10px 0 10px 0;
 }
 
+.dash-flex {
+  display: flex;
+  flex-direction: column;
+}
+
 .dash-weather {
   text-align: left;
 }
 
 .dashboard-header > h1 {
   font-size: 32px;
+}
+.dash-city-breakdown > h2 {
+  font-size: 20px;
+  text-align: center;
 }
 
 .dash-weather-title {
@@ -95,7 +105,8 @@ img {
   padding: 30px 0;
   justify-content: flex-start;
   border: solid;
-  background-color: rgba(54, 209, 180, 0.5);
+  background-color: rgba(54, 209, 180, 0.2);
+  border-radius: 20px;
   padding: 10px 10px 10px 10px;
   height: 490px;
 }
@@ -106,6 +117,22 @@ img {
   padding: 15px 15px 15px 15px;
   border: solid;
   border-color: rgba(54, 209, 180, 0.5);
+  border-radius: 20px;
+}
+
+.dash-table {
+  width: 400px;
+  text-align: center;
+  border: solid;
+  background-color: rgba(161, 186, 181, 0.7);
+}
+
+.dash-city-breakdown {
+  width: 400px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .dash-weather-entry {
@@ -113,18 +140,26 @@ img {
   color: rgba(54, 209, 180, 0.5);
 }
 
-.dash-weather-icon {
-
-}
-
-.dash-weather-box {
+.dash-weather-cond-box {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
-
+.dash-weather-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border: solid;
+  border-color: black;
+  padding: 10px 10px 10px 10px;
+  height: 310px;
+  margin: 5px 0 5px 0;
+  background-color: rgba(54, 209, 180, 0.2);
+  border-radius: 20px;
+}
 
 .dashboard-category {
   text-align: left;
@@ -141,6 +176,10 @@ img {
   align-items: center;
 }
 
+.weather-widget {
+  width: 497px;
+}
+
 .dash-categoy{
   margin: 10px 0px 10px 0px;
   padding: 10px 0px 10px 0px;
@@ -150,7 +189,13 @@ img {
   padding: 0px 0px 0px 0px;
 }
 
-
+.weather-banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 75px 0 75px;
+}
 
 
 .new-flex {

@@ -86,8 +86,53 @@ class Condition < ActiveRecord::Base
 
 
   def self.build_range_array(max, min, interval)
-    (0..number_of_groups(max, min, interval)).map do |number|
+    (0...number_of_groups(max, min, interval)).map do |number|
       [(min + number * interval).round(1), (min + (number + 1) * interval).round(1)]
     end
   end
+
+  def self.ride_by_temp
+    temperature_ranges.reduce({}) do |result, (lower, upper)|
+      rides_in_range = rides_on_days_in_temp_range_order_desc(lower, upper)
+      result[:graph] = [] if result[:graph].nil?
+      result[:table] = [] if result[:table].nil?
+      result[:graph] << ["#{lower.to_i} - #{upper.to_i}", Condition.average(rides_in_range)]
+      result[:table] << ["#{lower.to_i} - #{upper.to_i}", rides_in_range.count, Condition.min(rides_in_range), Condition.average(rides_in_range), Condition.max(rides_in_range)]
+      result
+    end
+  end
+
+  def self.ride_by_wind
+    wind_speed_ranges.reduce({}) do |result, (lower, upper)|
+      rides_in_range = rides_on_days_in_wind_speed_range_order_desc(lower, upper)
+      result[:graph] = [] if result[:graph].nil?
+      result[:table] = [] if result[:table].nil?
+      result[:graph] << ["#{lower.to_i} - #{upper.to_i}", Condition.average(rides_in_range)]
+      result[:table] << ["#{lower.to_i} - #{upper.to_i}", rides_in_range.count, Condition.min(rides_in_range), Condition.average(rides_in_range), Condition.max(rides_in_range)]
+      result
+    end
+  end
+
+  def self.ride_by_vis
+    visibility_ranges.reduce({}) do |result, (lower, upper)|
+      rides_in_range = rides_on_days_in_visibility_range_order_desc(lower, upper)
+      result[:graph] = [] if result[:graph].nil?
+      result[:table] = [] if result[:table].nil?
+      result[:graph] << ["#{lower.to_i} - #{upper.to_i}", Condition.average(rides_in_range)]
+      result[:table] << ["#{lower.to_i} - #{upper.to_i}", rides_in_range.count, Condition.min(rides_in_range), Condition.average(rides_in_range), Condition.max(rides_in_range)]
+      result
+    end
+  end
+
+  def self.ride_by_precip
+    precipitation_ranges.reduce({}) do |result, (lower, upper)|
+      rides_in_range = rides_on_days_in_precipitation_range_order_desc(lower, upper)
+      result[:graph] = [] if result[:graph].nil?
+      result[:table] = [] if result[:table].nil?
+      result[:graph] << ["#{lower} - #{upper}", Condition.average(rides_in_range)]
+      result[:table] << ["#{lower} - #{upper}", rides_in_range.count, Condition.min(rides_in_range), Condition.average(rides_in_range), Condition.max(rides_in_range)]
+      result
+    end
+  end
+
 end

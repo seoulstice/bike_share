@@ -11,7 +11,7 @@ describe Condition do
     it ".temperature_ranges" do
       result = Condition.temperature_ranges
 
-      expected = [[47.0, 57.0], [57.0, 67.0], [67.0, 77.0], [77.0, 87.0], [87.0, 97.0], [97.0, 107.0]]
+      expected = [[47.0, 57.0], [57.0, 67.0], [67.0, 77.0], [77.0, 87.0], [87.0, 97.0]]
 
       expect(result).to eq(expected)
     end
@@ -27,7 +27,7 @@ describe Condition do
     it ".wind_speed_ranges" do
       result = Condition.wind_speed_ranges
 
-      expected = [[0.0, 4.0], [4.0, 8.0], [8.0, 12.0], [12.0, 16.0], [16.0, 20.0], [20.0, 24.0], [24.0, 28.0]]
+      expected = [[0.0, 4.0], [4.0, 8.0], [8.0, 12.0], [12.0, 16.0], [16.0, 20.0], [20.0, 24.0]]
 
       expect(result).to eq(expected)
     end
@@ -44,7 +44,7 @@ describe Condition do
     it ".visibilty_ranges" do
       result = Condition.visibility_ranges
 
-      expected = [[4.0, 8.0], [8.0, 12.0], [12.0, 16.0]]
+      expected = [[4.0, 8.0], [8.0, 12.0]]
 
       expect(result).to eq(expected)
     end
@@ -59,7 +59,7 @@ describe Condition do
     it ".precipitation_ranges" do
       result = Condition.precipitation_ranges
 
-      expected =  [[0.0, 0.5], [0.5, 1.0], [1.0, 1.5], [1.5, 2.0], [2.0, 2.5], [2.5, 3.0], [3.0, 3.5], [3.5, 4.0]]
+      expected =  [[0.0, 0.5], [0.5, 1.0], [1.0, 1.5], [1.5, 2.0], [2.0, 2.5], [2.5, 3.0], [3.0, 3.5]]
 
       expect(result).to eq(expected)
     end
@@ -76,7 +76,7 @@ describe Condition do
     it ".build_range_array" do
       result = Condition.build_range_array(10,0,3.3)
 
-      expected = [[0.0,3.3], [3.3, 6.6], [6.6, 9.9], [9.9, 13.2], [13.2, 16.5]]
+      expected = [[0.0,3.3], [3.3, 6.6], [6.6, 9.9], [9.9, 13.2]]
 
       expect(result).to eq(expected)
     end

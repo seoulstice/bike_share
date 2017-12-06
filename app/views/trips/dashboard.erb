@@ -48,21 +48,21 @@
   </div>
   <div class="main-chart">
     <div class="small-chart">
-      <%= column_chart @trips.group_by_day_of_week(:start_date).count, colors: ["#145187"], xtitle: "Day of Week", ytitle: "Rides Taken", width: "325px", height: "200px",  library: {backgroundColor: "transparent", fontStyle: "bold", fontSize: "24px"} %>
+      <%= column_chart @trips.group_by_day_of_week(:start_date, format: "%a").count, colors: ["#145187"], xtitle: "Day of Week", ytitle: "Rides Taken", width: "325px", height: "200px",  library: {backgroundColor: "transparent", fontStyle: "bold", fontSize: "24px"} %>
     </div>
     <div class="small-chart">
       <%= column_chart @trips.rides_by_year, colors: ["#36d1b4"], xtitle: "Number of Rides", ytitle: "Year", width: "325px", height: "200px",  library: {backgroundColor: "transparent", fontStyle: "bold", fontSize: "30px"} %>
     </div>
   </div>
   <div class="pie-chart">
-    <%= pie_chart @trips.count_by_subscription_type, colors: ["#36d1b4", "#145187"], width: "300px", height: "250px", legend: "bottom", library: {backgroundColor: "transparent", fontStyle: "bold", fontSize: "30px"} %>
+    <%= pie_chart @trips.count_by_subscription_type, colors: ["#36d1b4", "#145187"], width: "300px", height: "250px", legend: "top", library: {backgroundColor: "transparent", fontStyle: "bold", fontSize: "30px"} %>
   </div>
 
   <div class="dash-weather">
       <h2 class="dash-weather-title">Weather on most Popular Trip Date<br/>
-      <%= @trips.weather_on_date_most_rides.date %></h2>
+      <%= @best_weather.date %></h2>
 
-      <div class="dash-weather-box">
+      <div class="dash-weather-cond-box">
 
       <div class="dash-weather-entry">Humidity: <%= @best_weather.mean_humidity %> <br/>
       Visibility: <%= @best_weather.mean_visibility_miles %> miles <br/>
@@ -83,7 +83,7 @@
         Weather on least Popular Trip Date<br/>
         <%= @worst_weather.date %>
       </h2>
-      <div class="dash-weather-box">
+      <div class="dash-weather-cond-box">
       <div class="dash-weather-entry">Humidity: <%= @worst_weather.mean_humidity %>  <br/>
       Visibility: <%= @worst_weather.mean_visibility_miles %> miles <br/>
       Precipitation: <%= @worst_weather.precipitation_inches %> in.<br/> Wind Speed: <%= @worst_weather.mean_wind_speed_mph %> mph
