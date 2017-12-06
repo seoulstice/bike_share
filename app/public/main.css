@@ -88,6 +88,10 @@ img {
 .dashboard-header > h1 {
   font-size: 32px;
 }
+.dash-city-breakdown > h2 {
+  font-size: 20px;
+  text-align: center;
+}
 
 .dash-weather-title {
   color: rgba(54, 209, 180, 0.5);
@@ -122,6 +126,13 @@ img {
   background-color: rgba(161, 186, 181, 0.7);
 }
 
+.dash-city-breakdown {
+  width: 400px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
 
 .dash-weather-entry {
   text-align: left;

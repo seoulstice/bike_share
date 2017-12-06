@@ -67,4 +67,16 @@ class Station < ActiveRecord::Base
   def self.max_occurance(column)
     group(column).order('count(*) DESC').count.first.first
   end
+
+  def self.station_pie_chart(stations)
+    stations.map do |(station, count)|
+      [station.name, count]
+    end
+  end
+
+  def self.station_objects(stations)
+    stations.map do |(station, _)|
+      station
+    end
+  end
 end

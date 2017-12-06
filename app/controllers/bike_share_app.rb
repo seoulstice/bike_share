@@ -17,6 +17,10 @@ class BikeShareApp < Sinatra::Base
 
   get '/station-dashboard' do
     @stations = Station.all
+    top_5_stations = Trip.top_five_stations
+    @top_5_station_pie = Station.station_pie_chart(top_5_stations)
+    @avg_latitude = Station.average(:latitude)
+    @avg_longitude = Station.average(:longitude)
 
     erb :"stations/dashboard"
   end

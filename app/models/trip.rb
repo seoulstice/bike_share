@@ -47,6 +47,10 @@ class Trip <ActiveRecord::Base
     max_occurrence(:start_station)
   end
 
+  def self.top_five_stations
+    group(:start_station).order('count(*) DESC').limit(5).count
+  end
+
   def self.station_most_end_rides
     max_occurrence(:end_station)
   end

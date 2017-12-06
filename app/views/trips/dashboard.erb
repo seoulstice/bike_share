@@ -55,7 +55,7 @@
     </div>
   </div>
   <div class="pie-chart">
-    <%= pie_chart @trips.count_by_subscription_type, colors: ["#36d1b4", "#145187"], width: "300px", height: "250px", legend: "bottom", library: {backgroundColor: "transparent", fontStyle: "bold", fontSize: "30px"} %>
+    <%= pie_chart @trips.count_by_subscription_type, colors: ["#36d1b4", "#145187"], width: "300px", height: "250px", legend: "top", library: {backgroundColor: "transparent", fontStyle: "bold", fontSize: "30px"} %>
   </div>
 
   <div class="dash-weather">
