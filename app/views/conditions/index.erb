@@ -38,16 +38,6 @@
           </ul>
         <% end %>
       </div>
-
-      <div>
-        <% if @paginate.present? && @paginate != "1" %>
-          <a href="/trips?page=<%= @pagdown %>">&laquo;</a>
-          <%= @paginate %>
-          <a href="/trips?page=<%= @paginate.next %>">&raquo; oh my</a>
-        <% else %>
-          <a href="/trips?page=2">&raquo; oh my</a>
-        <% end %>
-      </div>
     </section>
 
     <aside class="indexes-aside">
@@ -77,13 +67,17 @@
     </aside>
   </main>
 
+  <div class="create-new">
+    <a class="make-new" href="/conditions/new">New Condition</a>
+  </div>
+
   <div class="paginate">
     <% if @paginate.present? && @paginate != "1" %>
-      <a href="/conditions?page=<%= @pagdown %>">&laquo;</a>
+      <a class="pag-link" href="/conditions?page=<%= @pagdown %>">&laquo;</a>
       <%= @paginate %>
-      <a href="/conditions?page=<%= @paginate.next %>">&raquo;</a>
+      <a class="pag-link" href="/conditions?page=<%= @paginate.next %>">&raquo;</a>
     <% else %>
-      <a href="/conditions?page=2">&raquo;</a>
+      <a class="pag-link"  href="/conditions?page=2">&raquo;</a>
     <% end %>
   </div>
 </body>

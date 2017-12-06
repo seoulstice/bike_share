@@ -66,14 +66,18 @@
       </div>
     </aside>
   </main>
-  
+
+  <div class="create-new">
+    <a class="make-new" href="/trips/new">New Trip</a>
+  </div>
+
   <div class="paginate">
     <% if @paginate.present? && @paginate != "1" %>
-      <a href="/trips?page=<%= @pagdown %>">&laquo;</a>
+      <a class="pag-link" href="/trips?page=<%= @pagdown %>">&laquo;</a>
       <%= @paginate %>
-      <a href="/trips?page=<%= @paginate.next %>">&raquo;</a>
+      <a class="pag-link" href="/trips?page=<%= @paginate.next %>">&raquo;</a>
     <% else %>
-      <a href="/trips?page=2">&raquo;</a>
+      <a class="pag-link" href="/trips?page=2">&raquo;</a>
     <% end %>
   </div>
 </body>

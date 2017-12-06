@@ -212,10 +212,18 @@ ul.breadcrumb li a:hover {
 }
 
 .paginate {
-  font-size: 30px;
+  font-size: 28px;
   position: absolute;
   right: 800px;
   bottom: 25px;
+  border: 2px solid gray;
+  padding: 4px;
+  color: darkblue;
+}
+
+.pag-link{
+  color: lightblue;
+  text-decoration: none;
 }
 
 .picture-nav {
@@ -301,33 +309,35 @@ a.pic-nav {
 }
 
 .station-back {
+  display: flex;
+  flex-direction: row;
   background-color: rgba(59, 247, 129, .5);
-  padding: 2px 0;
+  padding-bottom: 3px;
 }
 
 .station-dash-back {
   background-color: rgba(59, 247, 129, .3);
-  padding: 2px 0;
+  padding-bottom: 3px;
 }
 
 .trips-back {
   background-color: rgba(244, 159, 10, .5);
-  padding: 2px 0;
+  padding-bottom: 3px;
 }
 
 .trips-dash-back {
   background-color: rgba(244, 159, 10, .3);
-  padding: 2px 0;
+  padding-bottom: 3px;
 }
 
 .condition-back {
   background-color: rgba(169, 248, 251, .5);
-  padding: 2px 0;
+  padding-bottom: 3px;
 }
 
 .condition-dash-back {
   background-color: rgba(169, 248, 251, .3);
-  padding: 2px 0;
+  padding-bottom: 2px;
 }
 
 .logo-back {
@@ -426,4 +436,24 @@ a.pic-nav {
 .test-section {
   display: flex;
   flex-direction: column;
+}
+
+.nav-extra {
+  width: 20px;
+  height: 20px;
+  padding-left: 35px;
+}
+
+.create-new {
+  position: absolute;
+  top: 5px;
+  right: 1px;
+}
+
+.make-new {
+  font: bold 11px Arial;
+  margin: 10px 0 10px 0;
+  padding: 10px 20px;
+  background-color: limegreen;
+  text-decoration: none;
 }
