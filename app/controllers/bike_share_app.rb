@@ -35,8 +35,13 @@ class BikeShareApp < Sinatra::Base
 
   post '/stations' do
     station = Station.create(params[:station])
-
-    redirect "/stations/#{station.id}"
+    # if station.valid?
+      redirect "/stations/#{station.id}"
+    # else
+      # redirect "stations/new"
+      # flash.now[:notice] = "Station Cannot Be Created, missing fields."
+      # station.delete
+    # end
   end
 
   put '/stations/:id' do |id|
