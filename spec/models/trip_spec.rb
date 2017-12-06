@@ -13,11 +13,11 @@ describe Trip do
     end
 
     it ".station_most_start_rides" do
-      expect(Trip.station_most_start_rides).to eq("South Van Ness at Market")
+      expect(Trip.station_most_start_rides.name).to eq("South Van Ness at Market")
     end
 
     it ".station_most_end_rides" do
-      expect(Trip.station_most_end_rides).to eq("South Van Ness at Market")
+      expect(Trip.station_most_end_rides.name).to eq("South Van Ness at Market")
     end
 
     it ".rides_by_month" do
@@ -40,7 +40,7 @@ describe Trip do
     end
 
     it ".least_ridden_bike" do
-      expect(Trip.least_ridden_bike).to eq(56)
+      expect(Trip.least_ridden_bike).to eq(513)
     end
 
     it ".most_ridden_bike_ride_count" do
@@ -78,38 +78,16 @@ describe Trip do
     end
 
     it '.min_occurrence(column)' do
-      expect(Trip.min_occurrence(:bike_id)).to eq(56)
-    end
-
-    it '.weather_on_date_most_rides' do
-      expect(Trip.weather_on_date_most_rides.date.to_s).to eq("2013-08-29")
-      expect(Trip.weather_on_date_most_rides.max_temperature_f).to eq(74.0)
-      expect(Trip.weather_on_date_most_rides.mean_temperature_f).to eq(68.0)
-      expect(Trip.weather_on_date_most_rides.min_temperature_f).to eq(61.0)
-      expect(Trip.weather_on_date_most_rides.mean_humidity).to eq(75.0)
-      expect(Trip.weather_on_date_most_rides.mean_visibility_miles).to eq(10.0)
-      expect(Trip.weather_on_date_most_rides.mean_wind_speed_mph).to eq(11.0)
-      expect(Trip.weather_on_date_most_rides.precipitation_inches).to eq(0.0)
-    end
-
-    it '.weather_on_date_least_rides' do
-      expect(Trip.weather_on_date_least_rides.date.to_s).to eq("2013-08-30")
-      expect(Trip.weather_on_date_least_rides.max_temperature_f).to eq(78.0)
-      expect(Trip.weather_on_date_least_rides.mean_temperature_f).to eq(69.0)
-      expect(Trip.weather_on_date_least_rides.min_temperature_f).to eq(60.0)
-      expect(Trip.weather_on_date_least_rides.mean_humidity).to eq(70.0)
-      expect(Trip.weather_on_date_least_rides.mean_visibility_miles).to eq(10.0)
-      expect(Trip.weather_on_date_least_rides.mean_wind_speed_mph).to eq(13.0)
-      expect(Trip.weather_on_date_least_rides.precipitation_inches).to eq(0.0)
+      expect(Trip.min_occurrence(:bike_id)).to eq(513)
     end
   end
 
   describe "validations" do
     it "is not valid without a duration" do
       trip = Trip.new(start_date: "2017-01-01",
-                      start_station: "South SF",
+                      start_station_name: "South SF",
                       end_date: "2017-01-01",
-                      end_station: "North SF",
+                      end_station_name: "North SF",
                       bike_id: 21,
                       subscription_type: "Subscriber",
                       zipcode: 12345
@@ -120,9 +98,9 @@ describe Trip do
 
     it "is not valid without a start date" do
       trip = Trip.new(duration: 2,
-                      start_station: "South SF",
+                      start_station_name: "South SF",
                       end_date: "2017-01-01",
-                      end_station: "North SF",
+                      end_station_name: "North SF",
                       bike_id: 21,
                       subscription_type: "Subscriber"
                       )
@@ -134,7 +112,7 @@ describe Trip do
       trip = Trip.new(duration: 2,
                       start_date: "2017-01-01",
                       end_date: "2017-01-01",
-                      end_station: "North SF",
+                      end_station_name: "North SF",
                       bike_id: 21,
                       subscription_type: "Subscriber"
                      )
@@ -145,8 +123,8 @@ describe Trip do
     it "is not valid without an end_date" do
       trip = Trip.new(duration: 2,
                       start_date: "2017-01-01",
-                      start_station: "South SF",
-                      end_station: "North SF",
+                      start_station_name: "South SF",
+                      end_station_name: "North SF",
                       bike_id: 21,
                       subscription_type: "Subscriber",
                       zipcode: 12345
@@ -158,7 +136,7 @@ describe Trip do
     it "is not valid without an end station" do
       trip = Trip.new(duration: 2,
                       start_date: "2017-01-01",
-                      start_station: "South SF",
+                      start_station_name: "South SF",
                       end_date: "2017-01-01",
                       bike_id: 21,
                       subscription_type: "Subscriber",
@@ -171,9 +149,9 @@ describe Trip do
     it "is not valid without a bike id" do
       trip = Trip.new(duration: 2,
                       start_date: "2017-01-01",
-                      start_station: "South SF",
+                      start_station_name: "South SF",
                       end_date: "2017-01-01",
-                      end_station: "North SF",
+                      end_station_name: "North SF",
                       subscription_type: "Subscriber",
                       zipcode: 12345
                      )
@@ -184,9 +162,9 @@ describe Trip do
     it "is not valid without a subscription type" do
       trip = Trip.new(duration: 2,
                       start_date: "2017-01-01",
-                      start_station: "South SF",
+                      start_station_name: "South SF",
                       end_date: "2017-01-01",
-                      end_station: "North SF",
+                      end_station_name: "North SF",
                       bike_id: 21,
                       zipcode: 12345
                      )
@@ -197,9 +175,11 @@ describe Trip do
     it "is valid without a zipcode" do
       trip = Trip.new(duration: 2,
                       start_date: "2017-01-01",
-                      start_station: "South SF",
+                      start_station_name: "South SF",
+                      start_station_id: 2,
                       end_date: "2017-01-01",
-                      end_station: "North SF",
+                      end_station_name: "North SF",
+                      start_station_id: 2,
                       bike_id: 21,
                       subscription_type: "Subscriber"
                      )

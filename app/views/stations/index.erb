@@ -1,25 +1,62 @@
-<%= erb :banner %>
-
 <head>
   <title>All Stations</title>
+  <link rel="stylesheet" type="text/css" href="/reset.css">
+  <link rel="stylesheet" type="text/css" href="/main.css">
+  <link rel="icon" type="image/png" href="https://imgur.com/P5MWuLX.png" />
+  <script src="//www.google.com/jsapi"></script>
+  <script src="chartkick.js"></script>
 </head>
 
-<ul class="breadcrumb">
-  <li><a href="/">Home</a></li>
-  <li>Stations</li>
-</ul>
-
-<a class="button" href="/stations/new">New Station</a>
-
-<main class="flex-parent">
-<% @stations.each do |station| %>
-  <ul>
-    <section class = "display_object">
-    <li class = "station_name"><a href="/stations/<%= station.id %>"><%= station.name %></a></li>
-    <li class = "station_city"><%= station.city %>, CA</li>
-    <li>Docks: <%= station.dock_count %></li>
-    <li>Installation: <%= station.installation_date %></li>
+<body class="index-background">
+  <main class="indexes-fp">
+    <section class="indexes-main">
+      <ul class="indexes-table-header">
+        <li class="station_name plus_one">Station Name:</li>
+        <li class="station_city">Station City:</li>
+        <li class="dock_count">Dock Count:</li>
+        <li class="installation">Installation Date:</li>
+      </ul>
+      <div class="table-size">
+      <% @stations.each do |station| %>
+        <ul>
+          <section class="display_object">
+          <li class="station_name"><a class="station_name_link" href="/stations/<%= station.id %>"><%= station.name %></a></li>
+          <li class="station_city"><%= station.city %>, CA</li>
+          <li class="dock_count">Docks: <%= station.dock_count %></li>
+          <li class="installation"><%= station.installation_date %></li>
+          </section>
+        </ul>
+      <% end %>
+      <div>
     </section>
-  </ul>
-<% end %>
-</main>
+
+    <aside class="indexes-aside">
+      <div class="logo-thingy">
+        <center>
+          <a href="/"><img class="logo-back" src="images/bike_share_logo.png"></a>
+        </center>
+      </div>
+      <div class="station-back">
+        <a class="aside-link" href="/stations"><img class="nav-icons station-icon" src="images/bike-icon.jpeg"><p class="aside-text">Station Index</p></a>
+      </div>
+      <div class="station-dash-back">
+        <a class="aside-link" href="/station-dashboard"><img class="nav-icons" src="images/station-dashboard-icon.png"><p class="aside-text">Station Dashboard</p></a>
+      </div>
+      <div class="trips-back">
+        <a class="aside-link" href="/trips"><img class="nav-icons" src="images/trip-icon.png"><p class="aside-text">Trips Index</p></a>
+      </div>
+      <div class="trips-dash-back">
+        <a class="aside-link" href="/trip-dashboard"><img class="nav-icons" src="images/trip-dashboard-icon.png"><p class="aside-text">Trips Dashboard</p></a>
+      </div>
+      <div class="condition-back">
+        <a class="aside-link" href="/conditions"><img class="nav-icons" src="images/weather-icon.png"><p class="aside-text">Conditions Index</p></a>
+      </div>
+      <div class="condition-dash-back">
+        <a class="aside-link" href="/weather-dashboard"><img class="nav-icons" src="images/conditions-dashboard-icon.png"><p class="aside-text">Weather Dashboard</p></a>
+      </div>
+    </aside>
+  </main>
+  <div class="create-new">
+    <a class="make-new" href="/stations/new">New Station</a>
+  </div>
+</body>

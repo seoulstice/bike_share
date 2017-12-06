@@ -1,0 +1,42 @@
+<head>
+  <title>All Stations</title>
+  <link rel="stylesheet" type="text/css" href="/reset.css">
+  <link rel="stylesheet" type="text/css" href="/main.css">
+  <link rel="icon" type="image/png" href="https://imgur.com/P5MWuLX.png" />
+  <script src="//www.google.com/jsapi"></script>
+  <script src="chartkick.js"></script>
+</head>
+
+
+
+<section class="index-background">
+  <ul class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li>Stations</li>
+  </ul>
+  <main class="flex-parent">
+<% @stations.each do |station| %>
+  <ul>
+    <section class="display_object">
+    <li class="station_name"><a href="/stations/<%= station.id %>"><%= station.name %></a></li>
+    <li class="station_city"><%= station.city %>, CA</li>
+    <li class="dock_count">Docks: <%= station.dock_count %></li>
+    <li>Installation: <%= station.installation_date %></li>
+    </section>
+  </ul>
+<% end %>
+</main>
+</section>
+
+<nav class="banner">
+  <a href="/stations"><img class="nav-icons station-icon" src="images/bike-icon.jpeg"><br>Station Index</a>
+  <a href="/station-dashboard"><img class="nav-icons" src="images/station-dashboard-icon.png"><br>Station Dashboard</a>
+  <a href="/trips"><img class="nav-icons" src="images/trip-icon.png"><br>Trips Index</a>
+  <a href="/trip-dashboard"><img class="nav-icons" src="images/trip-dashboard-icon.png"><br>Trips Dashboard</a>
+  <a href="/conditions"><img class="nav-icons" src="images/weather-icon.png"><br>Conditions Index</a>
+  <a href="/weather-dashboard"><img class="nav-icons" src="images/conditions-dashboard-icon.png"><br>Weather Dashboard</a>
+</nav>
+
+
+
+<a class="button" href="/stations/new">New Station</a>

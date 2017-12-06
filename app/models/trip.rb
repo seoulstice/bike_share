@@ -5,9 +5,9 @@ class Trip <ActiveRecord::Base
 
   validates_presence_of :duration,
                         :start_date,
-                        :start_station,
+                        :start_station_name,
                         :end_date,
-                        :end_station,
+                        :end_station_name,
                         :bike_id,
                         :subscription_type
 
@@ -31,6 +31,10 @@ class Trip <ActiveRecord::Base
     max_occurrence(:start_station)
   end
 
+  def self.top_five_stations
+    group(:start_station).order('count(*) DESC').limit(5).count
+  end
+
   def self.station_most_end_rides
     max_occurrence(:end_station)
   end
@@ -39,12 +43,12 @@ class Trip <ActiveRecord::Base
     max_occurrence(:start_date)
   end
 
-  def self.date_with_most_rides_trip_count
-    group(:start_date).count.values.max
-  end
-
   def self.date_with_least_rides
     min_occurrence(:start_date)
+  end
+
+  def self.date_with_most_rides_trip_count
+    group(:start_date).count.values.max
   end
 
   def self.date_with_least_rides_trip_count
@@ -89,13 +93,5 @@ class Trip <ActiveRecord::Base
 
   def self.count_by_subscription_type
     group(:subscription_type).order('count(*)').count
-  end
-
-  def self.weather_on_date_most_rides
-    Condition.find_by(date: Trip.date_with_most_rides)
-  end
-
-  def self.weather_on_date_least_rides
-    Condition.find_by(date: Trip.date_with_least_rides)
   end
 end

@@ -17,7 +17,7 @@
     <div class="cloud"></div>
     <div class="cloud"></div>
   </div>
-  <% elsif @weather.precipitation_inches > 0 && @weather.mean_visibility_miles < 8.0 %>
+  <% elsif @weather.precipitation_inches > 0 && @weather.max_temperature_f >= 32 %>
   <div class="icon rainy">
     <div class="cloud"></div>
     <div class="rain"></div>

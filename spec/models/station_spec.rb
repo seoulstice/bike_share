@@ -9,11 +9,11 @@ RSpec.describe Station do
     end
 
     it '#most_popular_end_station' do
-      expect(Station.all.first.most_popular_end_station.id).to eq(10)
+      expect(Station.all.first.most_popular_end_station.id).to eq(7)
     end
 
     it '#most_popular_start_station' do
-      expect(Station.all.first.most_popular_start_station.id).to eq(4)
+      expect(Station.all.first.most_popular_start_station.id).to eq(3)
     end
 
     it '#date_most_rides_started' do
