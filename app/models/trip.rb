@@ -11,21 +11,21 @@ class Trip <ActiveRecord::Base
                         :bike_id,
                         :subscription_type
 
-  def start_station_latitude
-    Station.find(start_station_id).latitude
-  end
-
-  def start_station_longitude
-    Station.find(start_station_id).longitude
-  end
-
-  def end_station_latitude
-    Station.find(end_station_id).latitude
-  end
-
-  def end_station_longitude
-    Station.find(end_station_id).longitude
-  end
+  # def start_station_latitude
+  #   Station.find(start_station_id).latitude
+  # end
+  #
+  # def start_station_longitude
+  #   Station.find(start_station_id).longitude
+  # end
+  #
+  # def end_station_latitude
+  #   Station.find(end_station_id).latitude
+  # end
+  #
+  # def end_station_longitude
+  #   Station.find(end_station_id).longitude
+  # end
 
   def self.longest_ride
     maximum(:duration)
