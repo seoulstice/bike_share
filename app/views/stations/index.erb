@@ -11,19 +11,19 @@
   <main class="indexes-fp">
     <section class="indexes-main">
       <ul class="indexes-table-header">
-        <li class="station_name plus_one">Station Name:</li>
-        <li class="station_city">Station City:</li>
-        <li class="dock_count">Dock Count:</li>
-        <li class="installation">Installation Date:</li>
+        <li class="station_name plus_one the-li-pads">Station Name:</li>
+        <li class="station_city the-li-pads">Station City:</li>
+        <li class="dock_count the-li-pads">Dock Count:</li>
+        <li class="installation the-li-pads">Installation Date:</li>
       </ul>
       <div class="table-size">
       <% @stations.each do |station| %>
         <ul>
           <section class="display_object">
-          <li class="station_name"><a class="station_name_link" href="/stations/<%= station.id %>"><%= station.name %></a></li>
-          <li class="station_city"><%= station.city %>, CA</li>
-          <li class="dock_count">Docks: <%= station.dock_count %></li>
-          <li class="installation"><%= station.installation_date %></li>
+          <li class="station_name the-li-pads"><a class="station_name_link" href="/stations/<%= station.id %>"><%= station.name %></a></li>
+          <li class="station_city the-li-pads"><%= station.city %>, CA</li>
+          <li class="dock_count the-li-pads">Docks: <%= station.dock_count %></li>
+          <li class="installation the-li-pads"><%= station.installation_date %></li>
           </section>
         </ul>
       <% end %>
