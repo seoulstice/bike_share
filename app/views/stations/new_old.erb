@@ -1,0 +1,25 @@
+<%= erb :banner %>
+
+<head>
+  <title>Create a station</title>
+</head>
+
+<ul class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/stations">Stations</a></li>
+  <li>New Station</li>
+</ul>
+<main class="dash-flex station-pages">
+<section class="new-flex">
+  <form class="form-flex" action="/stations" method="post">
+    Station Name: <input class="new-child" type="text" name="station[name]" value=""><br/>
+    City: <input class="new-child" type="text" name="station[city]" value=""><br/>
+    Number of Bike-Docks: <input class="new-child" type="number" min="0" name="station[dock_count]" value=""><br/>
+    Installation Date: <input class="new-child" type="date" name="station[installation_date]" value="<%= Date.today %>" data-date-inline-picker="true"><br/>
+    Latitude <input type="number" name="station[latitude]" step=""><br/>
+    Longitude <input type="number" name="station[longitude]" step=""><br/>
+    <input class="button" name="New" type="submit">
+    <input class="button" type="reset">
+  </form>
+</main>
+</section>
