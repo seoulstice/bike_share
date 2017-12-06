@@ -16,13 +16,13 @@
     <li>Trip <%= @trip.id %></li>
     <li>Duration: <%= @trip.duration %></li>
     <li>Start Date: <%= @trip.start_date %> </li>
-    <li>Start Station: <%= @trip.start_station %> </li>
+    <li>Start Station: <%= @start_station.name %> </li>
     <li>End Date: <%= @trip.end_date %></li>
-    <li>End Station: <%= @trip.end_station %></li>
+    <li>End Station: <%= @end_station.name %></li>
     <li>Bike ID: <%= @trip.bike_id %> </li>
     <li>Subscription Type: <%= @trip.subscription_type %></li>
     <li>Zip Code: <%= @trip.zipcode %> </li>
-    
+
     </ul>
   </div>
   <div id="map">
@@ -30,11 +30,11 @@
     function initMap() {
       var stations = [
            ['Starting Station',
-           {lat: <%= @trip.start_station_latitude %>,
-           lng: <%= @trip.start_station_longitude %>}],
+           {lat: <%= @start_station.latitude %>,
+           lng: <%= @start_station.longitude %>}],
            ['Ending Station',
-           {lat: <%= @trip.end_station_latitude %>,
-           lng: <%= @trip.end_station_longitude %>}]
+           {lat: <%= @end_station.latitude %>,
+           lng: <%= @end_station.longitude %>}]
          ];
 
       var map_center = {

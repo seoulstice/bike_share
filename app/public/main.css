@@ -12,6 +12,11 @@ header {
   color: white;
 }
 
+input {
+  float: right;
+  text-align: center;
+}
+
 nav {
   padding: 10px 0 10px 0;
   display: flex;
@@ -152,6 +157,107 @@ img {
   height: 490px;
 }
 
+.station-main {
+  background-image: url("/images/bike-station.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  /*justify-content: space-between;*/
+  font-family: Arial, sans-serif;
+}
+
+.station-edit {
+  background-image: url("/images/bike-station.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+}
+
+
+.station-show {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.footer {
+  height: 50px;
+  text-align: center;
+  color: white;
+  padding-top: 30px;
+}
+
+.edit-form {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.edit-data {
+  width: 400px;
+  background-color: rgba(163, 169, 190, 0.6);
+  border: groove;
+  align-content: center;
+  padding-top: 100px;
+  padding-left: 40px;
+  padding-right: 40px;
+  line-height: 1.8;
+  float: left;
+}
+
+.buttons-spacing {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.left-show {
+  height: 400px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: black;
+  border: groove;
+  background-color: rgba(163, 169, 190, 0.6);
+}
+
+.show-data {
+  align-content: center;
+}
+
+.data {
+  padding: 10px;
+  line-height: 1.5;
+}
+
+.links {
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.header-text {
+  background-color: rgba(163, 169, 190, 0.6);
+  text-align: center;
+  color: black;
+  border: groove;
+  border-style: solid;
+  border-width: 3px;
+  border-color: white;
+  padding: 15px;
+}
+
 .dash-weather {
   height: 200px;
   background-color: rgba(0,0,0,1);
@@ -238,7 +344,6 @@ img {
   padding: 0 75px 0 75px;
 }
 
-
 .new-flex {
   display: flex;
   justify-content: center;
@@ -262,11 +367,6 @@ img {
   height: 490px;
 }
 
-.new-child {
-  margin: 10px;
-  padding: 5px;
-}
-
 .trip-padding {
   padding: 0 10px;
 }
@@ -280,10 +380,19 @@ img {
 }
 
 .button {
-  font: bold 11px Arial;
-  margin: 10px 0 10px 0;
-  padding: 10px 32px;
-  background-color: limegreen;
+  font: bold 14px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+
+.edit {
+  border-radius: 4px;
 }
 
 ul.breadcrumb {
@@ -315,8 +424,8 @@ ul.breadcrumb li a:hover {
 }
 
 #map {
-  height: 300px;
-  width: 300px;
+  height: 400px;
+  width: 400px;
   margin: 5px 5px;
 }
 

@@ -1,7 +1,7 @@
 <%= erb :banner %>
 
 <head>
-  <title>Create a station</title>
+  <title>Create a Station</title>
 </head>
 
 <ul class="breadcrumb">
@@ -9,16 +9,28 @@
   <li><a href="/stations">Stations</a></li>
   <li>New Station</li>
 </ul>
-<main class="flex-parent">
-<section class="new-flex">
-  <form class="form-flex" action="/stations" method="post">
-    Station Name: <input class="new-child" type="text" name="station[name]" value=""><br/>
-    City: <input class="new-child" type="text" name="station[city]" value=""><br/>
-    Number of Bike-Docks: <input class="new-child" type="number" name="station[dock_count]" value=""><br/>
-    Installation Date: <input class="new-child" type="date" name="station[installation_date]" value="<%= Date.today %>" data-date-inline-picker="true"><br/>
-    Latitude <input type="number" name="station[latitude]" step="any"><br/>
-    Longitude <input type="number" name="station[longitude]" step="any"><br/>
-    <input class="button" name="New" type="submit">
-  </form>
-</main>
-</section>
+
+<body class="station-edit">
+  <div class="header">
+    <h1 class="header-text">Create a New Station</h1>
+  </div>
+  <div class="edit-form">
+    <form class="edit-data" action="/stations" method="post">
+      <ul>
+        <li>Station Name: <input type="text" name="station[name]" value=""></li>
+        <li>City: <input type="text" name="station[city]" value=""></li>
+        <li>Number: <input type="number" min="0" name="station[dock_count]" value=""></li>
+        <li>Installation Date: <input type="date" name="station[installation_date]" value="<%= Date.today %>" data-date-inline-picker="true"></li>
+        <li>Latitude <input type="number" name="station[latitude]" step=""></li>
+        <li>Longitude <input type="number" name="station[longitude]" step=""></li>
+        <input class="button" name="New" type="submit">
+        <input class="button" type="reset">
+      </ul>
+    </form>
+  </div>
+  <div class="footer">
+    <section>
+      <p>Created by: <a class="links" href="https://github.com/Maxscores">Max Stackhouse</a> | <a class="links" href="https://github.com/Ecksi">Jim Dechant</a> | <a class="links" href="https://github.com/seoulstice">Young Joon Jung</a>
+    </section>
+  </div>
+</body>
