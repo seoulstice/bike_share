@@ -78,13 +78,13 @@ img {
   padding: 0 20px;
 }
 
-.station_name, .station_city, .dock_count, .installation {
+.station_name, .station_city, .dock_count, .installation, .table-styles {
   font-weight: bold;
   font-family: sans-serif;
   letter-spacing: 1px;
 }
 
-.plus_one, .station_city, .dock_count, .installation {
+.plus_one, .station_city, .dock_count, .installation, .table-styles {
   color: darkblue;
 }
 
@@ -342,4 +342,40 @@ a.pic-nav {
   height: 90%;
   width: 78%;
   overflow: auto;
+}
+
+.trip-id-tab {
+  width: 7%;
+}
+
+.duration-tab {
+  width: 10%;
+}
+
+.start-date-tab {
+  width: 11%;
+}
+
+.start-station-tab {
+  width: 15%;
+}
+
+.end-date-tab {
+  width: 11%;
+}
+
+.end-station-tab {
+  width: 15%;
+}
+
+.bike-id-tab {
+  width: 8%;
+}
+
+.subscription-tab {
+  width: 12%;
+}
+
+.zip-tab {
+  width: 5%;
 }
