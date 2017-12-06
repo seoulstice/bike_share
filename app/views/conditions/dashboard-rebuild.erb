@@ -1,0 +1,113 @@
+<%= erb :banner %>
+
+<head>
+  <title>Weather Dashboard</title>
+  <script src="chartkick.js"></script>
+</head>
+
+<ul class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/conditions">Conditions</a></li>
+  <li>Weather Dashboard</li>
+</ul>
+
+<body>
+  <div class="all-boxes">
+    <h1>Weather Dashboard</h1>
+      <section class="dash-flex">
+        <div class="dash-table-graph">
+          <h2 class=""> Temperature Influence on Ridership<h2>
+          <div class="dash-chart">
+
+            <%= bar_chart @avg_ride_by_temp_graph, colors: ["#145187"], xtitle: "Day of Week", ytitle: "Rides Taken", width: "500px", height: "200px",  library: {backgroundColor: "transparent", fontSize: "24px"} %>
+          </div>
+        <table>
+          <tr>
+            <th>Temperature Range (F)</th>
+            <th>Days In Range</th>
+            <th>Average Rides</th>
+            <th>Maximum Rides</th>
+            <th>Minimum Rides</th>
+          </tr>
+          <% Condition.temperature_ranges.each do |lower, upper| %>
+            <tr>
+              <% rides_in_range = Condition.rides_on_days_in_temp_range_order_desc(lower, upper) %>
+              <td> <%= "#{lower}"+" - "+"#{upper}" %> </td>
+              <td> <%= rides_in_range.count %> </td>
+              <td> <%= Condition.average(rides_in_range) %> </td>
+              <td> <%= Condition.max(rides_in_range) %> </td>
+              <td> <%= Condition.min(rides_in_range) %></td>
+            </tr>
+          <% end %>
+        </table>
+        </div>
+
+        <table>
+          <caption>Wind Speed Influence on Ridership Statistics</caption>
+          <tr>
+            <th>Lower Wind Speed</th>
+            <th>Upper Wind Speed</th>
+            <th>Days In Range</th>
+            <th>Average Rides</th>
+            <th>Maximum Rides</th>
+            <th>Minimum Rides</th>
+          </tr>
+          <% Condition.wind_speed_ranges.each do |lower, upper| %>
+            <tr>
+              <% rides_in_range = Condition.rides_on_days_in_wind_speed_range_order_desc(lower, upper) %>
+              <td> <%= lower %> </td>
+              <td> <%= upper %> </td>
+              <td> <%= rides_in_range.count %> </td>
+              <td> <%= Condition.average(rides_in_range) %> </td>
+              <td> <%= Condition.max(rides_in_range) %> </td>
+              <td> <%= Condition.min(rides_in_range) %></td>
+            </tr>
+          <% end %>
+        </table>
+        <table>
+          <caption>Visibility Influence on Ridership Statistics</caption>
+          <tr>
+            <th>Lower Visibility Range</th>
+            <th>Upper Visibility Range</th>
+            <th>Days In Range</th>
+            <th>Average Rides</th>
+            <th>Maximum Rides</th>
+            <th>Minimum Rides</th>
+          </tr>
+          <% Condition.visibility_ranges.each do |lower, upper| %>
+            <tr>
+              <% rides_in_range = Condition.rides_on_days_in_visibility_range_order_desc(lower, upper) %>
+              <td> <%= lower %> </td>
+              <td> <%= upper %> </td>
+              <td> <%= rides_in_range.count %> </td>
+              <td> <%= Condition.average(rides_in_range) %> </td>
+              <td> <%= Condition.max(rides_in_range) %> </td>
+              <td> <%= Condition.min(rides_in_range) %></td>
+            </tr>
+          <% end %>
+        </table>
+        <table>
+          <caption>Precipitation Influence on Ridership Statistics</caption>
+          <tr>
+            <th>Lower Precipitation Range</th>
+            <th>Upper Precipitation Range</th>
+            <th>Days In Range</th>
+            <th>Average Rides</th>
+            <th>Maximum Rides</th>
+            <th>Minimum Rides</th>
+          </tr>
+          <% Condition.precipitation_ranges.each do |lower, upper| %>
+            <tr>
+              <% rides_in_range = Condition.rides_on_days_in_precipitation_range_order_desc(lower, upper) %>
+              <td> <%= lower %> </td>
+              <td> <%= upper %> </td>
+              <td> <%= rides_in_range.count %> </td>
+              <td> <%= Condition.average(rides_in_range) %> </td>
+              <td> <%= Condition.max(rides_in_range) %> </td>
+              <td> <%= Condition.min(rides_in_range) %></td>
+            </tr>
+          <% end %>
+        </table>
+    </section>
+  </div>
+</body>
