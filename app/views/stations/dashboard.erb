@@ -11,18 +11,68 @@
 </ul>
 
 <body>
-  <h1 class="dashboard-header">Station Dashboard</h1>
+  <article class="dashboard">
 
-  <section class="dash-flex">
-    <ul class="dashboard-results">
-      <li>Total # of Stations: <%= @stations.count %></li>
-      <li>Average Dock Count: <%= @stations.average_dock_count %></li>
-      <li>Station with Most Docks: <%= @stations.max_dock_count_station %></li>
-      <li>Maximum Dock Count: <%= @stations.maximum_dock_count %></li>
-      <li>Station with Least Docks: <%= @stations.min_dock_count_station %></li>
-      <li>Mininum Dock Count: <%= @stations.mininum_dock_count %></li>
-      <li>Newest Station: <%= @stations.newest_station.name %></li>
-      <li>Oldest Station: <%= @stations.oldest_station.name %></li>
-    </ul>
-  </section>
+    <div class="dashboard-results">
+      <h1 class="dashboard-header">Station Dashboard</h1>
+      <ul >
+        <li class="dashboard-category">Total # of Stations: <li><%= @stations.count %></li></li>
+        <li class="dashboard-category">Average Dock Count: <li><%= @stations.average_dock_count %></li></li>
+        <li class="dashboard-category">Station with Most Docks: <li> <%= @stations.max_dock_count_station.name %></li></li>
+        <li class="dashboard-category">Maximum Dock Count: <li> <%= @stations.maximum_dock_count %></li></li>
+        <li class="dashboard-category">Station with Least Docks: <li><%= @stations.min_dock_count_station.name %></li></li>
+        <li class="dashboard-category">Mininum Dock Count: <li><%= @stations.mininum_dock_count %></li></li>
+        <li class="dashboard-category">Newest Station: <li><%= @stations.newest_station.name %></li></li>
+        <li class="dashboard-category">Oldest Station: <li><%= @stations.oldest_station.name %></li></li>
+      </ul>
+    </div>
+    <div class="dash-city-breakdown">
+    <div class="">
+      Number of Stations by City
+      <%= pie_chart @stations.group(:city).count, colors: ["#36d1b4", "#F7C59F", "#145187", "#FF6B35", "#EFEFD0"], width: "400px", height: "300px", legend: false, library: {backgroundColor: "transparent", fontStyle: "bold", fontSize: "30px"} %>
+    </div>
+    <div class="">
+      Top 5 Stations with Most Rides
+      <%= bar_chart @top_5_station_pie, ytitle: "Station", colors: ["#145187"], xtitle: "Number of Rides", width: "400px", height: "180px",  library: {backgroundColor: "transparent", fontStyle: "bold", fontSize: "24px"} %>
+    </div>
+    </div>
+    <div id="map">
+      <script>
+      function initMap() {
+        var stations = [
+            <% @stations.each do |station| %>
+              ['<%=station.name%>', {lat: <%= station.latitude %>, lng: <%= station.longitude %>}]
+              <% if station.name != @stations.last.name %>
+                ,
+              <% end %>
+            <% end %>
+           ];
+
+        var map_center = {
+          lat: <%= @avg_latitude %> ,
+          lng: <%= @avg_longitude %>
+        };
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 8,
+            center: map_center
+           });
+
+        <% @stations.count.times do |time| %>
+        var marker_<%=time %> = new google.maps.Marker({
+             position: stations[<%=time%>][1],
+             map: map,
+             title: stations[<%=time%>][0]
+           });
+
+        marker_<%=time%>.setMap(map)
+        <% end %>
+       }
+      </script>
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPiZRNt7SNQqhm39Aug86hg9HXrTLBLZQ&callback=initMap">
+      </script>
+    </div>
+  </article>
+
 </body>

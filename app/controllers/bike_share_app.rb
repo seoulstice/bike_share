@@ -17,6 +17,10 @@ class BikeShareApp < Sinatra::Base
 
   get '/station-dashboard' do
     @stations = Station.all
+    top_5_stations = Trip.top_five_stations
+    @top_5_station_pie = Station.station_pie_chart(top_5_stations)
+    @avg_latitude = Station.average(:latitude)
+    @avg_longitude = Station.average(:longitude)
 
     erb :"stations/dashboard"
   end
@@ -64,6 +68,8 @@ class BikeShareApp < Sinatra::Base
 
   get '/trip-dashboard' do
     @trips = Trip.all
+    @best_weather = Condition.find_by(date: Trip.date_with_most_rides)
+    @worst_weather = Condition.find_by(date: Trip.date_with_least_rides)
 
     erb :'trips/dashboard'
   end
@@ -81,6 +87,8 @@ class BikeShareApp < Sinatra::Base
   get '/trips/:id' do
     @trip = Trip.find(params[:id])
     @end_station = Station.find(@trip.end_station_id)
+    @start_station = Station.find(@trip.start_station_id)
+
 
 
     erb :'trips/show'
@@ -150,7 +158,10 @@ class BikeShareApp < Sinatra::Base
   end
 
   get '/weather-dashboard' do
-    @conditions = Condition.all
+    @ride_by_temp = Condition.ride_by_temp
+    @ride_by_wind  = Condition.ride_by_wind
+    @ride_by_vis = Condition.ride_by_vis
+    @ride_by_precip = Condition.ride_by_precip
 
     erb :"conditions/dashboard"
   end

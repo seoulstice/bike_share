@@ -2,7 +2,6 @@
 
 <head>
   <title>Weather Dashboard</title>
-  <script src="chartkick.js"></script>
 </head>
 
 <ul class="breadcrumb">
@@ -12,99 +11,121 @@
 </ul>
 
 <body>
-  <div class="all-boxes">
-    <h1>Weather Dashboard</h1>
-      <section class="dash-flex">
-          <ul class="dashboard-results">
-        <table>
-          <caption>Temperature Influence on Ridership Statistics </caption>
+  <div class="weather-banner">
+    <h1 class="dashboard-header">Dashboard Summary</h1>
+    <div class="weather-widget">
+
+    <a href="https://www.accuweather.com/en/us/san-francisco-ca/94103/weather-forecast/347629" class="aw-widget-legal">
+  <!--
+  By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at https://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at https://www.accuweather.com/en/privacy.
+  -->
+  </a><div id="awcc1512583087360" class="aw-widget-current"  data-locationkey="347629" data-unit="f" data-language="en-us" data-useip="false" data-uid="awcc1512583087360"></div><script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
+  </div>
+  </div>
+  <div class="dashboard">
+    <div class="dash-weather-box">
+      Ride Breakdown by Temperature
+      <div class="dash-chart">
+        <%= column_chart @ride_by_temp[:graph], colors: ["#145187"], xtitle: "Temperature", ytitle: "Rides Taken", width: "500px", height: "150px",  library: {backgroundColor: "transparent", fontSize: "24px"} %>
+      </div>
+      <div >
+        <table class="dash-table">
           <tr>
-            <th>Lower Temperature</th>
-            <th>Upper Temperature</th>
-            <th>Days In Range</th>
-            <th>Average Rides</th>
-            <th>Maximum Rides</th>
-            <th>Minimum Rides</th>
+            <th>Temperature </br>Range (F)</th>
+            <th>Days In </br>Range</th>
+            <th> Minimum </br>Rides</th>
+            <th> Average </br>Rides</th>
+            <th> Maximum </br>Rides</th>
           </tr>
-          <% Condition.temperature_ranges.each do |lower, upper| %>
+          <% @ride_by_temp[:table].each do |range, rides, min, avg, max| %>
             <tr>
-              <% rides_in_range = Condition.rides_on_days_in_temp_range_order_desc(lower, upper) %>
-              <td> <%= lower %> </td>
-              <td> <%= upper %> </td>
-              <td> <%= rides_in_range.count %> </td>
-              <td> <%= Condition.average(rides_in_range) %> </td>
-              <td> <%= Condition.max(rides_in_range) %> </td>
-              <td> <%= Condition.min(rides_in_range) %></td>
+              <td> <%= range %> </td>
+              <td> <%= rides %> </td>
+              <td> <%= min %> </td>
+              <td> <%= avg %> </td>
+              <td> <%= max %></td>
             </tr>
           <% end %>
         </table>
-        <table>
-          <caption>Wind Speed Influence on Ridership Statistics</caption>
+      </div>
+    </div>
+    <div class="dash-weather-box">
+      Ride Breakdown by Wind Speed
+      <div class="dash-chart">
+        <%= column_chart @ride_by_wind[:graph], colors: ["#145187"], xtitle: "Wind Speed", ytitle: "Rides Taken", width: "500px", height: "150px",  library: {backgroundColor: "transparent", fontSize: "24px"} %>
+      </div>
+      <div >
+        <table class="dash-table">
           <tr>
-            <th>Lower Wind Speed</th>
-            <th>Upper Wind Speed</th>
-            <th>Days In Range</th>
-            <th>Average Rides</th>
-            <th>Maximum Rides</th>
-            <th>Minimum Rides</th>
+            <th>Wind Speed </br>Range (mph)</th>
+            <th>Days In </br>Range</th>
+            <th> Minimum </br>Rides</th>
+            <th> Average </br>Rides</th>
+            <th> Maximum </br>Rides</th>
           </tr>
-          <% Condition.wind_speed_ranges.each do |lower, upper| %>
+          <% @ride_by_wind[:table].each do |range, rides, min, avg, max| %>
             <tr>
-              <% rides_in_range = Condition.rides_on_days_in_wind_speed_range_order_desc(lower, upper) %>
-              <td> <%= lower %> </td>
-              <td> <%= upper %> </td>
-              <td> <%= rides_in_range.count %> </td>
-              <td> <%= Condition.average(rides_in_range) %> </td>
-              <td> <%= Condition.max(rides_in_range) %> </td>
-              <td> <%= Condition.min(rides_in_range) %></td>
+              <td> <%= range %> </td>
+              <td> <%= rides %> </td>
+              <td> <%= min %> </td>
+              <td> <%= avg %> </td>
+              <td> <%= max %></td>
             </tr>
           <% end %>
         </table>
-        <table>
-          <caption>Visibility Influence on Ridership Statistics</caption>
+      </div>
+    </div>
+    <div class="dash-weather-box">
+      Ride Breakdown by Precipitation
+      <div class="dash-chart">
+        <%= column_chart @ride_by_precip[:graph], colors: ["#145187"], xtitle: "Precipitation", ytitle: "Rides Taken", width: "500px", height: "150px",  library: {backgroundColor: "transparent", fontSize: "24px"} %>
+      </div>
+      <div>
+        <table class="dash-table">
           <tr>
-            <th>Lower Visibility Range</th>
-            <th>Upper Visibility Range</th>
-            <th>Days In Range</th>
-            <th>Average Rides</th>
-            <th>Maximum Rides</th>
-            <th>Minimum Rides</th>
+            <th>Precipitation </br>Range (inches)</th>
+            <th>Days In </br>Range</th>
+            <th> Minimum </br>Rides</th>
+            <th> Average </br>Rides</th>
+            <th> Maximum </br>Rides</th>
           </tr>
-          <% Condition.visibility_ranges.each do |lower, upper| %>
+          <% @ride_by_precip[:table].each do |range, rides, min, avg, max| %>
             <tr>
-              <% rides_in_range = Condition.rides_on_days_in_visibility_range_order_desc(lower, upper) %>
-              <td> <%= lower %> </td>
-              <td> <%= upper %> </td>
-              <td> <%= rides_in_range.count %> </td>
-              <td> <%= Condition.average(rides_in_range) %> </td>
-              <td> <%= Condition.max(rides_in_range) %> </td>
-              <td> <%= Condition.min(rides_in_range) %></td>
+              <td> <%= range %> </td>
+              <td> <%= rides %> </td>
+              <td> <%= min %> </td>
+              <td> <%= avg %> </td>
+              <td> <%= max %></td>
             </tr>
           <% end %>
         </table>
-        <table>
-          <caption>Precipitation Influence on Ridership Statistics</caption>
+      </div>
+    </div>
+    <div class="dash-weather-box">
+      Ride Breakdown by Visibility
+      <div class="dash-chart">
+        <%= column_chart @ride_by_vis[:graph], colors: ["#145187"], xtitle: "Visibility", ytitle: "Rides Taken", width: "500px", height: "150px",  library: {backgroundColor: "transparent", fontSize: "24px"} %>
+      </div>
+      <div >
+        <table class="dash-table">
           <tr>
-            <th>Lower Precipitation Range</th>
-            <th>Upper Precipitation Range</th>
-            <th>Days In Range</th>
-            <th>Average Rides</th>
-            <th>Maximum Rides</th>
-            <th>Minimum Rides</th>
+            <th>Visibility </br>Range (mile)</th>
+            <th>Days In </br>Range</th>
+            <th> Minimum </br>Rides</th>
+            <th> Average </br>Rides</th>
+            <th> Maximum </br>Rides</th>
           </tr>
-          <% Condition.precipitation_ranges.each do |lower, upper| %>
+          <% @ride_by_vis[:table].each do |range, rides, min, avg, max| %>
             <tr>
-              <% rides_in_range = Condition.rides_on_days_in_precipitation_range_order_desc(lower, upper) %>
-              <td> <%= lower %> </td>
-              <td> <%= upper %> </td>
-              <td> <%= rides_in_range.count %> </td>
-              <td> <%= Condition.average(rides_in_range) %> </td>
-              <td> <%= Condition.max(rides_in_range) %> </td>
-              <td> <%= Condition.min(rides_in_range) %></td>
+              <td> <%= range %> </td>
+              <td> <%= rides %> </td>
+              <td> <%= min %> </td>
+              <td> <%= avg %> </td>
+              <td> <%= max %></td>
             </tr>
           <% end %>
         </table>
-      </ul>
-    </section>
+      </div>
+    </div>
   </div>
 </body>
