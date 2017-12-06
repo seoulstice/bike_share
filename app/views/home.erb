@@ -1,12 +1,21 @@
-<%= erb :banner %>
-<head><title>SF Bike Share</title></head>
+<head>
+  <title>SF Bike Share</title>
+  <link rel="stylesheet" type="text/css" href="/reset.css">
+  <link rel="stylesheet" type="text/css" href="/main.css">
+  <link rel="icon" type="image/png" href="https://imgur.com/P5MWuLX.png" />
+  <script src="//www.google.com/jsapi"></script>
+  <script src="chartkick.js"></script>
+</head>
 
 
-<ul>
-  <li>
-    <a href="/stations">Stations</a>
-  </li>
-  <li>
-    <a href="/trips">Trips</a>
-  </li>
-</ul>
+<main class="background">
+  <img class="logo" src="images/bike_share_logo.png">
+  <aside class="picture-nav">
+    <a class="pic-nav" href="/stations"><img class="pic-nav" src="images/stations_logo.png"><br>
+    <p class="pic-nav">Stations</p></a>
+    <a class="pic-nav" href="/trips"><img class="pic-nav" src="images/trips_logo.png"><br>
+    <p class="pic-nav">Trips</p></a>
+    <a class="pic-nav" href="/conditions"><img class="pic-nav" src="images/weather_logo.png"><br>
+    <p class="pic-nav">Weather Conditions</p></a>
+  <aside>
+</main>
