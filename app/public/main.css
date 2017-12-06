@@ -526,8 +526,6 @@ a.pic-nav {
 }
 
 .station-back {
-  display: flex;
-  flex-direction: row;
   background-color: rgba(59, 247, 129, .5);
   padding-bottom: 3px;
 }
