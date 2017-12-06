@@ -195,12 +195,12 @@ ul.breadcrumb li a:hover {
   justify-content: flex-end;
   position:fixed;
   bottom:19%;
-  right:3%;
+  right:5%;
 }
 
 img.pic-nav {
-  width: 150px;
-  height: 125px;
+  width: 125px;
+  height: 100px;
   padding: 0 20px;
 }
 
