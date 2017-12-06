@@ -8,6 +8,12 @@ header {
   justify-content: space-around;
   background-color: black;
   padding: 20px 0 20px 0;
+  color: white;
+}
+
+input {
+  float: right;
+  text-align: center;
 }
 
 nav {
@@ -148,8 +154,9 @@ img {
   align-content: center;
   padding-top: 100px;
   padding-left: 40px;
+  padding-right: 40px;
   line-height: 1.8;
-  
+  float: left;
 }
 
 .buttons-spacing {
@@ -197,6 +204,7 @@ img {
   border-style: solid;
   border-width: 3px;
   border-color: white;
+  padding: 15px;
 }
 
 .dash-weather {
@@ -270,11 +278,6 @@ img {
   flex-direction: column;
   padding: 10px 10px 10px 10px;
   height: 490px;
-}
-
-.new-child {
-  margin: 10px;
-  padding: 5px;
 }
 
 .trip-padding {
