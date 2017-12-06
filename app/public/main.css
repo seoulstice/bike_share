@@ -84,6 +84,11 @@ img {
   font-size: 32px;
 }
 
+.dash-weather-title {
+  color: rgba(54, 209, 180, 0.5);
+  font-size: 20px;
+}
+
 .dashboard-results {
   display: flex;
   flex-direction: column;

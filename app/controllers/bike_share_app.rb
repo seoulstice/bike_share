@@ -64,6 +64,8 @@ class BikeShareApp < Sinatra::Base
 
   get '/trip-dashboard' do
     @trips = Trip.all
+    @best_weather = @trips.weather_on_date_most_rides
+    @worst_weather = @trips.weather_on_date_least_rides
 
     erb :'trips/dashboard'
   end

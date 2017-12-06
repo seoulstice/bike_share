@@ -59,45 +59,40 @@
   </div>
 
   <div class="dash-weather">
-      <h2 class="dashboard-header" style="font-size: 20px; color: rgba(54, 209, 180, 0.5);">Weather on most Popular Trip Date<br/>
+      <h2 class="dash-weather-title">Weather on most Popular Trip Date<br/>
       <%= @trips.weather_on_date_most_rides.date %></h2>
 
       <div class="dash-weather-box">
 
-      <div class="dash-weather-entry">Humidity: <%= @trips.weather_on_date_most_rides.mean_humidity %> <br/>
-      Visibility: <%= @trips.weather_on_date_most_rides.mean_visibility_miles %> miles <br/>
-      Precipitation: <%= @trips.weather_on_date_most_rides.precipitation_inches %> in.<br/>
-      Wind Speed: <%= @trips.weather_on_date_most_rides.mean_wind_speed_mph %> mph
+      <div class="dash-weather-entry">Humidity: <%= @best_weather.mean_humidity %> <br/>
+      Visibility: <%= @best_weather.mean_visibility_miles %> miles <br/>
+      Precipitation: <%= @best_weather.precipitation_inches %> in.<br/>
+      Wind Speed: <%= @best_weather.mean_wind_speed_mph %> mph
       <br/>
       <br/>
-      <%= @trips.weather_on_date_most_rides.min_temperature_f %> / <%= @trips.weather_on_date_most_rides.mean_temperature_f %> / <%=  @trips.weather_on_date_most_rides.max_temperature_f %> deg
+      <%= @best_weather.min_temperature_f %> / <%= @best_weather.mean_temperature_f %> / <%=  @best_weather.max_temperature_f %> deg
       </div>
-      <div class="icon sunny">
-        <div class="sun">
-          <div class="rays"></div>
-        </div>
-      </div>
+      <% @weather = @best_weather %>
+      <%= erb :weather%>
+
   </div>
   </div>
 
   <div class="dash-weather">
-      <h2 class="dashboard-header" style="font-size: 20px; color: rgba(54, 209, 180, 0.5);">
+      <h2 class="dash-weather-title">
         Weather on least Popular Trip Date<br/>
-        <%= @trips.weather_on_date_least_rides.date %>
+        <%= @worst_weather.date %>
       </h2>
       <div class="dash-weather-box">
-      <div class="dash-weather-entry">Humidity: <%= @trips.weather_on_date_least_rides.mean_humidity %>  <br/>
-      Visibility: <%= @trips.weather_on_date_least_rides.mean_visibility_miles %> miles <br/>
-      Precipitation: <%= @trips.weather_on_date_least_rides.precipitation_inches %> in.<br/> Wind Speed: <%= @trips.weather_on_date_least_rides.mean_wind_speed_mph %> mph
+      <div class="dash-weather-entry">Humidity: <%= @worst_weather.mean_humidity %>  <br/>
+      Visibility: <%= @worst_weather.mean_visibility_miles %> miles <br/>
+      Precipitation: <%= @worst_weather.precipitation_inches %> in.<br/> Wind Speed: <%= @worst_weather.mean_wind_speed_mph %> mph
       <br/>
-      <%= @trips.weather_on_date_least_rides.min_temperature_f %> / <%= @trips.weather_on_date_least_rides.mean_temperature_f %> / <%=  @trips.weather_on_date_least_rides.max_temperature_f %> deg
+      <br/>
+      <%= @worst_weather.min_temperature_f %> / <%= @worst_weather.mean_temperature_f %> / <%=  @worst_weather.max_temperature_f %> deg
     </div>
-    <div class="dash-weather-icon">
-      <div class="icon rainy">
-        <div class="cloud"></div>
-        <div class="rain"></div>
-      </div>
-    </div>
+    <% @weather = @worst_weather %>
+    <%= erb :weather%>
   </div>
   </div>
 
