@@ -379,3 +379,35 @@ a.pic-nav {
 .zip-tab {
   width: 5%;
 }
+
+.cond-date-tab {
+  width: 15%;
+}
+
+.max-temp-tab {
+  width: 10%;
+}
+
+.mean-temp-tab {
+  width: 11%;
+}
+
+.min-temp-tab {
+  width: 10%;
+}
+
+.humidity-tab {
+  width: 9%;
+}
+
+.visibility-tab {
+  width: 10%;
+}
+
+.wind-speed-tab {
+  width: 12%;
+}
+
+.precipitation-tab {
+  width: 5%;
+}
