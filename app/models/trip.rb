@@ -5,27 +5,11 @@ class Trip <ActiveRecord::Base
 
   validates_presence_of :duration,
                         :start_date,
-                        :start_station,
+                        :start_station_name,
                         :end_date,
-                        :end_station,
+                        :end_station_name,
                         :bike_id,
                         :subscription_type
-
-  def start_station_latitude
-    Station.find(start_station_id).latitude
-  end
-
-  def start_station_longitude
-    Station.find(start_station_id).longitude
-  end
-
-  def end_station_latitude
-    Station.find(end_station_id).latitude
-  end
-
-  def end_station_longitude
-    Station.find(end_station_id).longitude
-  end
 
   def self.longest_ride
     maximum(:duration)

@@ -9,11 +9,11 @@ RSpec.describe Station do
     end
 
     it '#most_popular_end_station' do
-      expect(Station.all.first.most_popular_end_station.id).to eq(10)
+      expect(Station.all.first.most_popular_end_station.id).to eq(7)
     end
 
     it '#most_popular_start_station' do
-      expect(Station.all.first.most_popular_start_station.id).to eq(4)
+      expect(Station.all.first.most_popular_start_station.id).to eq(3)
     end
 
     it '#date_most_rides_started' do
@@ -30,20 +30,6 @@ RSpec.describe Station do
   end
 
   describe "Class Methods" do
-    it ".view_order" do
-      expect(Station.view_order.first.city).to eq("Mountain View")
-    end
-
-    it ".view_order" do
-      expect(Station.view_order.first.name).to eq("Castro Street and El Camino Real")
-    end
-
-    it ".city_groups" do
-      expected = {"Mountain View"=>7, "San Jose"=>16, "San Francisco"=>35, "Palo Alto"=>5, "Redwood City"=>7}
-
-      expect(Station.city_groups.count).to eq(expected)
-    end
-
     it ".average_dock_count" do
       expect(Station.average_dock_count).to eq(17.66)
     end
