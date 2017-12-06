@@ -4,85 +4,98 @@
   <title>Trip Dashboard</title>
 </head>
 
-<ul class="breadcrumb">
-  <li><a href="/">Home</a></li>
-  <li><a href="/trips">Trips</a></li>
-  <li>Trip Dashboard</li>
-</ul>
-
 <body>
-  <h1 class="dashboard-header">Trip Dashboard</h1>
+  <ul class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/trips">Trips</a></li>
+    <li>Trip Dashboard</li>
+  </ul>
 
-  <section class="dash-flex">
-    <ul class="dashboard-results">
-      <li>Average Ride Duration: <%= @trips.average_duration %></li>
-      <li>Longest Ride: <%= @trips.longest_ride %></li>
-      <li>Shortest Ride: <%= @trips.shortest_ride %></li>
-      <li>Most Popular Starting Station: <%= @trips.station_most_start_rides %></li>
-      <li>Most Popular Destination Station: <%= @trips.station_most_end_rides %></li>
-      <li>Most Popular Trip Date: <%= @trips.date_with_most_rides %> - <%= @trips.date_with_most_rides_trip_count %> trips</li>
-      <li>Least Popular Trip Date: <%= @trips.date_with_least_rides %> - <%= @trips.date_with_least_rides_trip_count %> trips</li>
-      <li>Most Ridden Bike ID: #<%= @trips.most_ridden_bike %> - Ride Count: <%= @trips.most_ridden_bike_ride_count %></li>
-      <li>Least Ridden Bike ID: #<%= @trips.least_ridden_bike %> - Ride Count:<%= @trips.least_ridden_bike_ride_count %></li>
-      <li>
-        <%= bar_chart @trips.rides_by_month, xtitle: "Number of Rides", ytitle: "Month" %>
-        <%= bar_chart @trips.rides_by_year, xtitle: "Number of Rides", ytitle: "Year" %>
-      </li>
-      <table>
-        <tr>
-          <th>Year</th> <th>Month</th> <th>Rides</th>
-        </tr>
-        <% Trip.rides_by_month.each do |date, count|%>
-        <tr>
-          <td><%= date.year %></td>
-          <td><%= date.month %></td>
-          <td><%= count %></td>
-        </tr>
-        <% end %>
-      </table>
-      <table>
-        <tr>
-          <th>Year</th> <th>Rides</th>
-        </tr>
-        <% Trip.rides_by_year.each do |date, count|%>
-        <tr>
-          <td><%= date.year %></td>
-          <td><%= count %></td>
-        </tr>
-        <% end %>
-      </table>
-      <table>
-        <tr>
-          <th>Rider Type</th> <th># of Accounts</th> <th> % </th>
-        </tr>
-        <% @trips.count_by_subscription_type.each do |key, value|%>
-        <tr>
-          <td><%= key %></td>
-          <td><%= value%></td>
-          <td><%= (100.0 * value/Trip.count) %></td>
-        </tr>
-        <% end %>
-      </table>
-    </ul>
-    <ul>
-      <h3 class="dashboard-header">Weather on most Popular Trip Date (<%= @trips.weather_on_date_most_rides.date %>)</h3>
-      <li>Max Temperature: <%=  @trips.weather_on_date_most_rides.max_temperature_f %> degrees</li>
-      <li>Mean Temperature: <%= @trips.weather_on_date_most_rides.mean_temperature_f %> degrees</li>
-      <li>Min Temperature: <%= @trips.weather_on_date_most_rides.min_temperature_f %> degrees</li>
-      <li>Mean Humidity: <%= @trips.weather_on_date_most_rides.mean_humidity %></li>
-      <li>Mean Visibility: <%= @trips.weather_on_date_most_rides.mean_visibility_miles %> miles</li>
-      <li>Mean Wind Speed: <%= @trips.weather_on_date_most_rides.mean_wind_speed_mph %> mph</li>
-      <li>Precipitation: <%= @trips.weather_on_date_most_rides.precipitation_inches %> inches</li>
-    </ul>
-    <ul>
-      <h3 class="dashboard-header">Weather on least Popular Trip Date (<%= @trips.weather_on_date_least_rides.date %>)</h3>
-      <li>Max Temperature: <%=  @trips.weather_on_date_least_rides.max_temperature_f %> degrees</li>
-      <li>Mean Temperature: <%= @trips.weather_on_date_least_rides.mean_temperature_f %> degrees</li>
-      <li>Min Temperature: <%= @trips.weather_on_date_least_rides.min_temperature_f %> degrees</li>
-      <li>Mean Humidity: <%= @trips.weather_on_date_least_rides.mean_humidity %></li>
-      <li>Mean Visibility: <%= @trips.weather_on_date_least_rides.mean_visibility_miles %> miles</li>
-      <li>Mean Wind Speed: <%= @trips.weather_on_date_least_rides.mean_wind_speed_mph %> mph</li>
-      <li>Precipitation: <%= @trips.weather_on_date_least_rides.precipitation_inches %> inches</li>
-    </ul>
-  </section>
+  <article class="dashboard">
+    <div class="dashboard-results">
+      <h1 class="dashboard-header">Dashboard Summary</h1>
+      <ul>
+        <li class="dashboard-category">Average Ride Duration: <li><%= @trips.average_duration %></li></li>
+        <li class="dashboard-category">Longest Ride: <li> <%= @trips.longest_ride %></li>
+        </li>
+        <li class="dashboard-category">Shortest Ride: <li> <%= @trips.shortest_ride %></li>
+        </li>
+        <li class="dashboard-category">Most Popular Starting Station </li>
+        <li class="dash-data"><%= @trips.station_most_start_rides.name %></li>
+        <li class="dashboard-category">Most Popular Destination Station
+        <li class="dash-data"><%= @trips.station_most_end_rides.name%></li>
+        </li>
+        <li class="dashboard-category">Most Popular Trip Date
+        <li class="dash-data"><%= @trips.date_with_most_rides %> - <%= @trips.date_with_most_rides_trip_count %> trips</li>
+        </li>
+        <li class="dashboard-category">Least Popular Trip Date
+        <li class="dash-data"> <%= @trips.date_with_least_rides %> - <%= @trips.date_with_least_rides_trip_count %> trips</li>
+        </li>
+        <li class="dashboard-category">
+          Most Ridden Bike ID
+        <li class="dash-data">
+          #<%= @trips.most_ridden_bike %> - Ride Count: <%= @trips.most_ridden_bike_ride_count %></li>
+        </li>
+        <li class="dashboard-category">
+          Least Ridden Bike ID
+        <li class="dash-data">
+          #<%= @trips.least_ridden_bike %> - Ride Count:<%= @trips.least_ridden_bike_ride_count %></li>
+        </li>
+      </ul>
+    </div>
+  <div class="main-chart">
+      <%= area_chart @trips.rides_by_month, ytitle: "Number of Rides", colors: ["#102538"], xtitle: "Month of Year", width: "400px", height: "430px",  library: {backgroundColor: "transparent", fontStyle: "bold", fontSize: "24px"} %>
+  </div>
+  <div class="main-chart">
+    <div class="small-chart">
+      <%= column_chart @trips.group_by_day_of_week(:start_date).count, colors: ["#145187"], xtitle: "Day of Week", ytitle: "Rides Taken", width: "325px", height: "200px",  library: {backgroundColor: "transparent", fontStyle: "bold", fontSize: "24px"} %>
+    </div>
+    <div class="small-chart">
+      <%= column_chart @trips.rides_by_year, colors: ["#36d1b4"], xtitle: "Number of Rides", ytitle: "Year", width: "325px", height: "200px",  library: {backgroundColor: "transparent", fontStyle: "bold", fontSize: "30px"} %>
+    </div>
+  </div>
+  <div class="pie-chart">
+    <%= pie_chart @trips.count_by_subscription_type, colors: ["#36d1b4", "#145187"], width: "300px", height: "250px", legend: "bottom", library: {backgroundColor: "transparent", fontStyle: "bold", fontSize: "30px"} %>
+  </div>
+
+  <div class="dash-weather">
+      <h2 class="dash-weather-title">Weather on most Popular Trip Date<br/>
+      <%= @trips.weather_on_date_most_rides.date %></h2>
+
+      <div class="dash-weather-box">
+
+      <div class="dash-weather-entry">Humidity: <%= @best_weather.mean_humidity %> <br/>
+      Visibility: <%= @best_weather.mean_visibility_miles %> miles <br/>
+      Precipitation: <%= @best_weather.precipitation_inches %> in.<br/>
+      Wind Speed: <%= @best_weather.mean_wind_speed_mph %> mph
+      <br/>
+      <br/>
+      <%= @best_weather.min_temperature_f %> / <%= @best_weather.mean_temperature_f %> / <%=  @best_weather.max_temperature_f %> deg
+      </div>
+      <% @weather = @best_weather %>
+      <%= erb :weather%>
+
+  </div>
+  </div>
+
+  <div class="dash-weather">
+      <h2 class="dash-weather-title">
+        Weather on least Popular Trip Date<br/>
+        <%= @worst_weather.date %>
+      </h2>
+      <div class="dash-weather-box">
+      <div class="dash-weather-entry">Humidity: <%= @worst_weather.mean_humidity %>  <br/>
+      Visibility: <%= @worst_weather.mean_visibility_miles %> miles <br/>
+      Precipitation: <%= @worst_weather.precipitation_inches %> in.<br/> Wind Speed: <%= @worst_weather.mean_wind_speed_mph %> mph
+      <br/>
+      <br/>
+      <%= @worst_weather.min_temperature_f %> / <%= @worst_weather.mean_temperature_f %> / <%=  @worst_weather.max_temperature_f %> deg
+    </div>
+    <% @weather = @worst_weather %>
+    <%= erb :weather%>
+  </div>
+  </div>
+
+</article>
+
 </body>
