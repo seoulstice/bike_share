@@ -1013,3 +1013,35 @@ a.pic-nav {
 .smush {
   color: lightgray;
 }
+
+.errs-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.errs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+}
+
+.errs-h1 {
+  font-size: 44px;
+  padding-bottom: 40px;
+}
+
+.errs-h2 {
+  font-size: 36px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.errs-h3 {
+  font-size: 22px;
+}
+
+.errs-img {
+  width: 500px;
+}

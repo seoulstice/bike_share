@@ -164,4 +164,8 @@ class BikeShareApp < Sinatra::Base
 
     erb :"conditions/dashboard"
   end
+
+  error Sinatra::NotFound do
+    erb :"opps"
+  end
 end
