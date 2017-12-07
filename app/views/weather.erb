@@ -1,4 +1,8 @@
-  <% if @weather.precipitation_inches == 0 && @weather.mean_visibility_miles > 8.0 %>
+
+
+  <% if @weather.precipitation_inches.nil? || @weather.mean_visibility_miles.nil? || @weather.max_temperature_f.nil? %>
+
+  <% elsif @weather.precipitation_inches == 0 && @weather.mean_visibility_miles > 8.0 %>
   <div class="icon sunny">
     <div class="sun">
       <div class="rays"></div>
