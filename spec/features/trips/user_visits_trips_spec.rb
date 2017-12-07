@@ -1,15 +1,4 @@
 describe "When a user visits trips" do
-  it "sees banner" do
-    visit '/trips'
-
-    expect(page).to have_current_path('/trips')
-
-    expect(page).to have_content("SF Bike Share")
-    expect(page).to have_link("Station Dashboard")
-    expect(page).to have_link("Station Index")
-    expect(page).to have_link("Trips Index")
-  end
-
   it "sees all trips" do
     visit '/trips'
 
