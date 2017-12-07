@@ -1,0 +1,42 @@
+<%= erb :banner %>
+
+<head>
+  <title>Edit Trip</title>
+</head>
+
+<ul class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/trips">Trips</a></li>
+  <li><a href="/trips/<%= @trip.id %>"><%= @trip.id %></a></li>
+  <li>Edit Trip</li>
+</ul>
+
+<body class="trip-main">
+  <div class="header">
+    <h1 class="header-text">Trip #<%= @trip.id %></h1>
+  </div>
+  <div class="edit-form">
+    <form class="edit-data" action="/trips/<%= @trip.id %>" method="post">
+      <ul>
+        <li><input type="hidden" name="_method" value="PUT">
+        <li>Trip Duration: <input type="number" name="trip[duration]" value="<%= @trip.duration %>"><br/>
+        <li>Start Date: <input type="date" name="trip[start_date]" value="<%= @trip.start_date %>"><br/>
+        <li>Start Station Name: <input type="text" name="trip[start_station]" value="<%= @trip.start_station.name%>"><br/>
+        <li>Start Station ID: <input class="new-child" type="text" name="trip[start_station_id]" value="<%= @trip.start_station_id %>"><br/>
+        <li>End Date: <input type="date" name="trip[end_date]" value="<%= @trip.end_date %>"><br/>
+        <li>End Station Name: <input type="text" name="trip[end_station]" value="<%= @trip.end_station.name %>"><br/>
+        <li>End Station ID: <input class="new-child" type="text" name="trip[end_station_id]" value="<%= @trip.end_station_id %>"><br/>
+        <li>Bike ID: <input type="number" name="trip[bike_id]" value="<%= @trip.bike_id %>"><br/>
+        <li>Subscription Type: <input type="text" name="trip[subscription_type]" value="<%= @trip.subscription_type %>"><br/>
+        <li>Zipcode: <input type="number" name="trip[zipcode]" value="<%= @trip.zipcode %>"><br/>
+        <input class="button" name="Update" type="submit">
+        <input class="button" type="reset">
+      </ul>
+    </form>
+  </div>
+  <div class="footer">
+    <section>
+      <p>Created by: <a class="links" href="https://github.com/Maxscores">Max Stackhouse</a> | <a class="links" href="https://github.com/Ecksi">Jim Dechant</a> | <a class="links" href="https://github.com/seoulstice">Young Joon Jung</a>
+    </section>
+  </div>
+</section>
