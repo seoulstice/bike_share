@@ -41,4 +41,16 @@ describe "When a visitor visits conditions index" do
 
     expect(page).to have_current_path('/conditions/new')
   end
+
+  it "only the next pagination link shows up" do
+    visit '/conditions'
+
+    expect(page).to have_link(">>")
+  end
+
+  it "has working pagination" do
+    visit '/conditions'
+
+    
+  end
 end

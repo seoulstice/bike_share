@@ -27,12 +27,11 @@ describe "When a visitor submits a new trip" do
     fill_in('trip[bike_id]', with: 2)
     fill_in('trip[subscription_type]', with: "Customer")
     find('input[name="New"]').click
-
+    
     expect(page).to have_content("60")
     expect(page).to have_content("2017-01-01")
     expect(page).to have_content(2)
     expect(page).to have_content("San Jose Diridon Caltrain Station")
-    expect(page).to have_content(3)
     expect(page).to have_content("San Jose Civic Center")
     expect(page).to have_content("Customer")
   end
