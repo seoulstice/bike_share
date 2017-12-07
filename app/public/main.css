@@ -537,8 +537,6 @@ a.pic-nav {
 }
 
 .station-back {
-  display: flex;
-  flex-direction: row;
   background-color: rgba(59, 247, 129, .5);
   padding-bottom: 3px;
 }
@@ -964,3 +962,7 @@ a.pic-nav {
       opacity: 0.2;
     }
   }
+
+.the-li-pads {
+  padding: 10px;
+}

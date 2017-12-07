@@ -12,28 +12,28 @@
   <main class="indexes-fp">
     <section class="indexes-main">
       <ul class="indexes-table-header">
-        <li class="table-styles cond-date-tab">Date:</li>
-        <li class="table-styles max-temp-tab">Max Temp:</li>
-        <li class="table-styles mean-temp-tab">Mean Temp:</li>
-        <li class="table-styles min-temp-tab">Min Temp:</li>
-        <li class="table-styles humidity-tab">Humidity:</li>
-        <li class="table-styles visibility-tab">Visibility:</li>
-        <li class="table-styles wind-speed-tab">Wind Speed:</li>
-        <li class="table-styles precipitation-tab">Precipitation:</li>
+        <li class="table-styles cond-date-tab the-li-pads">Date:</li>
+        <li class="table-styles max-temp-tab the-li-pads">Max Temp:</li>
+        <li class="table-styles mean-temp-tab the-li-pads">Mean Temp:</li>
+        <li class="table-styles min-temp-tab the-li-pads">Min Temp:</li>
+        <li class="table-styles humidity-tab the-li-pads">Humidity:</li>
+        <li class="table-styles visibility-tab the-li-pads">Visibility:</li>
+        <li class="table-styles wind-speed-tab the-li-pads">Wind Speed:</li>
+        <li class="table-styles precipitation-tab the-li-pads">Precipitation:</li>
       </ul>
 
       <div class="trip-cond-table-size">
         <% @conditions.each do |condition| %>
           <ul>
             <section class = "display_object">
-              <li class="table-styles cond-date-tab"><a class="station_name_link" href="/conditions/<%= condition.id %>"><%= condition.date %></a></li>
-              <li class="table-styles max-temp-tab"><%= condition.max_temperature_f %> &deg;F</li>
-              <li class="table-styles mean-temp-tab"><%= condition.mean_temperature_f %> &deg;F</li>
-              <li class="table-styles min-temp-tab"><%= condition.min_temperature_f %> &deg;F</li>
-              <li class="table-styles humidity-tab"><%= condition.mean_humidity %></li>
-              <li class="table-styles visibility-tab"><%= condition.mean_visibility_miles %> miles</li>
-              <li class="table-styles wind-speed-tab"><%= condition.mean_wind_speed_mph %> mph</li>
-              <li class="table-styles precipitation-tab"><%= condition.precipitation_inches %> inches</li>
+              <li class="table-styles cond-date-tab the-li-pads"><a class="station_name_link" href="/conditions/<%= condition.id %>"><%= condition.date %></a></li>
+              <li class="table-styles max-temp-tab the-li-pads"><%= condition.max_temperature_f %> &deg;F</li>
+              <li class="table-styles mean-temp-tab the-li-pads"><%= condition.mean_temperature_f %> &deg;F</li>
+              <li class="table-styles min-temp-tab the-li-pads"><%= condition.min_temperature_f %> &deg;F</li>
+              <li class="table-styles humidity-tab the-li-pads"><%= condition.mean_humidity %></li>
+              <li class="table-styles visibility-tab the-li-pads"><%= condition.mean_visibility_miles %> miles</li>
+              <li class="table-styles wind-speed-tab the-li-pads"><%= condition.mean_wind_speed_mph %> mph</li>
+              <li class="table-styles precipitation-tab the-li-pads"><%= condition.precipitation_inches %> inches</li>
             </section>
           </ul>
         <% end %>
