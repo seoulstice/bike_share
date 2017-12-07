@@ -179,7 +179,7 @@ describe Trip do
                       start_station_id: 2,
                       end_date: "2017-01-01",
                       end_station_name: "North SF",
-                      start_station_id: 2,
+                      end_station_id: 2,
                       bike_id: 21,
                       subscription_type: "Subscriber"
                      )
