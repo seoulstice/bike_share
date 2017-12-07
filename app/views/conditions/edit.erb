@@ -7,7 +7,7 @@
 <ul class="breadcrumb">
   <li><a href="/">Home</a></li>
   <li><a href="/conditions">Conditions</a></li>
-  <li><a href="/conditions/<%= @condition.id %>"><%= @condition.id %></a></li>
+  <li><a href="/conditions/<%= @condition.id %>"><%= @condition.date %></a></li>
   <li>Edit Condition</li>
 </ul>
 
@@ -28,6 +28,7 @@
       Mean Precipitation (inches): <input  type="number" step="0.1" name="condition[precipitation_inches]" value="<%=  @condition.precipitation_inches %>" required>
       <br/>
       <input class="button" name="Update" type="submit">
+      <input class="button rounded-button" type="reset">
     </form>
   </div>
   <div class="footer">
