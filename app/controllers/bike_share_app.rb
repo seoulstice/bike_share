@@ -76,7 +76,7 @@ class BikeShareApp < Sinatra::Base
   end
 
   get '/trips/new' do
-    erb :'trips/new_new'
+    erb :'trips/new'
   end
 
   get '/trips/:id/edit' do
