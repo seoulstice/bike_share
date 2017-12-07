@@ -40,7 +40,7 @@ describe Trip do
     end
 
     it ".least_ridden_bike" do
-      expect(Trip.least_ridden_bike).to eq(513)
+      expect(Trip.least_ridden_bike).to eq(56)
     end
 
     it ".most_ridden_bike_ride_count" do
