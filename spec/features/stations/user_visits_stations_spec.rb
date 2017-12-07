@@ -4,7 +4,7 @@ describe "When a visitor visits stations" do
 
     expect(page).to have_current_path('/stations')
 
-    expect(page).to have_content("All Stations")
+    expect(page).to have_content("19")
     expect(page).to have_content("SJSU 4th")
     expect(page).to have_link("Castro Street and El Camino")
     expect(page).to have_link("New Station")
