@@ -24,4 +24,20 @@ describe "When a visistor visits individual trip" do
     expect(page).to have_link("Station Index")
     expect(page).to have_link("Trips Index")
   end
+
+  it "clicks on the Home breadcrumb" do
+    visit '/trips/1'
+
+    click_link("Home")
+
+    expect(page).to have_current_path('/')
+  end
+
+  it "clicks on the Trips breadcrumb" do
+    visit '/trips/new'
+
+    click_link("Trips")
+
+    expect(page).to have_current_path('/trips')
+  end
 end

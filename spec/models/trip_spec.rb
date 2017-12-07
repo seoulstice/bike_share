@@ -40,7 +40,7 @@ describe Trip do
     end
 
     it ".least_ridden_bike" do
-      expect(Trip.least_ridden_bike).to eq(513)
+      expect(Trip.least_ridden_bike).to eq(11)
     end
 
     it ".most_ridden_bike_ride_count" do
@@ -179,7 +179,7 @@ describe Trip do
                       start_station_id: 2,
                       end_date: "2017-01-01",
                       end_station_name: "North SF",
-                      start_station_id: 2,
+                      end_station_id: 2,
                       bike_id: 21,
                       subscription_type: "Subscriber"
                      )

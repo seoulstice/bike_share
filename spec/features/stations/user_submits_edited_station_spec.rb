@@ -25,4 +25,20 @@ describe "When a user updates an existing station" do
     expect(page).to have_content(2)
     expect(page).to have_content("2017-01-01")
   end
+
+  it "clicks on the Home breadcrumb" do
+    visit '/stations/2/edit'
+
+    click_link("Home")
+
+    expect(page).to have_current_path('/')
+  end
+
+  it "clicks on the Stations breadcrumb" do
+    visit '/stations/4/edit'
+
+    click_link("Santa Clara at Almaden")
+
+    expect(page).to have_current_path('/stations/4')
+  end
 end

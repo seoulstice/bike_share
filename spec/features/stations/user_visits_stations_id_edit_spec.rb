@@ -25,4 +25,20 @@ describe "When a visitor visits edit station" do
     expect(page).to have_link("Station Index")
     expect(page).to have_link("Trips Index")
   end
+
+  it "clicks on the Home breadcrumb" do
+    visit '/stations/12/edit'
+
+    click_link("Home")
+
+    expect(page).to have_current_path('/')
+  end
+
+  it "clicks on the Stations breadcrumb" do
+    visit '/stations/12/edit'
+
+    click_link("SJSU 4th at San Carlos")
+
+    expect(page).to have_current_path('/stations/12')
+  end
 end

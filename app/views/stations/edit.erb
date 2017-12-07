@@ -17,19 +17,21 @@
   <div class="edit-form">
     <form class="edit-data" action="/stations/<%= @station.id %>" method="post">
       <input type="hidden" name="_method" value="PUT">
-      Station Name <input type="text" name="station[name]" value="<%= @station.name %>"><br/>
-      City <input type="text" name="station[city]" value="<%= @station.city %>"><br/>
-      Number of Bike Docks <input type="number" name="station[dock_count]" value="<%= @station.dock_count %>"><br/>
-      Installation Date <input type="date" name="station[installation_date]" value="<%= @station.installation_date %>" data-date-inline-picker="true"><br/>
-      Latitude <input type="number" name="station[latitude]" step="any" value="<%= @station.latitude %>"><br/>
-      Longitude <input type="number" name="station[longitude]" step="any" value="<%= @station.longitude %>"><br/>
-      <input class="button" name="Update" type="submit">
-      <input class="button" type="reset">
+      <ul>
+      <li>Station Name <input type="text" name="station[name]" value="<%= @station.name %>" required><br/></li>
+      <li>City <input type="text" name="station[city]" value="<%= @station.city %>" required><br/></li>
+      <li>Number of Bike Docks <input type="number" name="station[dock_count]" value="<%= @station.dock_count %>" required><br/></li>
+      <li>Installation Date <input type="date" name="station[installation_date]" value="<%= @station.installation_date %>" data-date-inline-picker="true" required><br/></li>
+      <li>Latitude <input type="number" name="station[latitude]" step="any" value="<%= @station.latitude %>" required><br/></li>
+      <li>Longitude <input type="number" name="station[longitude]" step="any" value="<%= @station.longitude %>" required><br/></li>
+      <input class="button rounded-button" name="Update" type="submit">
+      <input class="button rounded-button" type="reset">
+      </ul>
     </form>
   </div>
   <div class="footer">
     <section>
-      <p>Created by: <a class="links" href="https://github.com/Maxscores">Max Stackhouse</a> | <a class="links" href="https://github.com/Ecksi">Jim Dechant</a> | <a class="links" href="https://github.com/seoulstice">Young Joon Jung</a>
+      <p>Created by: <a class="links" href="https://github.com/Maxscores">Max Stackhouse</a> | <a class="links" href="https://github.com/Ecksi">Jim Dechant</a> | <a class="links" href="https://github.com/seoulstice">Young Joon Jung</a></p>
     </section>
   </div>
 </body>

@@ -17,20 +17,20 @@
   <div class="edit-form">
     <form class="edit-data" action="/stations" method="post">
       <ul>
-        <li>Station Name: <input type="text" name="station[name]" value=""></li>
-        <li>City: <input type="text" name="station[city]" value=""></li>
-        <li>Number: <input type="number" min="0" name="station[dock_count]" value=""></li>
-        <li>Installation Date: <input type="date" name="station[installation_date]" value="<%= Date.today %>" data-date-inline-picker="true"></li>
-        <li>Latitude <input type="number" name="station[latitude]" step=""></li>
-        <li>Longitude <input type="number" name="station[longitude]" step=""></li>
-        <input class="button" name="New" type="submit">
-        <input class="button" type="reset">
+        <li>Station Name: <input type="text" name="station[name]" value="" required></li>
+        <li>City: <input type="text" name="station[city]" value="" required></li>
+        <li>Number: <input type="number" min="0" name="station[dock_count]" value="" required></li>
+        <li>Installation Date: <input type="date" name="station[installation_date]" value="<%= Date.today %>" data-date-inline-picker="true" required></li>
+        <li>Latitude <input type="number" name="station[latitude]" step="" required></li>
+        <li>Longitude <input type="number" name="station[longitude]" step="" required></li>
+        <input class="button rounded-button" name="New" type="submit">
+        <input class="button rounded-button" type="reset">
       </ul>
     </form>
   </div>
   <div class="footer">
     <section>
-      <p>Created by: <a class="links" href="https://github.com/Maxscores">Max Stackhouse</a> | <a class="links" href="https://github.com/Ecksi">Jim Dechant</a> | <a class="links" href="https://github.com/seoulstice">Young Joon Jung</a>
+      <p>Created by: <a class="links" href="https://github.com/Maxscores">Max Stackhouse</a> | <a class="links" href="https://github.com/Ecksi">Jim Dechant</a> | <a class="links" href="https://github.com/seoulstice">Young Joon Jung</a></p>
     </section>
   </div>
 </body>

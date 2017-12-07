@@ -18,21 +18,21 @@
   <div class="edit-form">
     <form class="edit-data" action="/conditions/<%= @condition.id %>" method="post">
       <input type="hidden" name="_method" value="PUT">
-      Date: <inputtype="date" name="condition[date]" value="<%= @condition.date %>" data-date-inline-picker="true"><br/>
-      Max Temperature (F): <input  type="number" step="0.1" name="condition[max_temperature_f]" value="<%= @condition.max_temperature_f %>"><br/>
-      Mean Temperature (F): <input  type="number" step="0.1" name="condition[mean_temperature_f]" value="<%= @condition.mean_temperature_f %>"><br/>
-      Min Temperature (F): <input  type="number" step="0.1" name="condition[min_temperature_f]" value="<%= @condition.min_temperature_f %>"><br/>
-      Mean Humidity: <input  type="number" step="0.1" name="condition[mean_humidity]" value="<%= @condition.mean_humidity %>"><br/>
-      Mean Visibility (mile): <input  type="number" step="0.1" name="condition[mean_visibility_miles]" value="<%= @condition.mean_visibility_miles %>"><br/>
-      Mean Wind Speed (mph): <input  type="number" step="0.1" name="condition[mean_wind_speed_mph]" value="<%= @condition.mean_wind_speed_mph %>"><br/>
-      Mean Precipitation (inches): <input  type="number" step="0.1" name="condition[precipitation_inches]" value="<%=  @condition.precipitation_inches %>">
+      Date: <input type="date" name="condition[date]" value="<%= @condition.date %>" data-date-inline-picker="true" required><br/>
+      Max Temperature (F): <input  type="number" step="0.1" name="condition[max_temperature_f]" value="<%= @condition.max_temperature_f %>" required><br/>
+      Mean Temperature (F): <input  type="number" step="0.1" name="condition[mean_temperature_f]" value="<%= @condition.mean_temperature_f %>" required><br/>
+      Min Temperature (F): <input  type="number" step="0.1" name="condition[min_temperature_f]" value="<%= @condition.min_temperature_f %>" required><br/>
+      Mean Humidity: <input  type="number" step="0.1" name="condition[mean_humidity]" value="<%= @condition.mean_humidity %>" required><br/>
+      Mean Visibility (mile): <input  type="number" step="0.1" name="condition[mean_visibility_miles]" value="<%= @condition.mean_visibility_miles %>" required><br/>
+      Mean Wind Speed (mph): <input  type="number" step="0.1" name="condition[mean_wind_speed_mph]" value="<%= @condition.mean_wind_speed_mph %>" required><br/>
+      Mean Precipitation (inches): <input  type="number" step="0.1" name="condition[precipitation_inches]" value="<%=  @condition.precipitation_inches %>" required>
       <br/>
       <input class="button" name="Update" type="submit">
     </form>
   </div>
   <div class="footer">
     <section>
-      <p>Created by: <a class="links" href="https://github.com/Maxscores">Max Stackhouse</a> | <a class="links" href="https://github.com/Ecksi">Jim Dechant</a> | <a class="links" href="https://github.com/seoulstice">Young Joon Jung</a>
+      <p>Created by: <a class="links" href="https://github.com/Maxscores">Max Stackhouse</a> | <a class="links" href="https://github.com/Ecksi">Jim Dechant</a> | <a class="links" href="https://github.com/seoulstice">Young Joon Jung</a></p>
     </section>
   </div>
 </body>

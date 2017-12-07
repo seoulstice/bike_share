@@ -164,6 +164,26 @@ img {
   height: 490px;
 }
 
+.trip-main {
+  background-image: url("/images/trip-background.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+}
+
+.trip-show {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+
+
+
 .station-main {
   background-image: url("/images/bike-station.jpg");
   background-repeat: no-repeat;
@@ -171,7 +191,6 @@ img {
   background-size: cover;
   display: flex;
   flex-direction: column;
-  /*justify-content: space-between;*/
   font-family: Arial, sans-serif;
 }
 
@@ -184,7 +203,6 @@ img {
   flex-direction: column;
   font-family: Arial, sans-serif;
 }
-
 
 .station-show {
   display: flex;
@@ -209,10 +227,7 @@ img {
   width: 400px;
   background-color: rgba(163, 169, 190, 0.6);
   border: groove;
-  align-content: center;
-  padding-top: 100px;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding: 40px;
   line-height: 1.8;
   float: left;
 }
@@ -248,10 +263,10 @@ img {
 }
 
 .header {
-  display: flex;
-  justify-content: center;
   padding-top: 40px;
   padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .header-text {
@@ -398,7 +413,7 @@ img {
   border-left: 1px solid #CCCCCC;
 }
 
-.edit {
+.rounded-button {
   border-radius: 4px;
 }
 
@@ -431,9 +446,9 @@ ul.breadcrumb li a:hover {
 }
 
 #map {
+  border: groove;
   height: 400px;
   width: 400px;
-  margin: 5px 5px;
 }
 
 .paginate {
@@ -962,4 +977,14 @@ a.pic-nav {
 
 .the-li-pads {
   padding: 10px;
+}
+
+.hacksauce {
+  position: absolute;
+  bottom: 4%;
+  right: 60%;
+}
+
+.smush {
+  color: lightgray;
 }
