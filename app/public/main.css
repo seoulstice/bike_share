@@ -47,6 +47,10 @@ img {
   width: 150px;
 }
 
+.header-home-link {
+  color: rgba(54, 209, 180, 0.5);
+}
+
 .background {
   background-image: url("images/golden-gate-fog.jpeg");
   height: 100%;
@@ -63,6 +67,10 @@ img {
   background-size: cover;
 }
 
+.dashboard-background {
+  background-color: lightgray;
+}
+
 .logo {
   width: 300px;
   position: relative;
@@ -75,7 +83,7 @@ img {
   flex-wrap: wrap;
   height: 100%;
   overflow: scroll;
-  background-color: rgba(54, 209, 180, 0.5)
+  background-color: rgba(54, 209, 180, 0.5);
 }
 
 .display_object {
