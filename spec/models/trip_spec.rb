@@ -40,7 +40,7 @@ describe Trip do
     end
 
     it ".least_ridden_bike" do
-      expect(Trip.least_ridden_bike).to eq(11)
+      expect(Trip.least_ridden_bike).to eq(543)
     end
 
     it ".most_ridden_bike_ride_count" do
@@ -71,14 +71,6 @@ describe Trip do
 
     it ".date_with_least_rides_trip_count" do
       expect(Trip.date_with_least_rides_trip_count).to eq(252)
-    end
-
-    it '.max_occurrence(column)' do
-      expect(Trip.max_occurrence(:bike_id)).to eq(538)
-    end
-
-    it '.min_occurrence(column)' do
-      expect(Trip.min_occurrence(:bike_id)).to eq(513)
     end
   end
 

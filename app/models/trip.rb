@@ -28,7 +28,7 @@ class Trip <ActiveRecord::Base
   end
 
   def self.station_most_start_rides
-    max_occurrence(:start_station)
+    group(:start_station).order('count(*) DESC').count.first.first
   end
 
   def self.top_five_stations
@@ -36,15 +36,16 @@ class Trip <ActiveRecord::Base
   end
 
   def self.station_most_end_rides
-    max_occurrence(:end_station)
+    group(:end_station).order('count(*) DESC').count.first.first
+
   end
 
   def self.date_with_most_rides
-    max_occurrence(:start_date)
+    group(:start_date).order('count(*) DESC').count.first.first
   end
 
   def self.date_with_least_rides
-    min_occurrence(:start_date)
+    group(:start_date).order('count(*)').count.first.first
   end
 
   def self.date_with_most_rides_trip_count
@@ -56,7 +57,7 @@ class Trip <ActiveRecord::Base
   end
 
   def self.most_ridden_bike
-    max_occurrence(:bike_id)
+    group(:bike_id).order('count(*) DESC').count.first.first
   end
 
   def self.most_ridden_bike_ride_count
@@ -64,7 +65,7 @@ class Trip <ActiveRecord::Base
   end
 
   def self.least_ridden_bike
-    min_occurrence(:bike_id)
+    group(:bike_id).order('count(*)').count.first.first
   end
 
   def self.least_ridden_bike_ride_count
@@ -81,14 +82,6 @@ class Trip <ActiveRecord::Base
 
   def self.subscription_groups
     group(:subscription_type)
-  end
-
-  def self.max_occurrence(column)
-    group(column).order('count(*) DESC').count.first.first
-  end
-
-  def self.min_occurrence(column)
-    group(column).order('count(*)').count.first.first
   end
 
   def self.count_by_subscription_type
