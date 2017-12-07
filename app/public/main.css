@@ -1,3 +1,8 @@
+@keyframes gonavgo {
+  from {left:600px;}
+  to {left: 0px;}
+}
+
 body, html {
   height: 100%;
 }
@@ -178,11 +183,7 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-
 }
-
-
-
 
 .station-main {
   background-image: url("/images/bike-station.jpg");
@@ -551,31 +552,55 @@ a.pic-nav {
 .station-back {
   background-color: rgba(59, 247, 129, .5);
   padding-bottom: 3px;
+  position: relative;
+  animation-name: gonavgo;
+  animation-duration: 2.5s;
+  animation-timing-function: linear;
 }
 
 .station-dash-back {
   background-color: rgba(59, 247, 129, .3);
   padding-bottom: 3px;
+  position: relative;
+  animation-name: gonavgo;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
 }
 
 .trips-back {
   background-color: rgba(244, 159, 10, .5);
   padding-bottom: 3px;
+  position: relative;
+  animation-name: gonavgo;
+  animation-duration: 3s;
+  animation-timing-function: ease;
 }
 
 .trips-dash-back {
   background-color: rgba(244, 159, 10, .3);
   padding-bottom: 3px;
+  position: relative;
+  animation-name: gonavgo;
+  animation-duration: 3s;
+  animation-timing-function: linear;
 }
 
 .condition-back {
   background-color: rgba(169, 248, 251, .5);
   padding-bottom: 3px;
+  position: relative;
+  animation-name: gonavgo;
+  animation-duration: 4s;
+  animation-timing-function: ease;
 }
 
 .condition-dash-back {
   background-color: rgba(169, 248, 251, .3);
   padding-bottom: 2px;
+  position: relative;
+  animation-name: gonavgo;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
 }
 
 .logo-back {
