@@ -16,6 +16,16 @@ describe "When a visitor visits conditions index" do
     expect(page).to have_link("2013-09-07")
   end
 
+  it "has working navigation" do
+    visit '/trips'
+
+    expect(page).to have_current_path('/trips')
+
+    expect(page).to have_link("Station Dashboard")
+    expect(page).to have_link("Trips Index")
+    expect(page).to have_link("Weather Dashboard")
+  end
+
   it "clicks on a specific condition link" do
     visit '/conditions'
 

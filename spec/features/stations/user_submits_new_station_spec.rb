@@ -16,7 +16,6 @@ describe "When a visitor submits a new station" do
     expect(page).to have_content("2017-01-01")
   end
 
-
   it "is redirected to that station's page" do
     visit '/stations/new'
     fill_in('station[name]', with: "North SF")
@@ -28,7 +27,22 @@ describe "When a visitor submits a new station" do
 
     find('input[name="New"]').click
 
-
     expect(page).to have_current_path("/stations/86")
+  end
+
+  it "clicks on the Home breadcrumb" do
+    visit '/stations/new'
+
+    click_link("Home")
+
+    expect(page).to have_current_path('/')
+  end
+
+  it "clicks on the Stations breadcrumb" do
+    visit '/stations/new'
+
+    click_link("Stations")
+
+    expect(page).to have_current_path('/stations')
   end
 end

@@ -7,8 +7,8 @@ describe 'When a visitor visits new trip page' do
     expect(page).to have_field('trip[duration]')
     expect(page).to have_field('trip[start_date]')
     expect(page).to have_field('trip[end_date]')
-    expect(page).to have_field('trip[start_station]')
-    expect(page).to have_field('trip[end_station]')
+    expect(page).to have_field('trip[start_station_name]')
+    expect(page).to have_field('trip[end_station_name]')
     expect(page).to have_field('trip[bike_id]')
     expect(page).to have_field('trip[subscription_type]')
   end

@@ -10,6 +10,16 @@ describe "When a visitor visits stations" do
     expect(page).to have_link("New Station")
   end
 
+  it "has working navigation" do
+    visit '/stations'
+
+    expect(page).to have_current_path('/stations')
+
+    expect(page).to have_link("Station Dashboard")
+    expect(page).to have_link("Weather Dashboard")
+    expect(page).to have_link("Conditions Index")
+  end
+
   it "clicks on a specific station link" do
     visit '/stations'
 
