@@ -157,13 +157,20 @@ img {
 }
 
 .trip-main {
-  background-image: url("/images/trip-background.jpg");
+  background-image: url("/images/trip-background.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
+}
+
+.trip-show {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
 }
 
 
@@ -251,10 +258,10 @@ img {
 }
 
 .header {
-  display: flex;
-  justify-content: center;
   padding-top: 40px;
   padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .header-text {
@@ -265,7 +272,10 @@ img {
   border-style: solid;
   border-width: 3px;
   border-color: white;
-  padding: 15px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 30px;
 }
 
 .dash-weather {
@@ -401,7 +411,7 @@ img {
   border-left: 1px solid #CCCCCC;
 }
 
-.edit {
+.rounded-button {
   border-radius: 4px;
 }
 

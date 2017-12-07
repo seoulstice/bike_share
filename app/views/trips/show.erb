@@ -12,69 +12,76 @@
 
 <body class="trip-main">
   <div class="header">
-    <h1 class="header-text"><%= @station.name %> in <%= @station.city %></h1>
+    <h1 class="header-text">Trip #<%= @trip.id %></h1>
   </div>
   <div class="trip-show">
-    
-  </div>
-    <ul>
-    <li>Trip <%= @trip.id %></li>
-    <li>Duration: <%= @trip.duration %></li>
-    <li>Start Date: <%= @trip.start_date %> </li>
-    <li>Start Station: <%= @start_station.name %> </li>
-    <li>End Date: <%= @trip.end_date %></li>
-    <li>End Station: <%= @end_station.name %></li>
-    <li>Bike ID: <%= @trip.bike_id %> </li>
-    <li>Subscription Type: <%= @trip.subscription_type %></li>
-    <li>Zip Code: <%= @trip.zipcode %> </li>
-
-    </ul>
-  </div>
-  <div id="map">
-    <script>
-    function initMap() {
-      var stations = [
-           ['Starting Station',
-           {lat: <%= @start_station.latitude %>,
-           lng: <%= @start_station.longitude %>}],
-           ['Ending Station',
-           {lat: <%= @end_station.latitude %>,
-           lng: <%= @end_station.longitude %>}]
-         ];
-
-      var map_center = {
-        lat: ((stations[0][1]['lat'] + stations[1][1]['lat'])/2) ,
-        lng: ((stations[0][1]['lng'] + stations[1][1]['lng'])/2)
-      };
-
-      var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 8,
-          center: map_center
-         });
-
-      var start = new google.maps.Marker({
-             position: stations[0][1],
-             map: map,
-             title: stations[0][0]
+    <section class="left-show">
+      <div class="show-data">
+        <ul class="data">
+          <li>Trip ID: <%= @trip.id %></li>
+          <li>Duration: <%= @trip.duration %></li>
+          <li>Start Date: <%= @trip.start_date %> </li>
+          <li>Start Station: <%= @start_station.name %> </li>
+          <li>End Date: <%= @trip.end_date %></li>
+          <li>End Station: <%= @end_station.name %></li>
+          <li>Bike ID: <%= @trip.bike_id %> </li>
+          <li>Subscription Type: <%= @trip.subscription_type %></li>
+          <li>Zip Code: <%= @trip.zipcode %> </li>
+        </ul>
+      </div>
+      <div class="buttons-spacing">
+        <section>
+          <a  class="button rounded-button" href="/trips/<%= @trip.id %>/edit">Edit</a>
+        </section>
+        <section>
+          <form class="" action="/trips/<%= @trip.id %>" method="post">
+            <input type="hidden" name="_method" value="DELETE">
+            <input class="button rounded-button" type="submit" name="Delete" value="Delete">
+          </form>
+        </section>
+      </div>
+    </section>
+    <section id="map">
+      <script>
+        function initMap() {
+        var stations = [
+             ['Starting Station',
+             {lat: <%= @start_station.latitude %>,
+             lng: <%= @start_station.longitude %>}],
+             ['Ending Station',
+             {lat: <%= @end_station.latitude %>,
+             lng: <%= @end_station.longitude %>}]
+           ];
+        var map_center = {
+          lat: ((stations[0][1]['lat'] + stations[1][1]['lat'])/2) ,
+          lng: ((stations[0][1]['lng'] + stations[1][1]['lng'])/2)
+        };
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 8,
+            center: map_center
            });
-
-      var end = new google.maps.Marker({
-           position: stations[1][1],
-           map: map,
-           title: stations[1][0]
-         });
-
-      start.setMap(map)
-      end.setMap(map)
-     }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPiZRNt7SNQqhm39Aug86hg9HXrTLBLZQ&callback=initMap">
-    </script>
+        var start = new google.maps.Marker({
+               position: stations[0][1],
+               map: map,
+               title: stations[0][0]
+             });
+        var end = new google.maps.Marker({
+             position: stations[1][1],
+             map: map,
+             title: stations[1][0]
+           });
+        start.setMap(map)
+        end.setMap(map)
+       }
+      </script>
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPiZRNt7SNQqhm39Aug86hg9HXrTLBLZQ&callback=initMap">
+      </script>
+    </section>
   </div>
-
-</section>
-  <form class="" action="/trips/<%= @trip.id %>" method="post">
-    <input type="hidden" name="_method" value="DELETE">
-    <input class="button inline-btn" type="submit" name="Delete" value="Delete">
-  </form>
+  <div class="footer">
+    <section>
+      <p>Created by: <a class="links" href="https://github.com/Maxscores">Max Stackhouse</a> | <a class="links" href="https://github.com/Ecksi">Jim Dechant</a> | <a class="links" href="https://github.com/seoulstice">Young Joon Jung</a>
+    </section>
+  </div>
+</body>
