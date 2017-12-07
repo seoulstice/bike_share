@@ -4,7 +4,7 @@
   <title>Trip Dashboard</title>
 </head>
 
-<body>
+<body  class="dashboard-background">
   <ul class="breadcrumb">
     <li><a href="/">Home</a></li>
     <li><a href="/trips">Trips</a></li>
@@ -48,10 +48,10 @@
   </div>
   <div class="main-chart">
     <div class="small-chart">
-      <%= column_chart @trips.group_by_day_of_week(:start_date, format: "%a").count, colors: ["#145187"], xtitle: "Day of Week", ytitle: "Rides Taken", width: "325px", height: "200px",  library: {backgroundColor: "transparent", fontStyle: "bold", fontSize: "24px"} %>
+      <%= column_chart @trips.group_by_day_of_week(:start_date, format: "%a").count, colors: ["#145187"], xtitle: "Day of Week", ytitle: "Rides Taken", width: "400px", height: "200px",  library: {backgroundColor: "transparent", fontStyle: "bold", fontSize: "24px"} %>
     </div>
     <div class="small-chart">
-      <%= column_chart @trips.rides_by_year, colors: ["#36d1b4"], xtitle: "Number of Rides", ytitle: "Year", width: "325px", height: "200px",  library: {backgroundColor: "transparent", fontStyle: "bold", fontSize: "30px"} %>
+      <%= column_chart @trips.rides_by_year, colors: ["#36d1b4"], xtitle: "Year", ytitle: "Number of Rides", width: "400px", height: "300px",  library: {backgroundColor: "transparent", fontStyle: "bold", fontSize: "30px"} %>
     </div>
   </div>
   <div class="pie-chart">
@@ -96,6 +96,10 @@
   </div>
   </div>
 
-</article>
-
+  </article>
+  <div class="footer">
+    <section>
+      <p>Created by: <a class="links" href="https://github.com/Maxscores">Max Stackhouse</a> | <a class="links" href="https://github.com/Ecksi">Jim Dechant</a> | <a class="links" href="https://github.com/seoulstice">Young Joon Jung</a>
+    </section>
+  </div>
 </body>

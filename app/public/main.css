@@ -47,6 +47,10 @@ img {
   width: 150px;
 }
 
+.header-home-link {
+  color: rgba(54, 209, 180, 0.5);
+}
+
 .background {
   background-image: url("images/golden-gate-fog.jpeg");
   height: 100%;
@@ -63,6 +67,10 @@ img {
   background-size: cover;
 }
 
+.dashboard-background {
+  background-color: lightgray;
+}
+
 .logo {
   width: 300px;
   position: relative;
@@ -75,7 +83,7 @@ img {
   flex-wrap: wrap;
   height: 100%;
   overflow: scroll;
-  background-color: rgba(54, 209, 180, 0.5)
+  background-color: rgba(54, 209, 180, 0.5);
 }
 
 .display_object {
@@ -156,6 +164,19 @@ img {
   height: 490px;
 }
 
+.trip-main {
+  background-image: url("/images/trip-background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+}
+
+
+
+
 .station-main {
   background-image: url("/images/bike-station.jpg");
   background-repeat: no-repeat;
@@ -163,7 +184,6 @@ img {
   background-size: cover;
   display: flex;
   flex-direction: column;
-  /*justify-content: space-between;*/
   font-family: Arial, sans-serif;
 }
 
@@ -176,7 +196,6 @@ img {
   flex-direction: column;
   font-family: Arial, sans-serif;
 }
-
 
 .station-show {
   display: flex;

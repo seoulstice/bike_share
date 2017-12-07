@@ -10,8 +10,13 @@
   <li><%= @trip.id %></li>
 </ul>
 
-<section class="dash-flex">
-  <div class="dashboard-results">
+<body class="trip-main">
+  <div class="header">
+    <h1 class="header-text"><%= @station.name %> in <%= @station.city %></h1>
+  </div>
+  <div class="trip-show">
+    
+  </div>
     <ul>
     <li>Trip <%= @trip.id %></li>
     <li>Duration: <%= @trip.duration %></li>
