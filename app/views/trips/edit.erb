@@ -19,16 +19,16 @@
     <form class="edit-data" action="/trips/<%= @trip.id %>" method="post">
       <input type="hidden" name="_method" value="PUT">
       <ul>
-      <li>Trip Duration: <input type="number" name="trip[duration]" value="<%= @trip.duration %>"><br/></li>
-      <li>Start Date: <input type="date" name="trip[start_date]" value="<%= @trip.start_date %>"><br/></li>
-      <li>Start Station Name: <input type="text" name="trip[start_station_name]" value="<%= @trip.start_station.name%>"><br/></li>
-      <li>Start Station ID: <input class="new-child" type="text" name="trip[start_station_id]" value="<%= @trip.start_station_id %>"><br/></li>
-      <li>End Date: <input type="date" name="trip[end_date]" value="<%= @trip.end_date %>"><br/></li>
-      <li>End Station Name: <input type="text" name="trip[end_station_name]" value="<%= @trip.end_station.name %>"><br/></li>
-      <li>End Station ID: <input class="new-child" type="text" name="trip[end_station_id]" value="<%= @trip.end_station_id %>"><br/></li>
-      <li>Bike ID: <input type="number" name="trip[bike_id]" value="<%= @trip.bike_id %>"><br/></li>
-      <li>Subscription Type: <input type="text" name="trip[subscription_type]" value="<%= @trip.subscription_type %>"><br/></li>
-      <li>Zipcode: <input type="number" name="trip[zipcode]" value="<%= @trip.zipcode %>"><br/></li>
+      <li>Trip Duration: <input type="number" name="trip[duration]" value="<%= @trip.duration %>" required><br/></li>
+      <li>Start Date: <input type="date" name="trip[start_date]" value="<%= @trip.start_date %>" required><br/></li>
+      <li>Start Station Name: <input type="text" name="trip[start_station_name]" value="<%= @trip.start_station.name%>" required><br/></li>
+      <li>Start Station ID: <input class="new-child" type="text" name="trip[start_station_id]" value="<%= @trip.start_station_id %>" required><br/></li>
+      <li>End Date: <input type="date" name="trip[end_date]" value="<%= @trip.end_date %>" required><br/></li>
+      <li>End Station Name: <input type="text" name="trip[end_station_name]" value="<%= @trip.end_station.name %>" required><br/></li>
+      <li>End Station ID: <input class="new-child" type="text" name="trip[end_station_id]" value="<%= @trip.end_station_id %>" required><br/></li>
+      <li>Bike ID: <input type="number" name="trip[bike_id]" value="<%= @trip.bike_id %>" required><br/></li>
+      <li>Subscription Type: <input type="text" name="trip[subscription_type]" value="<%= @trip.subscription_type %>" required><br/></li>
+      <li>Zipcode: <input type="number" name="trip[zipcode]" value="<%= @trip.zipcode %>" required><br/></li>
       <input class="button rounded-button" name="Update" type="submit">
       <input class="button rounded-button" type="reset">
       </ul>
