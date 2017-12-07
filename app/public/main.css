@@ -272,10 +272,7 @@ img {
   border-style: solid;
   border-width: 3px;
   border-color: white;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 30px;
+  padding: 15px;
 }
 
 .dash-weather {
@@ -444,9 +441,9 @@ ul.breadcrumb li a:hover {
 }
 
 #map {
+  border: groove;
   height: 400px;
   width: 400px;
-  margin: 5px 5px;
 }
 
 .paginate {
