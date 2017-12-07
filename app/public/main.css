@@ -219,10 +219,7 @@ img {
   width: 400px;
   background-color: rgba(163, 169, 190, 0.6);
   border: groove;
-  align-content: center;
-  padding-top: 100px;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding: 40px;
   line-height: 1.8;
   float: left;
 }
