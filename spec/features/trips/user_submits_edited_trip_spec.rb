@@ -35,4 +35,28 @@ describe "When a user updates an existing trip" do
     expect(page).to have_content("Harry Bridges Plaza (Ferry Building)")
     expect(page).to have_content("Customer")
   end
+
+  it "clicks on the Home breadcrumb" do
+    visit '/trips/13/edit'
+
+    click_link("Home")
+
+    expect(page).to have_current_path('/')
+  end
+
+  it "clicks on the Trips breadcrumb" do
+    visit '/trips/13/edit'
+
+    click_link("Trips")
+
+    expect(page).to have_current_path('/trips')
+  end
+
+  it "clicks on the individual trip id breadcrumb" do
+    visit '/trips/13/edit'
+
+    click_link("13")
+
+    expect(page).to have_current_path('/trips/13')
+  end
 end

@@ -16,6 +16,16 @@ describe "When a visitor visits conditions index" do
     expect(page).to have_link("2013-09-07")
   end
 
+  it "has working navigation" do
+    visit '/trips'
+
+    expect(page).to have_current_path('/trips')
+
+    expect(page).to have_link("Station Dashboard")
+    expect(page).to have_link("Trips Index")
+    expect(page).to have_link("Weather Dashboard")
+  end
+
   it "clicks on a specific condition link" do
     visit '/conditions'
 
@@ -30,5 +40,17 @@ describe "When a visitor visits conditions index" do
     click_link("New Condition")
 
     expect(page).to have_current_path('/conditions/new')
+  end
+
+  it "only the next pagination link shows up" do
+    visit '/conditions'
+
+    expect(page).to have_link(">>")
+  end
+
+  it "has working pagination" do
+    visit '/conditions'
+
+    
   end
 end
