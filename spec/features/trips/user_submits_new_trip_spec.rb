@@ -19,20 +19,21 @@ describe "When a visitor submits a new trip" do
     visit '/trips/new'
     fill_in('trip[duration]', with: 60)
     fill_in('trip[start_date]', with: "2017-01-01")
-    fill_in('trip[start_station_name]', with: "Alcatraz")
+    fill_in('trip[start_station_name]', with: "San Jose Diridon Caltrain Station")
     fill_in('trip[start_station_id]', with: 2)
     fill_in('trip[end_date]', with: "2017-01-01")
-    fill_in('trip[end_station_name]', with: "SF City Hall")
-    fill_in('trip[end_station_id]', with: 2)
+    fill_in('trip[end_station_name]', with: "San Jose Civic Center")
+    fill_in('trip[end_station_id]', with: 3)
     fill_in('trip[bike_id]', with: 2)
     fill_in('trip[subscription_type]', with: "Customer")
     find('input[name="New"]').click
     save_and_open_page
     expect(page).to have_content("60")
     expect(page).to have_content("2017-01-01")
-    expect(page).to have_content("Alcatraz")
-    expect(page).to have_content("SF City Hall")
     expect(page).to have_content(2)
+    expect(page).to have_content("San Jose Diridon Caltrain Station")
+    expect(page).to have_content(3)
+    expect(page).to have_content("San Jose Civic Center")
     expect(page).to have_content("Customer")
   end
 

@@ -12,18 +12,17 @@ describe "when a visitor visits the Weather Dashboard" do
     expect(page).to have_link("Conditions Index")
     expect(page).to have_link("Weather Dashboard")
   end
-  
+
   it "displays all collected weather conditions" do
     visit '/weather-dashboard'
 
     expect(page).to have_current_path('/weather-dashboard')
 
-    expect(page).to have_content("Weather Dashboard")
-    expect(page).to have_content("Lower Temperature")
-    expect(page).to have_content("Upper Temperature")
-    expect(page).to have_content("Days In Range")
-    expect(page).to have_content("Average Rides")
-    expect(page).to have_content("Maximum Rides")
+    expect(page).to have_content("Dashboard Summary")
+    expect(page).to have_content("Ride Breakdown by Temperature")
+    expect(page).to have_content("Ride Breakdown by Wind Speed")
+    expect(page).to have_content("Ride Breakdown by Precipitation")
+    expect(page).to have_content("Ride Breakdown by Visibility")
   end
 
   it "clicks on Station Index link" do
