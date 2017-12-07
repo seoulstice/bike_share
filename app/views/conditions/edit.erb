@@ -18,7 +18,7 @@
   <div class="edit-form">
     <form class="edit-data" action="/conditions/<%= @condition.id %>" method="post">
       <input type="hidden" name="_method" value="PUT">
-      Date: <inputtype="date" name="condition[date]" value="<%= @condition.date %>" data-date-inline-picker="true" required><br/>
+      Date: <input type="date" name="condition[date]" value="<%= @condition.date %>" data-date-inline-picker="true" required><br/>
       Max Temperature (F): <input  type="number" step="0.1" name="condition[max_temperature_f]" value="<%= @condition.max_temperature_f %>" required><br/>
       Mean Temperature (F): <input  type="number" step="0.1" name="condition[mean_temperature_f]" value="<%= @condition.mean_temperature_f %>" required><br/>
       Min Temperature (F): <input  type="number" step="0.1" name="condition[min_temperature_f]" value="<%= @condition.min_temperature_f %>" required><br/>
