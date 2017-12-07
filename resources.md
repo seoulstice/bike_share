@@ -40,8 +40,9 @@ Known bugs/errors:
 
 - ActiveRecord::RecordNotFound - Couldn't find Trip with 'id'=chartkick.js: error(see image in errors folder) shown in shotgun when submitting a new Trip using the new Trip form.  The error is only visible in Terminal, otherwise normal behavior.  The user is redirected to the new Trip's show page and can then edit or delete the Trip from the database.  Verified that the Trip also got saved in the Database by checking in Tux(see image in errors folder)
 
-
-SELECT conditions.*, count(date) AS trip_count FROM conditions
-JOIN trips ON conditions.date=trips.start_date
-WHERE '70' <= conditions.max_temperature_f AND conditions.max_temperature_f <= '80'
-GROUP BY conditions.id;
+Lots of trips in our fixture have 1 ride.. ;-/
+1) Trip Class methods .least_ridden_bike
+     Failure/Error: expect(Trip.least_ridden_bike).to eq(543)
+    
+       expected: 543
+            got: {11=>1, 144=>1, 262=>1, 683=>1, 161=>1, 576=>1, 654=>1, 151=>1, 653=>1, 649=>1, 530=>1, 600=>1, 493=>...7, 448=>7, 626=>7, 562=>7, 615=>7, 416=>7, 632=>8, 318=>8, 319=>9, 409=>9, 598=>9, 395=>11, 538=>14}
