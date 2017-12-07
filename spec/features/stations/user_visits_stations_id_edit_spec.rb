@@ -37,15 +37,7 @@ describe "When a visitor visits edit station" do
   it "clicks on the Stations breadcrumb" do
     visit '/stations/12/edit'
 
-    click_link("Stations")
-
-    expect(page).to have_current_path('/stations')
-  end
-
-  it "clicks on the individual station id breadcrumb" do
-    visit '/stations/12/edit'
-
-    click_link("12")
+    click_link("SJSU 4th at San Carlos")
 
     expect(page).to have_current_path('/stations/12')
   end

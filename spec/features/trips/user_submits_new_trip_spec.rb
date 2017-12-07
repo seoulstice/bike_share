@@ -27,7 +27,7 @@ describe "When a visitor submits a new trip" do
     fill_in('trip[bike_id]', with: 2)
     fill_in('trip[subscription_type]', with: "Customer")
     find('input[name="New"]').click
-    save_and_open_page
+    
     expect(page).to have_content("60")
     expect(page).to have_content("2017-01-01")
     expect(page).to have_content(2)
