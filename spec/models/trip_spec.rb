@@ -78,7 +78,7 @@ describe Trip do
     end
 
     it '.min_occurrence(column)' do
-      expect(Trip.min_occurrence(:bike_id)).to eq(513)
+      expect(Trip.min_occurrence(:bike_id)).to eq(56)
     end
   end
 
