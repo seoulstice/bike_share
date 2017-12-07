@@ -35,10 +35,10 @@ describe "When a user updates an existing station" do
   end
 
   it "clicks on the Stations breadcrumb" do
-    visit '/stations/2/edit'
+    visit '/stations/4/edit'
 
-    click_link("San Jose Diridon Caltrain Station")
+    click_link("Santa Clara at Almaden")
 
-    expect(page).to have_current_path('/stations/2')
+    expect(page).to have_current_path('/stations/4')
   end
 end
