@@ -978,3 +978,13 @@ a.pic-nav {
 .the-li-pads {
   padding: 10px;
 }
+
+.hacksauce {
+  position: absolute;
+  bottom: 4%;
+  right: 60%;
+}
+
+.smush {
+  color: lightgray;
+}

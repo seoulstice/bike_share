@@ -4,7 +4,7 @@ describe "When a user visits trips" do
 
     expect(page).to have_current_path('/trips')
 
-    expect(page).to have_content("All Trips")
+    expect(page).to have_content("San Jose City Hall")
     expect(page).to have_content("Subscriber")
     expect(page).to have_link("Trip 1")
     expect(page).to have_link("New Trip")
