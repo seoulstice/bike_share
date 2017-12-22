@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "heroku"
 gem 'sinatra', require: 'sinatra/base'
 gem 'pg'
 gem 'activerecord'
