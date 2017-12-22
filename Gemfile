@@ -7,7 +7,6 @@ gem 'sinatra-activerecord'
 gem 'pry'
 gem "chartkick"
 gem 'groupdate'
-gem 'rspec-core'
 
 group :development, :test do
   gem 'database_cleaner'
