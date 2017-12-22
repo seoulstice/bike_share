@@ -8,14 +8,14 @@ class Seed
   def self.production
     Seed.stations
     Seed.weather
-    Seed.trips
+    Seed.trips_heroku
   end
 
   def self.test
     DatabaseCleaner.clean
     Seed.stations
     Seed.weather
-    Seed.trip_fixture
+    Seed.trips_heroku
   end
 
   def self.stations
@@ -30,6 +30,32 @@ class Seed
       )
     end
     ActiveRecord::Base.connection.reset_pk_sequence!('stations')
+  end
+
+  def self.normal_distribution(count, average, variance)
+    Array.new(count) { average + (variance) * Math.sqrt(-2 * Math.log(rand)) * Math.cos(2 * Math::PI * rand) }
+  end
+
+  def self.trips_heroku
+    subscription_type = ["Customer", "Subscriber"]
+    durations = normal_distribution(4000, 60, 3)
+    4000.times do |time|
+      condition = Condition.all.sample
+      start_station = Station.all.sample
+      end_station = Station.all.sample
+      Trip.create!(duration: durations.pop,
+                   start_date: condition.date,
+                   start_station_name: start_station.name,
+                   start_station_id: start_station.id,
+                   end_date: condition.date,
+                   end_station_name: end_station.name,
+                   end_station_id: end_station.id,
+                   bike_id: rand(1..400),
+                   subscription_type: subscription_type.sample,
+                   zipcode: 54611,
+                   condition_id: condition.id
+                 )
+    end
   end
 
   def self.trip_fixture
