@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem "heroku"
 gem 'sinatra', require: 'sinatra/base'
 gem 'pg'
 gem 'activerecord'
@@ -8,9 +7,6 @@ gem 'sinatra-activerecord'
 gem 'pry'
 gem "chartkick"
 gem 'groupdate'
-gem 'rspec'
-gem 'rspec-core'
-
 
 group :development, :test do
   gem 'database_cleaner'
