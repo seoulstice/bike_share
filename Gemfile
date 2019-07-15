@@ -1,13 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'sinatra', require: 'sinatra/base'
+gem "sinatra", ">= 2.0.2"
 gem 'pg'
 gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'pry'
-gem "chartkick"
+gem "chartkick", ">= 3.2.0"
 gem 'groupdate'
 gem 'heroku-rake'
+gem "rack", ">= 2.0.6"
 
 group :development, :test do
   gem 'database_cleaner'
